@@ -1,0 +1,170 @@
+* {margin:0; padding:0;}
+header, section, nav, aside, article, footer {display:block; padding:20px; }
+body {
+font-family:'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+font-size: .85em;
+background-color: #FFFFFF;
+color:#000;
+background-image:url(images/vines1.3.jpg);
+background-position: center 0;
+}
+body.vita {}
+body.vita #wrapper {background-color:#fff; padding:30px; max-width:900px;}
+.heading {font-family:'Aclonica', cursive; font-weight:400; }
+#wrapper {width:1000px; margin:0 auto; border-top:15px solid #FF6600;}
+nav#one {float:right; width:430px; height:440px; background-image:url(images/magenta.png); margin-top:0;}
+nav#two {float:right; width:230px; height:200px; background-image:url(images/purple.png); margin-top:0; padding-top:5px;}	
+	nav#two ul li a {font-size:.8em;  font-weight:100; color:#fff;}
+	#two .heading {color:#66FFFF; font-size:110%;}
+header#three { width:250px; margin-top:0; margin-bottom:20px; padding:15px 0 0 0 ;}
+nav#four {float:right;  width:350px; height:250px; margin:126px -270px 0 0; background-image:url(images/green.png);}
+nav#five {float:right; width:130px; height:50px;  margin:36px -120px 0 0; background-color:#996600; opacity:.8;}
+footer#six {width:430px; float:right; margin:-50px 0 0 0;}
+	footer ul li {display:inline;}
+	footer ul li a {font-size:.8em; font-weight:100; color:#000; }
+aside {float:right; width:230px; background-image:url(images/purple.png); margin-left:30px;}
+aside li {margin:0 0 10px 10px; color:#CCC;}
+	.vita aside p, .vita aside p a, .vita aside dt a {color:#fff!important;}
+dl.aside-gallery img {width:50px;}
+
+h1 {font-size:1.5em; color:#fff; font-family:'Aclonica', cursive; font-weight:400;}
+	#valid h1 {font-size:1em;}
+	.vita #wrapper h1 {color:#60F; font-family:'Aclonica', cursive; font-weight:400;}
+h2 {font-size:1.1em; color:#66FFFF; font-weight:100;}
+	.vita #wrapper h2 {margin:10px 0; font-weight:200; color:#60F}
+h3 {font-size:.9em; margin-bottom:5px;}
+h4 {font-size:.85em; margin-bottom:5px;}
+h4 a {color:#000;}
+ul li {margin:0; list-style-type:none;}
+	ul li a{font-size:1em; color:#66FFFF;}
+	ul ul li {margin:0; list-style-type:none;}
+	ul ul li:last-child {margin-bottom:15px;}
+	ul ul li a{color:#fff;font-weight:100; font-size:.8em;}
+	.vita ul  {list-style-type:disc; list-style:disc; }
+	.vita li {margin:0 0 3px 25px; font-size:.85em;}
+a {text-decoration:none; color:#fff;}
+p { color:#66FFFF;}
+	.vita p {color:#000; margin-bottom:10px; font-size:.85em;}
+	p a {color:#63C;}
+	p span.jobtitle {font-weight:bold;}
+	p cite, p cite a {font-size:10px; font-style:normal; color:#fff;}
+.vita dl dt { font-size:.8em!important; }	
+.vita dl dt a {color:#63C;}	
+.vita dl dd {margin:0 0 5px 20px; font-size:.75em;}	
+.vita dl dd a {color:#63C;}
+/*form page*/
+aside#intro { float:left;  width:230px; margin:0px 0 0 0; 
+	background-image:url(images/green.png); 
+	font-size:16px;
+	color:#999900;
+	padding:0 15px 15px 15px;}
+	aside#intro p {margin:10px 0 0 0;}
+section.form {margin-left:260px; width:430px; background-image:url(images/magenta.png);}
+legend {color:#99CC00; margin: 0 0 0 -20px; font-size:14px; line-height:18px}
+fieldset {padding:0; margin:0 0 20px 10px; border:0; line-height:16px;}
+label {display:block; color:#fff; line-height:14px; font-size:.8em}
+input {line-height:12px; margin:0 0 10px 0; padding:0;}
+select {margin-bottom:10px;}
+.example {font-size:10px; color:#CCCCCC; }
+
+/*For the form validation script
+http://javascript.internet.com/forms/dynamic-javascript-form-validation.html  */
+#valid {margin:0;}
+#msg { display: none; position: absolute; z-index: 200; background: url(images/msg_arrow.gif) left center no-repeat; padding-left: 7px; }
+#msgcontent { display: block; background: #f3e6e6; border: 2px solid #924949; border-left: none; padding: 5px; min-width: 150px; max-width: 250px; }
+
+/* for vcard */
+.vcard, .vcard a, .vcard a.url { color:#66FFFF;}
+
+/* Van Londen's Calendar */
+section, header, nav, footer {display:block;}
+a {text-decoration:none;}
+h1 {font-size:20px;}
+
+nav#days {			  
+	width:860px;			  
+	margin:0 auto;   		 
+	height: 500px;  		 
+	 text-align:left;       
+}
+ol.day {
+	list-style-position:inside;
+	width:860px;			  
+	margin:0 auto;   		 
+	padding:0;
+}
+ol.day li {
+	float: left;
+	margin:10px;
+	padding: 7px 10px 10px 10px;
+	opacity: 0.8;
+	-moz-opacity:0.8;
+	-webkit-opacity:0.8;
+	background-color:#AFC585;
+	background-image:url(number_bg.png);
+	background-position:-1px -1px;
+	background-repeat:no-repeat;
+	box-shadow:0px 2px 15px #333;
+	-moz-box-shadow: 0px 2px 15px #333;
+	-webkit-box-shadow: 0px 2px 15px #333;
+	position: relative;
+	width:150px;
+	height:140px;
+	color:#fff;
+	font-size:18px;
+	line-height:18px;
+	font-weight:normal;
+}
+ol.day li.current {
+	background-color:#DE983C;
+	z-index: 3;
+	opacity: 1;
+	-moz-opacity:1;
+	-webkit-opacity:1;
+}
+ol.day li.tiltright {
+	z-index: 1;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+}
+ol.day li.tiltleft {
+	z-index: 2;
+	-webkit-transform: rotate(-6deg);
+	-moz-transform: rotate(-6deg);
+}
+ol.day li:hover {
+	z-index: 10;
+	-moz-box-shadow: 3px 5px 15px #333;
+	-webkit-box-shadow: 3px 5px 15px #333;
+	border:0;
+	background-color:#C283A7;
+	opacity: 1;
+	-moz-opacity:1;
+	-webkit-opacity:1;
+
+}
+ol.day li a img {
+	width:150px;
+	height:150px;
+	border:0;
+}
+ol.day li ul {
+	list-style:none;
+	list-style-type:none;
+	background-color:transparent;
+}
+ol.day li ul li {
+	display:block;
+	padding:2px;
+	margin:0;
+	font-size:11px;
+	font-weight:normal;
+	line-height:13px;
+	height:auto;
+	width:150px;
+	background-image:none;
+	background-color:transparent;
+	
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}/* end of Van Londen's calendar */

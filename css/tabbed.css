@@ -1,0 +1,75 @@
+/* tabbed content using inputs 
+Responsive tabs: http://stanhub.com/create-responsive-tabs-using-css-only-no-jquery/
+
+what causes the outer two tabs to jump to the side a few pixels?
+*/
+
+	#tabs label {
+	  background-color: orange; 
+	  color:white;
+	  cursor: pointer;
+	  margin:0 2% 0 0;
+	  padding:2% 6% 2% 3%;
+	  z-index: 1;
+	  -webkit-border-radius:5px 30px 0 0;
+	      -ms-border-radius:5px 30px 0 0;
+	          border-radius:5px 30px 0 0;
+	}
+	#tabs label:first-of-type {
+	  margin-left: 0;
+	}
+	#tabs label:hover {
+		background-color:orange;
+		color:white;
+		-webkit-transition: all 500ms ease;
+		   -moz-transition: all 500ms ease;
+		    -ms-transition: all 500ms ease;
+	       	 -o-transition: all 500ms ease;
+		transition: all 500ms ease;
+		}
+	#tabs article {
+	  width: 95%;
+	  min-height:auto;
+	  margin: 6px 0 5% 0;
+	  padding: 1% 2% 2% 2%;
+	  color:white;
+	}
+	#tabs input[type=radio]{display: none;}
+	
+	#tabs input[type=radio]:checked + label {/* active current tab */
+	  background: white;
+	  color:var(--purpleish);
+	  margin-bottom:-2px;
+	}
+	#tabs input[type=radio]:checked + label + article {
+		display: block;
+		color:black;
+	}
+
+	@media all and (min-width: 600px) { /* TABLET ============================*/
+		#tabs {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-wrap: wrap;
+			flex-wrap: wrap;
+		}
+		#tabs article {
+			-webkit-order: 1;
+			order: 1;
+			display: none;
+		    min-height:300px;
+		    margin: 0px 0 5% 0;
+		}
+		#tabs label {
+			padding:1% 2% 1% 1%; 
+		}
+	
+	}	
+	
+	@media all and (min-width: 1080px) { /* DESKTOP */
+	
+	}
+	
+    @media print { /* PRINT */
+		#tabs label {color:black; border-color:gray;}
+	}

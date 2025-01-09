@@ -1,0 +1,385 @@
+
+body {
+    font-family:sans-serif;
+    font-size:13px;
+    line-height:2;
+    color:DarkMagenta;
+    background-color:linen;
+}
+/* Change anchor colors to fit scheme */
+a {text-decoration:underline;}
+a:link {color:blue;}
+a:visited {color:purple;}
+a:hover {color:blue;}
+a:focus {outline:0px dotted blue;}
+a:active {color:Crimson;}
+
+
+/* Flex method css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+.wrapper, nav, header, main, footer  {/* REMOVE THIS AFTER OBSERVATION */
+   border:1px solid #5f044c; 
+}
+
+.wrapper {/* wrap a set of flexible blocks */
+	display: flex; 
+	flex-flow: row wrap;
+	margin:0 auto;
+	padding:0;
+	max-width:1080px; 
+	min-width:320px; 
+}
+.wrapper > * { /* set all wrapped blocks to 1 column; spreads each the full width */
+	flex: 1 100%;
+	text-align:center;
+}
+
+/* ================
+css only parallax http://keithclark.co.uk/articles/pure-css-parallax-websites 
+  
+======================*/
+
+
+/* FLEX MENUS ala Chris Coyier CSS Tricks codepen.io/chriscoyier/pen/qazmI?editors=110 css-tricks.com/snippets/css/a-guide-to-flexbox/	*/
+.parent {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+	.parent a { 
+		text-decoration:none;
+		background-color:gray;
+		border:;
+		color:white;
+		display:block;
+		margin: 0 20px;
+		padding:5px;
+		white-space: normal; 
+		line-height:1;
+	}
+
+	#design .parent li {
+		flex:1; 
+		align-items:flex-end;
+	}
+	#topics .parent li,
+	 #share .parent li {
+		position:relative; 
+		display:block;  
+		margin:0; 
+		padding:0;
+	}
+
+	#tools  .parent a {
+		background-color:MediumSeaGreen;
+		border:;
+		border-radius:10px;
+		box-shadow:3px 3px 5px RosyBrown ;
+		font-family:;
+		font-weight:;
+		font-size:;
+		padding:5px 15px;
+		text-shadow:;
+		text-transform:uppercase;
+		transform:;
+		transition:;
+	}
+		#tools .parent a:hover {color:MediumSeaGreen; background-color:white;}
+
+	#design .parent a {
+		background-color:Crimson;
+		border:2px solid white;
+		border-radius:50%;
+		box-shadow:3px 3px 5px RosyBrown ;
+		font-family:;
+		font-weight:bold;
+		font-size:150%;
+		padding:15px;
+		text-shadow:1px 1px RosyBrown ;
+		text-transform:uppercase;
+		transform:skew(5deg);
+		transition:;
+	}
+
+	#topics .parent a {
+		background-color:orange;
+		border:1px solid white;
+		border-radius:;
+		box-shadow:;
+		font-family:;
+		font-weight:;
+		font-size:120%;
+		text-shadow:1px 1px RosyBrown ;
+		text-transform:;
+		transform:;
+		transition:;
+	}
+	#share  .parent a {
+		background-color:transparent;
+		border:;
+		border-radius:;
+		box-shadow:;
+		font-family:;
+		font-weight:;
+		font-size:;
+		text-shadow:;
+		text-transform:;
+		transform:;
+		transition:;
+	}
+
+	#legal .parent a {
+		/* add embellishments */
+		background-color:MediumSeaGreen;
+		border:;
+		border-radius:10px;
+		box-shadow:3px 3px 5px RosyBrown ;
+		font-family:;
+		font-weight:;
+		font-size:;
+		text-shadow:;
+		text-transform:;
+		transform:;
+		transition:;		
+	}
+	
+.children {
+	margin:0; 
+	padding:0 0 0 10%; /* indent the child menu so it is obviously with the parent */
+	width:80%; /* use less width than parent */
+	list-style-type:none;
+}
+
+.parent a:hover,
+#design .parent a:hover {
+	color:PowderBlue;
+	transform:skew(-15deg) scale(1.2);
+	transition: all .2s;
+	background-color:MediumVioletRed;
+	box-shadow:3px 3px 15px RosyBrown ;
+}
+
+/* current menu */
+.parent a.current {background-color:blue!important;}
+
+
+/* breadcrumbs menu */
+#breadcrumbs, #breadcrumbs a {
+	text-decoration:none;
+	color:MediumSeaGreen;
+	background-color:;
+	padding:;
+	margin:;
+}
+
+/* previous next buttons */
+#move button {
+	background-color:;
+	border:0;
+	border-radius:50%;
+	box-shadow: 2px 2px 15px maroon;
+	color:;
+	font-family:;
+	font-weight:;
+	margin:0 5px;
+	padding:;
+	text-shadow:;
+	text-transform:;
+	transform:;
+	transition:;
+}
+	#move button.next:after {content:"➡";}
+	#move button.previous:after {content:"⬅";}
+	#move button:hover {
+		transform: scale(1.2);
+		transition:all .5s;
+		background-color:mediumseagreen;
+	}
+	#move button.next:hover {
+		transform: skew(-5deg) translateX(5px);
+	}
+	#move button.previous:hover {
+		transform: skew(5deg) translateX(-5px);
+	}	
+
+
+/* GALLERY MASONRY */
+.masonry {
+  line-height: 1;   /* 0 Prevents vertical gaps */
+  -webkit-column-count: 1;
+  -webkit-column-gap:   10px;
+  -moz-column-count:    1;
+  -moz-column-gap:      10px;
+  column-count:         1;
+  column-gap:           10px; 
+}
+	.masonry figure { /* design each set */
+	    border:1px solid black;
+	    border-radius:5px;
+	    box-shadow:2px 2px 10px gray;
+	    margin:0 0 10px 0;
+	  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+                page-break-inside: avoid; /* Firefox */
+                     break-inside: avoid; /* IE 10+ */
+        }
+
+    
+	.masonry img {
+		  /* Just in case there are inline attributes */
+		  width: 100%;
+		  height: auto;
+		  border-top-left-radius:5px;
+		  border-top-right-radius:5px;
+	}
+
+    .masonry figcaption {padding:5px; display:block;}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+@media all and (min-width: 600px) {
+
+	#topics, #share {flex: 1 auto;}
+ 
+	/* Chris Coyier CSS Tricks codepen.io/chriscoyier/pen/qazmI?editors=110 css-tricks.com/snippets/css/a-guide-to-flexbox/	*/
+	.parent {display:flex;}
+	
+		#topics .parent,
+		#share  .parent {display:block; flex:1;}
+		
+		.parent li:hover .children {display:block; }
+		
+		#tools  .parent a {}
+		#design .parent    {flex:1; align-items:flex-end; }
+		#topics .parent a  {margin:0; }
+		#share  .parent a  {margin:0;}
+		#legal  .parent    { }
+
+	.children {
+		display:none;
+		padding:0; /* remove indent so child lines up with parent */
+		position:absolute; 
+    	z-index:999; 
+    	width:auto;
+	}	
+		#topics .children {
+	    	left:100%; /* position at the right edge of line item */
+	    	top:3%; /* adjust to top of parent line item */
+		    margin:0; 
+	    	min-width:100px; 
+	    	max-width:200px;
+    	}
+
+		#design .children {transform:scale(.8) translateY(-30px) translateX(-20%);}
+
+	.masonry {
+	  -webkit-column-count: 3;
+	  -moz-column-count:    3;
+	  column-count:         3;
+	}	
+
+}/* Do not delete this brace */
+
+@media all and (min-width: 800px) {
+	/* main tag not well supported; use this class */	
+	.main   {flex: 4 auto;} /* four times as wide as the other two columns */ 
+	
+	/* order the columns */
+	#topics {order: 1;} 
+	.main   {order: 2;}
+	#share  {order: 3;}
+
+	.masonry {
+	  -webkit-column-count: 5;
+	  -moz-column-count:    5;
+	  column-count:         5;
+	}
+ 
+
+}/* Do not delete this brace */
+
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+   
+}/* Do not delete this brace */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}/* Do not delete this brace */
+

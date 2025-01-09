@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+/* @import url('css/cards.css'); */
+:root {
+    --purple: hsl(333, 71%, 21%);
+    --tan:hsl(38, 80%, 90%);
+    --tanT:hsl(38, 80%, 90%, 90%);
+    --blue: hsl(191, 33%, 49%);
+    --gold: hsl(39, 87%, 61%);
+    --mauve: hsl(336, 43%, 36%);
+    --mauveT: hsl(336, 43%, 36%,50%);
+    --mauveO: hsl(336, 43%, 36%,90%);
+}
+
+body {
+    color:var(--tan);
+    margin:0; padding:0;
+    background-image:url('images/pvl-crow-in-the-grass-2-1200.jpg');
+    background-color: var(--purple);
+    background-repeat: no-repeat;
+    background-size:fixed;
+    background-position:center top;
+    font-family: "Abel", sans-serif;
+    line-height: 1;
+    font-size:1em;
+    margin:0 auto;
+    max-width:900px;
+    min-width:500px;
+}
+header {
+    margin:0;
+    padding:3%;
+    background-color:var(--mauveT);
+    width:80%;
+    border-radius:0 0 10px 0;
+}
+header h1 {
+    font-size:150%;
+}
+.fancyButtons {
+    padding:0;
+    display:flex;
+    flex-flow:row wrap;
+    align-items: stretch;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: flex-start;
+    max-width:50%;
+}
+.fancyButtons a {
+    color:var(--tan);
+    background-color:var(--mauveT);
+    padding:6%;
+    max-width:100px;
+    text-decoration:none;
+    border-radius:10px;
+    box-shadow:10px;
+    margin:0 4% 4% 0;
+    font-weight:bold;
+}
+.fancyButtons a img {
+    width:100%;
+    border-radius:10px;
+
+}
+a.darker {background-color:var(--mauve);}
+.fancyButtons a:hover {
+    color:tan;
+    background-color:var(--tanT);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,.20);
+
+}
+footer {
+    background-color: var((--mauve));
+    padding:3%;
+
+}
+footer p {
+    color:var(--mauve);
+    font-style:normal;
+    font-size:80%;
+    padding-top:200px; /* controls positioning of image */
+}
+
+@media screen and (min-width: 30em) {
+    /* body {
+        background-position:unset;
+        background-position: fixed -20%;
+    }
+
+    .fancyButton {    
+        max-width:70%;
+    } */
+}
+
+@media screen and (min-width: 50em) {
+    /* body {
+        background-position:unset;
+        background-position: fixed -40%;
+    } */
+
+    .fancyButton {    
+        max-width:80%;
+    }
+    .fancyButton a {max-width:200px;}
+}

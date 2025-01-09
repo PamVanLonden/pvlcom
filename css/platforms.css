@@ -1,0 +1,112 @@
+
+/* ============================ Platforms gallery */
+.platforms { 
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr; /*tells each column to be one fraction of our grid. */
+	grid-template-columns: 1fr;
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+	margin:1% 0 0 0; 
+	padding:10px;
+}
+
+.platforms img {width:auto; max-width:320px;}
+.platforms li {
+  list-style-type:none; 
+  margin:inherit; 
+  padding:25px 10px 10px 10px;
+  -webkit-box-shadow: 1px 1px 4px 1px rgba(0,0,0,.20);
+  box-shadow: 1px 1px 4px 1px rgba(0,0,0,.20);
+  background-repeat:no-repeat;
+  background-size:20px 20px;
+  background-position:3px 3px;
+}
+.platforms li ol li {
+  padding:5px;
+  list-style-type:decimal;  
+  -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,.0);
+  box-shadow: 0 0 0 0 rgba(0,0,0,.0);
+  
+}
+.platforms li ul li {list-style-type:disc;}
+
+.platforms li iframe {height:240px;}
+
+.platforms li.chrome {
+  background-image:url(https://png.icons8.com/metro/50/000000/chrome.png); 
+  background-color:whitesmoke;
+}
+.platforms li.google-docs {
+  background-image:url(https://png.icons8.com/ios/50/000000/doc-filled.png); 
+  background-color:whitesmoke;
+}
+.platforms li.google-slides {
+  background-image:url(https://png.icons8.com/ios/50/000000/google-slides-filled.png); 
+  background-color:whitesmoke;
+}
+.platforms li.google-sheets {
+  background-image:url(https://png.icons8.com/material/50/000000/google-sheets.png); 
+  background-color:whitesmoke;
+}
+
+.platforms li.macos {
+  background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IgogICAgIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIKICAgICB2aWV3Qm94PSIwIDAgMjQgMjQiCiAgICAgc3R5bGU9ImZpbGw6IzAwMDAwMDsiPiAgICA8cGF0aCBkPSJNIDE2LjEyNSAxIEMgMTQuOTcyIDEuMDY3IDEzLjY0ODMyOCAxLjcwOTM0MzggMTIuODYxMzI4IDIuNTI3MzQzOCBDIDEyLjE1MDMyOCAzLjI3MTM0MzggMTEuNTg5MzU5IDQuMzc2MzEyNSAxMS44MTgzNTkgNS40NDUzMTI1IEMgMTMuMDcxMzU5IDUuNDc4MzEyNSAxNC4zMjkwMzEgNC44MTkzMjgxIDE1LjA4MjAzMSAzLjk4NjMyODEgQyAxNS43ODUwMzEgMy4yMDczMjgxIDE2LjMxOCAyLjEyIDE2LjEyNSAxIHogTSAxNi4xOTMzNTkgNS40NDMzNTk0IEMgMTQuMzg0MzU5IDUuNDQzMzU5NCAxMy42MjggNi41NTQ2ODc1IDEyLjM3NSA2LjU1NDY4NzUgQyAxMS4wODYgNi41NTQ2ODc1IDkuOTA3NjU2MiA1LjUxMzY3MTkgOC4zNDc2NTYyIDUuNTEzNjcxOSBDIDYuMjI1NjU2MiA1LjUxNDY3MTkgMyA3LjQ4MDMyODEgMyAxMi4xMTEzMjggQyAzIDE2LjMyNDMyOCA2LjgxNzY1NjMgMjEgOC45NzI2NTYyIDIxIEMgMTAuMjgxNjU2IDIxLjAxMyAxMC41OTkgMjAuMTc2OTY5IDEyLjM3NSAyMC4xNjc5NjkgQyAxNC4xNTMgMjAuMTU0OTY5IDE0LjUzNjY1NiAyMS4wMTEgMTUuODQ3NjU2IDIxIEMgMTcuMzIzNjU2IDIwLjk4OSAxOC40NzYzNTkgMTkuMzY3MDMxIDE5LjMxODM1OSAxOC4wODIwMzEgQyAxOS45MjIzNTkgMTcuMTYyMDMxIDIwLjE3MDY3MiAxNi42OTIzNDQgMjAuNjM4NjcyIDE1LjY1MjM0NCBDIDE3LjE2NTY3MiAxNC43NzIzNDQgMTYuNDc0NjcyIDkuMTcxNjcxOSAyMC42Mzg2NzIgOC4wMTM2NzE5IEMgMTkuODUyNjcyIDYuNjcyNjcxOSAxNy41NTgzNTkgNS40NDMzNTk0IDE2LjE5MzM1OSA1LjQ0MzM1OTQgeiI+PC9wYXRoPjwvc3ZnPg=='); 
+  background-color:#ffe6e6;
+}
+.platforms li.apple-pages {
+  background-image:url(https://png.icons8.com/ios/50/000000/multi-edit-filled.png); 
+  background-color:#ffe6e6;
+}
+.platforms li.apple-keynote {
+  background-image:url(https://png.icons8.com/ios/50/000000/podium-without-speaker-filled.png); 
+  background-color:#ffe6e6;
+}
+.platforms li.apple-numbers {
+  background-image:url(https://png.icons8.com/ios-glyphs/50/000000/futures.png); 
+  background-color:#ffe6e6;
+}
+
+
+.platforms li.windows {
+  background-image:url(https://png.icons8.com/ios/50/000000/windows8-filled.png); 
+  background-color:#e6f2ff;
+}
+.platforms li.ms-word {
+  background-image:url(https://png.icons8.com/ios/50/000000/ms-word-filled.png); 
+  background-color:#e6f2ff;
+}
+.platforms li.ms-powerpoint {
+  background-image:url(https://png.icons8.com/ios/50/000000/ms-powerpoint-filled.png); 
+  background-color:#e6f2ff;
+}
+.platforms li.ms-excel {
+  background-image:url(https://png.icons8.com/windows/50/000000/ms-excel.png); 
+  background-color:#e6f2ff;
+}
+
+
+@media all and (min-width: 769px) { /* TABLET ========================
+  ADD DECLARATIONS BETWEEN these curly braces */
+
+   .platforms {
+  -ms-grid-columns: 1fr 1fr 1fr ;
+	grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+		
+}/* Do not delete this brace. */
+
+
+
+@media print { /* PRINT ===============================================
+  ADD DECLARATIONS BETWEEN these curly braces */
+ 
+
+  .platforms {
+  -ms-grid-columns: 1fr 1fr 1fr ;
+	grid-template-columns: 1fr 1fr 1fr;
+	}
+	.platforms li h3 { margin-top:0!important;}
+	
+}/* Do not delete this brace.  */

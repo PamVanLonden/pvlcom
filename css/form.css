@@ -1,0 +1,133 @@
+/* form */
+form {margin-bottom:40px;}
+fieldset {
+  position:relative;
+  margin-top:0%;
+  border:0;
+  }
+fieldset p {margin:0;border:0;}
+#contact legend {
+    position:absolute;
+    left:0px; 
+    top:-15px;
+    white-space:nowrap;
+    color:var(--purpleish);
+    font-style:normal;
+    font-family:'Fredericka the Great', Georgia, cursive;
+    color:orange;
+  }
+#contact label {
+  display:block;
+  margin-top:4%;
+  background-color:white;
+  color:var(--purpleish);
+    font-size:.8em;
+}
+#contact label:hover {
+    background-color:white;
+    color:var(--purpleish);
+}
+
+#contact input, #contact textarea {
+  font-family: 'Lato', Verdana, sans-serif;
+  padding:2%;
+    margin:0;
+    width:100%;
+    border-radius:4px;
+    border:2px solid var(--purpleish);
+    font-size:.9em;
+}
+#contact textarea {height:100px;}
+
+label input[type="checkbox"], 
+label input[type="radio"] {
+  display:inline!important; 
+  }
+
+select {
+  font-family: 'Lato', Verdana, sans-serif;
+}
+option {}
+
+#contact input:focus, 
+#contact textarea:focus {
+    background-color:var(--greenlight);  
+    border:2px solid var(--purpleish);
+    }
+input:required, 
+textarea:required,
+select:required {
+    background-color:var(--greenlight); 
+    outline:var(--greenish);
+}
+
+label.required:after {content:" *";}
+#human {width:10%!important; }
+#submit {background-color:var(--purpleish); width:100%; color:white; font-weight:bold; border:0;}
+
+.confirmation {
+  background-color:var(--greenish);
+  border:2px solid var(--greenish);
+  color:white;
+  font-size:120%;
+  font-weight:bold;
+  max-width:300px;
+  padding:3%;
+  
+  position:absolute;
+  top:50%;
+  right:20%
+  z-index:999;
+  box-shadow: 0 0 7px 4px rgba(50,67,94,0.35);
+}
+
+.tryagain {
+  background-color:red;
+  border:2px solid red;
+  color:white;
+  font-size:120%;
+  font-weight:bold;
+  max-width:300px;
+  padding:3%;
+  
+  position:absolute;
+  top:50%;
+  right:20%
+  z-index:999;
+  box-shadow: 0 0 7px 4px rgba(50,67,94,0.35);
+
+}
+
+
+@media all and (min-width: 600px) { /* TABLET ========================
+  ADD DECLARATIONS BETWEEN these curly braces */
+  fieldset {margin-bottom:3%;}
+  fieldset.alignleft  {margin-top:5%;} /* ........................... Fixes overlap with headline..................... */
+
+  legend {
+    left:0px; 
+    top:-20px;
+}   
+}/* Do not delete this brace.  */
+
+
+
+@media all and (min-width: 1080px) { /* DESKTOP ======================
+  ADD DECLARATIONS BETWEEN these curly braces */
+  legend {top:-30px;}
+      
+  .reveal:hover > div {height:1000px;}
+    
+}/* Do not delete this brace.  */
+
+
+
+
+@media print { /* PRINT ===============================================
+  ADD DECLARATIONS BETWEEN these curly braces */
+  .reveal {display:none;}
+  .reveal:hover > div {height:450px;}
+  #contact {display:none;}  /* hide form */
+  
+ 
+}/* Do not delete this brace.  */

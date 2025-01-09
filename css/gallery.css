@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* MOBILE gallery */
+ul.gallery {/* This block holds a set of images and captions.  */
+	list-style-type:none; 
+	padding:0; 
+	text-align:center;
+	}
+ul.gallery li {/* This block holds one image and its caption */
+	position:relative; 
+	width:100%;
+	margin:0 10px 10px 0; /* Add breathing room between each block. */
+	padding:0; /* Add padding if desired. */
+	border:1px solid #000; /* Borders are optional. */
+	}  
+ul.gallery li img {/* This block is the image. */
+	width:100%;
+	margin:0; /* Added margin is optional. */
+	padding:0; /* Don't add padding. */
+	}
+
+ul.gallery ul { /* This block is holds the caption. */
+	list-style-type:none; /* Turn off bullets even though they should inherit the parent style. */
+	margin:0; 
+	padding:0;
+	width:100%; 
+	height:auto;
+	background-color:#fff; /* Choose a color to match your color scheme. */
+	} 
+
+ul.gallery ul li {/* This block is the caption text. */
+	margin:0; 
+	padding:0;
+	border:0;
+	/* Style the text. */
+	color:;
+	font-size:80%; /* Adjust this based on the body's font size. */
+	line-height:2em;
+	vertical-align:middle; /* Requires line-height */
+	} 
+	
+/* DESKTOP Gallery */
+ul.gallery {/* The outermost block of the gallery. */}
+ul.gallery li {/* This block inherits mobile properties. 
+	Define a size for the thumbnail blocks. */ 
+	width:100px;
+	height:135px;
+	float:left; /* Sets each block side by side. */
+	position:relative;
+	}  
+ul.gallery li img { /* This block inherits mobile properties. */
+	width:100px;
+	height:100px; /* This gallery method works best with square thumbnails. */
+	}
+ul.gallery ul {/* This block inherits mobile properties.
+	The height should be the remaining portion of the LI above. */
+	width:100%;
+	height:35px;
+	}
+ul.gallery ul li {/* The height and padding must add up to the height of the LI above.  */
+	height:30px;
+	padding-top:5px;
+	/* turn off and change inherited properties */
+	border:0;
+	float:none;
+	font-family:Tohoma, Arial, Sans-Serif;
+	font-size:60%;
+	line-height:1;
+	}
+	
+ul.gallery li:hover img {/* Enlarge size of image when hovering. */
+	/* Allow the actual dimensions to display. */
+	width:auto;
+	height:auto;
+	/* Position it for ease of use. */
+	position:relative;
+	left:-50%; /* Center the image under the thumbnail. */
+	top:-1px; /* Same width as border. */
+	z-index:300;
+	/* Style the popup with these optional properites: */
+	padding:0; 
+	border:1px solid #000;
+	box-shadow:;
+	border-radius:;
+	}
+
+ul.gallery li:hover ul {/* Show the caption block in the popup. */
+	/* Position the caption on top of the image. */
+	position:relative;
+	z-index:400;
+	/* Style the caption block. */
+	top:-2.65em;
+	left:1px;
+	border:0;
+	width:350px;
+	height:2em;
+	background-color:rgba(255,255,255,0.7);
+	}
+ul.gallery li:hover ul li {/* Allow the text to fill the block. */
+	width:auto; 
+	height:2em;
+	line-height:2em;
+	/* Style the caption text in the popup. */
+	vertical-align:middle;
+	font-size:90%;
+	color:#000;
+	font-weight:bold;

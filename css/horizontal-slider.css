@@ -1,0 +1,197 @@
+html,
+body, .panel {
+  width: 100%;
+  height: 100%;
+}
+
+.main-menu > ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  background-color: lightblue;
+  position: relative;
+  line-height: 1.5;
+}
+
+a {
+  color: #666;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.panel {
+  position: absolute;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+.panel.about {
+  background-color: #c5e5d5;
+  color: #62726a;
+}
+.panel.start {
+  background-color: #c5d5e5;
+  color: #626a72;
+}
+.panel.demo {
+  background-color: #d5c5e5;
+  color: #6a6272;
+}
+.panel.contact {
+  background-color: #e5c5d5;
+  color: #72626a;
+}
+.panel h2 {
+  font-size: 6em;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.show-about .panel.about {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.show-about .panel.start {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.show-about .panel.demo {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+.show-about .panel.contact {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+}
+
+.show-start .panel.about {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.show-start .panel.start {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.show-start .panel.demo {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.show-start .panel.contact {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+
+.show-demo .panel.about {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+.show-demo .panel.start {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.show-demo .panel.demo {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.show-demo .panel.contact {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.show-contact .panel.about {
+  -webkit-transform: translateX(-300%);
+          transform: translateX(-300%);
+}
+.show-contact .panel.start {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+.show-contact .panel.demo {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.show-contact .panel.contact {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+/* --- the loop above result to:
+
+.show-about .panel { // use .panel here, larger css but more scalable
+  &.about   { transform: translateX(0); }
+  &.start   { transform: translateX(100%); }
+  &.demo    { transform: translateX(200%); }
+  &.contact { transform: translateX(300%); }
+}
+
+.show-start .panel {
+  &.about   { transform: translateX(-100%); }
+  &.start   { transform: translateX(0); }
+  &.demo    { transform: translateX(100%); }
+  &.contact { transform: translateX(200%); }
+}
+
+.show-demo .panel {
+  &.about   { transform: translateX(-200%); }
+  &.start   { transform: translateX(-100%); }
+  &.demo    { transform: translateX(0); }
+  &.contact { transform: translateX(100%); }
+}
+
+.show-credit .panel {
+  &.about   { transform: translateX(-300%); }
+  &.start   { transform: translateX(-200%); }
+  &.demo    { transform: translateX(-100%); }
+  &.contact { transform: translateX(0); }
+}
+
+--- */
+.main-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 600px;
+  margin: 0 auto;
+  z-index: 3;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.main-menu > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-menu li {
+  margin: 0;
+  width: 25%;
+  display: block;
+  float: left;
+  text-align: center;
+}
+.main-menu li a {
+  color: white;
+  display: block;
+  padding: 0.5em 0;
+}
+.main-menu li a:hover {
+  opacity: 0.5;
+}
+
+.credit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+}

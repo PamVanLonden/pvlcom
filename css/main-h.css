@@ -1,0 +1,376 @@
+@import url(https://fonts.googleapis.com/css?family=Gudea:400,700|Roboto+Slab:700);
+html {
+    box-sizing: border-box;
+    font-family:'Gudea', verdana, sans-serif;
+    font-size:1.1em;
+    font-weight: normal;
+    line-height: 1.4;
+}
+*,*:before,*:after {box-sizing: inherit;}
+html,body {
+    height: 100%; width: 100%; 
+    max-width:1240px; 
+    margin: 0; padding: 0; 
+}
+#wrap { 
+    height: 100%; width: 100%; 
+    position: relative; 
+    overflow-y: auto;  overflow-x:hidden;
+    text-align: left;
+    background-color:#eaf7f7;
+    color:#1E3232;
+}
+a.top {
+  text-decoration:none; 
+  text-align:right; 
+  border:1px solid gray; 
+  padding:1%;
+  margin-left:90%;
+  border-radius:3px;
+}
+
+/* anchors */
+a {color:#226fbf; font-weight:bold;}
+a:link {color:#226fbf;}
+a:hover {color:orange;} 
+a:active {color:red;}
+a:visited {color:green;}
+
+nav { 
+    background: white;
+    position: absolute; 
+    top: 0; left: 0; 
+    z-index: 900; 
+    width: 100%; 
+    text-align:center;
+}
+nav label { 
+    color: #C34500; cursor: pointer; display: inline-block;
+    line-height: 4.25em; font-size: 0.75em; font-weight: bold;
+    padding: 0 1em; border-right:1px solid #788188;
+}
+nav label:hover { 
+    background:orange; 
+    color:whitesmoke;
+}
+/* section {
+    
+    margin:2%;
+    margin-top:200px;
+} */
+    /* https://codepen.io/davidicus/pen/pvObpV?editors=1100 */
+.slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 100%;
+    z-index: 10;
+    padding: 5em 1em 0;
+    background-color:#eaf7f7;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: left 0s 0.75s;
+    }
+    [id^=slide]:checked + .slide { left: 0; z-index: 100; transition: left 0.65s ease-out;}
+    [id^=slide]:checked + .slide h1 { opacity: 1; transform: translateY(0); transition: all 0.5s 0.5s;}
+
+
+h1, h2, h3 , h4 {
+  font-family: 'Roboto Slab', 'Gudea', Georgia, Serif; 
+  margin: 30px 0 0 0; padding:0;
+  line-height:1; 
+}
+h1 {color:#C34500; font-size:120%; margin:1%;}
+h2 {color:#f07800; font-size:140%; }
+h3 {color:#226fbf; font-size:120%; margin:0 0 1% 0;}
+    h3 > aside,
+    /*h3 > nav {margin-top:0;}*/
+h4 {color:#226fbf; font-size:110%; margin-top:3.5%;}
+h5 {font-size:103%;}
+h5 a {
+    font-weight:bold; 	
+    font-family: 'Roboto Slab', 'Gudea', Georgia, Serif; 
+}
+
+li {margin-bottom:10px;}
+p, li, dl {color:#1E3232;}
+p {margin:0 auto 20px; }
+p > ul, p > ol {margin-bottom:0;}
+.important:before {
+	content: "Important ▶";
+	color: #C00;
+	font-family: "ubuntu", arial, sans-serif;
+	font-weight: bolder;
+	padding-right: 4px;
+	text-transform: uppercase;
+}
+
+table {border-collapse:collapse; margin-bottom:30px;}
+tr td, tr th {border:1px solid gray; vertical-align:top; padding:1%;}
+tr td:nth-child(2) ol {padding-left:15px;}
+td {font-size:85%; line-height:1.2;}
+.nace {width:100px; height:100px;}
+
+kbd{
+    -moz-border-radius:3px;
+    -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    background-color:#f7f7f7;
+    border:1px solid #ccc;
+    color:#333;
+    display:inline-block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+    line-height:1.4;
+    vertical-align:middle;
+    margin:0 .1em;
+    padding:.1em .6em;
+    text-shadow:0 1px 0 #fff;
+}
+samp {
+  color:darkorchid; 
+  padding:inherit 15px; 
+  font-size:100%; 	
+  font-family:'Gudea', verdana, sans-serif;
+}
+#searching samp,
+#searching kbd {font-weight:bold;}
+menu {color:darkorchid; padding:0; margin:0; text-indent: 0; display:inline;}
+menu::after {content:"▼";}
+var {color:orange; font-weight:bold;}
+blockquote {padding:3%; font-style:italic; color:#C34500;}
+pre blockquote {padding:0;}
+pre {border-left:2px solid #CFDBC5; padding:0 0 20px 20px; background-color:white; }
+pre code {color:#2db92d; }
+dfn { line-height:1; padding:3px; margin:2px; background-color:darkorchid; color:white; border-radius:4px; }
+
+
+ol.checklist li { background-image:none; border-top:0; margin:0 0 2% 4%; padding:0; list-style-position:outside; }
+ol.checklist li:before {content: "◯ "; } 
+
+.movies { 
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr;	
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    margin:1% 0 0 0; 
+    padding:10px;
+}       
+.movies iframe {height:200px;}
+video,
+iframe {
+    width:90%; 
+    min-width:320px;
+    height: 400px;
+    border:3px solid lightgray;
+    padding:10px;
+    overflow:scroll;
+    margin-bottom:0;
+    display:block;
+    background-color:white;
+}
+iframe a.caption {margin:0 0 2% 0;}
+iframe a.caption:before {content:"Direct Link: ";}
+figure { width:98%;  max-width:500px;  margin:0 0 3% 0;  overflow:hidden; padding:0 0 3% 0%; }
+
+.alignleft {float:left; margin-right:30px;}
+.alignright {float:right; margin-left:30px;}
+.thirty {width:30%;} .forty {width:40%;} .fifty {width:50%;} .sixty {width:60%} seventy {width:70%;} eighty {width:80%;} ninety {width:90%;} .hundred {width:100%;}
+.boxshadow {box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;}
+
+.objectives li  {font-size:90%; font-weight:bold; margin:0; color:orange;}
+.objectives li a  { margin: 0 0 4px 10px; font-weight:normal; text-decoration:none; font-size:80%;}
+.objectives li:before a {content:" "; color:white;}
+
+aside {
+    padding:0% 1% 2% 1%;
+      margin:2%;
+      -webkit-border-radius: 0px 10px 3px 3px;
+    border-radius: 0px 10px 3px 3px;
+    clear:none!important;
+  }
+aside ul  {margin-left:0; padding-left:0; list-style-type:none;}
+aside li  {margin-bottom:3%; font-size:90%;}
+figure {
+	width:98%; 
+	max-width:500px; 
+	margin:0 0 3% 0; 
+	 overflow:hidden;
+	padding:0 0 3% 0%; 
+	}
+figcaption {font-size:70%;text-align:center;}
+
+img {
+    width:auto;  
+    max-width:800px;
+	height:auto;
+	-moz-border-radius:3px;
+    -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    border:1px solid #ccc;
+    background-color:white;
+    }
+img.key {max-width:30px;}
+#chart {width:100%; max-width:1300px;}
+
+img.floatingicon, i.floatingicon {
+	float:left; 
+	margin:0 1% 0 0; 
+	width:30px;
+	-moz-border-radius:0;
+    -moz-box-shadow:0 0 0 rgba(0,0,0,0),0 0 0 0 #fff inset;
+    border-radius:0;
+    -webkit-border-radius:0;
+    -webkit-box-shadow:0 0 0 rgba(0,0,0,0),0 0 0 0 #fff inset;
+    box-shadow:0 0 0 rgba(0,0,0,0),0 0 0 0 #fff inset;
+    border:0;
+    }
+img.noborder {border:0 none;}
+
+.masonry {	  
+
+	flex-wrap: wrap;
+	flex-direction: column;
+	flex-flow: row wrap; 
+  display: -ms-flexbox;
+  display: -webkit-box;
+	display: flex;
+}
+.masonry li { /* design each set */
+	border:1px solid gray;
+	border-radius:5px;
+	margin:0 2% 2% 0;
+	-webkit-box-flex: auto;
+	-ms-flex: auto;
+	flex: auto; 
+	width: 150px; 
+	height:auto;
+	align-content: flex-end;
+	background-color:white;
+	padding:1%;
+	list-style: none;
+	font-size:90%;
+}
+
+
+/* Design the contents of the popup.*/
+[data-tooltip]:after {
+    width: 250px!important;
+    font-family:inherit!important;
+    white-space:normal;
+    padding:5px;
+    text-align:center;
+    line-height:1.2;
+    margin:0;
+    
+  }
+  [data-tooltip]:before,
+  [data-tooltip]:after {
+    bottom: 100%;
+    left: 50%; 
+  }
+  
+  [data-tooltip] {
+    background-color:darkorchid; color:white; padding:0 3px; border-radius:3px; 
+  }
+  #state [data-tooltip]:after {width:250px!important;}
+
+
+  @media print { /* PRINT ===============================================
+    ADD DECLARATIONS BETWEEN these curly braces */
+    html {overflow:visible;}
+      body {font-size:9.5pt;}
+      h1 {font-size:250%;}
+      h2 {font-size:200%;}
+      h3 {font-size:150%;}
+      h4 {font-size:130%;}
+      h5 {font-size:120%;}
+      h6 {font-size:100%;}
+      h1, h2, h3, h4, h5, h6 {margin:20px 0 0 0; padding:0;}
+  
+      a {text-decoration:none; }
+      nav {display:none;}
+      iframe, video, audio {display:none;}
+
+    
+   ol.h5 li {
+     font-size:9.5pt!important;
+     margin-bottom:10.5pt!important;
+    }
+    ol.h5 a {font-weight:bold; 	font-family: 'gudea', sans-serif }
+  
+      address p {font-size:8pt;}
+      address p i,
+      address div i {font-size:8pt!important;}
+      #contact:after {content:"vanlondp @ oregonstate.edu";}  
+      .hidden {display:none;}
+      
+      footer ul a[href]{display:none;}
+      
+      tbody, th  {border-bottom:2px solid lightgray;}
+      td[colspan] {
+        border-bottom:2px solid lightgray;
+        border-right:2px solid lightgray;
+        }
+
+
+
+      .alignright {float:right; margin:0 0 2% 2%; width:30%;}
+      .alignleft  {float:left; margin:0 2% 2% 0; width:30%;}
+      
+      article, header, section {margin:0; padding:0; border:0; }
+      aside  {
+          border-left:1px dotted gray; 
+          padding:2%;
+          }
+      aside.fifty, figure.thirty {width:30%;}
+      aside h3  {margin:0; padding:0; }
+      
+      .boxshadow {box-shadow:none; }
+      .black {color:black;}
+      .radius {border:0;}	
+      
+      img, a img {
+        -moz-border-radius:0;
+      -moz-box-shadow:0 0 0 rgba(0,0,0,0.0),0 0 0 0 #fff inset;
+      border-radius:3px;
+      -webkit-border-radius:0;
+      -webkit-box-shadow:0 0 0 rgba(0,0,0,0),0 0 0 0 #fff inset;
+      box-shadow:0 1px 0 rgba(0,0,0,0),0 0 0 0 #fff inset;
+      border:0 solid transparent;
+      max-height:1.5in;
+      }
+      
+      .hear {margin-top:-20px!important;}
+      .break {page-break-before:always;}
+      .quote {font-size:11px; font-family:'Gudea', verdana, sans-serif;}
+      
+      .cards li h3 { margin-top:0!important;}
+  
+        .columns-dots {
+        list-style: outside disc;
+          padding: 0.5em;
+          margin-top: 1em;
+          -webkit-column-count: 2;
+          -webkit-column-gap:0.5em;
+          -moz-column-count:2;
+          -moz-column-gap:0.5em;
+          -o-column-count:2;
+          -o-column-gap:0.5em;
+          column-count:2;
+          column-gap:0.5em;
+        }
+        .columns-dots li {
+           margin-left: 1em;
+        }
+  }/* Do not delete this brace.  */
+  

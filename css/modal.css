@@ -1,0 +1,103 @@
+.modal { /* position, size, and hide the popup*/
+  /*display: none;*/
+  opacity:0;   
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+	position: fixed; 
+	z-index: 999;
+  top: 3%;
+	left: 5%; 
+	width: 80%;
+	max-width:900px;
+	height: auto;
+	max-height:900px;
+	overflow:auto;
+	padding-bottom:3%;
+}
+.modal:target { /* show the popup */
+	/*display: block;*/
+	opacity:1;
+	outline: none;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.modal figcaption { /* design the caption */
+  font-size: 120%;
+  line-height: 1.2;
+  padding:0 0 1% 0;
+  color:black;
+}
+.modal img {width:100%; height:auto;}
+
+.close { /* design the close button */
+  color:gray;
+  font-size:90%;
+  font-weight:bold;
+  position: absolute;
+  right: 4px;
+  top:4px;
+  /*border-radius:50%;
+  border:2px solid gray;
+  background-color:black;
+  padding:5px 10px 3px 10px;*/
+ 	cursor:pointer;
+}
+    
+
+.lightbox { /* design the popup to look like a Lightbox. */
+  padding:2%; 
+  text-align: center;
+	background: rgba(255,255,255,0.9);
+	color: black;
+	border-radius: 5px;
+}
+
+.appish { /* design the popup to look like a phone app. */
+	padding:3%;
+	margin:0;
+	border-radius:5px;
+	background-color:white;
+	width:50%;
+}
+
+.notes { /* design the popup to look like a notes. */
+	padding:3%;
+	margin:0;
+	border-radius:5px;
+	background-color:white;
+	width:50%;
+	text-align:left;
+}
+
+.zoomin {
+	position: absolute; 
+  bottom:50%;
+	left: -20%; 
+	padding:2% 2% 0 2%;
+  text-align: center;
+	border:0 solid transparent;
+	margin:0;
+	border-radius:0;
+	background-color:white;
+	overflow:visible;
+	width:1200px;
+
+}
+.zoomin img {width:150%;}
+
+ 
+.shadow {
+	-moz-box-shadow: 0 0 7px 7px rgba(0,0,0,0.2); 
+	-webkit-box-shadow: 0 0 7px 7px rgba(0,0,0,0.2); 
+	box-shadow: 0 0 7px 7px rgba(0,0,0,0.2); 
+}
+
+.shadow-big {
+	-moz-box-shadow: 0 0 400px 400px rgba(0,0,0,0.6); 
+	-webkit-box-shadow: 0 0  400px 400px rgba(0,0,0,0.6); 
+	box-shadow: 0 0 400px 400px rgba(0,0,0,0.6); 
+}
+

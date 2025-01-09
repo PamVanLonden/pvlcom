@@ -1,0 +1,225 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin:0 auto;
+  font-family:'Lato', sans-serif;
+	overflow: hidden;
+}
+
+body {
+  position: relative;
+  line-height: 1.5;
+  padding:1% 0 0 3%;
+  background: linear-gradient(to left, white, gray);
+}
+header {
+	color:white;
+}
+figure {
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+	background-color:white;
+	margin:0;
+	padding:0;
+	min-height:200px;
+	min-width:320px;
+}
+figure img {
+	width:100%; 
+	height:100%;
+}
+figcaption {}
+
+h1, h2 {margin:0;padding:0;}
+header p {max-width:600px;}
+cite:before {content:"By ";}
+dt {font-weight:bold;}
+dd {margin:0 0 10px 10px;}
+dd:before {content:"Description: ";}
+
+
+/* Article Panels */
+
+.panel {
+  position: absolute;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.8s;
+          transition: -webkit-transform 0.8s;
+          /*transition: transform 0.8s;
+          transition: transform 0.8s, -webkit-transform 0.8s;*/
+  
+  border:1px solid gray; 
+  padding: 1% 6% 3% 3%;
+  width: 90%;
+  height: 100%;
+  margin:0 auto;
+  background-color:whitesmoke;
+}
+
+.show-about .panel.about {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.show-about .panel.teaching {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.show-about .panel.pubs {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+.show-about .panel.service {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+}
+.show-about .panel.art {
+  -webkit-transform: translateX(400%);
+          transform: translateX(400%);
+}
+
+
+.show-teaching .panel.about {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.show-teaching .panel.teaching {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.show-teaching .panel.pubs {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.show-teaching .panel.service {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+.show-teaching .panel.art {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+}
+
+
+.show-pubs .panel.about {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+.show-pubs .panel.teaching {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.show-pubs .panel.pubs {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.show-pubs .panel.service {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.show-pubs .panel.art {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+
+
+.show-service .panel.about {
+  -webkit-transform: translateX(-300%);
+          transform: translateX(-300%);
+}
+.show-service .panel.teaching {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+.show-service .panel.pubs {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.show-service .panel.service {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.show-service .panel.art {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+
+.show-art .panel.about {
+  -webkit-transform: translateX(-400%);
+          transform: translateX(-400%);
+}
+.show-art .panel.teaching {
+  -webkit-transform: translateX(-300%);
+          transform: translateX(-300%);
+}
+.show-art .panel.pubs {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+.show-art .panel.service {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.show-art .panel.art {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+/* NAVIGATION */
+
+a {
+  color: black;
+  opacity:0.5;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.main-menu > ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-menu {
+  width: 100%;
+  /*margin: 0 auto;*/
+  z-index: 3;
+}
+.main-menu > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-menu li {
+  margin: 0;
+  min-width:100px;
+  width:auto;
+  display: block;
+  float: left;
+  text-align: center;
+}
+.main-menu li a {
+  display: block;
+  padding:3%;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  background-color:white;
+
+}
+
+.main-menu li a:hover {
+  opacity: 1;
+}
+
+
+
+@media all and (min-width: 600px) { /* TABLET ========================
+  ADD DECLARATIONS BETWEEN these curly braces */
+
+	
+/* Float and clear boxes to save space */
+	.alignright {float:right; margin:-20px 0 0 0;}
+	.fifty {width:50%;}
+	br {clear:both;}
+
+
+} /* End of tablet media query; do not delete this curly brace. */
