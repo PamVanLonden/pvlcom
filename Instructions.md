@@ -68,7 +68,7 @@ rm -rf node_modules package-lock.json
 npm install
 npm start
 ```
-3. **3. Clear Cache and Start Fresh**
+3. **Clear Cache and Start Fresh**
 ```sh
 npm cache clean --force
 npm install
