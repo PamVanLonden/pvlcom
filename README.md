@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Pam Van Londen Website Migration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is migrating [Pam Van Londen's website](https://pamvanlonden.com/) to **React.js** and hosting it on **Render.com**. The goal is to improve maintainability, scalability, and user experience while keeping the site's design as close to the original as possible.
 
-In the project directory, you can run:
+- **Main branch (production-ready code):** [GitHub Main Branch](https://github.com/PamVanLonden/pvlcom/tree/main)
+- **Website migration branch:** [GitHub Migration Branch](https://github.com/PamVanLonden/pvlcom/tree/2024-php-site)
+- **Project tasks and issues:** [GitHub Project Board](https://github.com/users/PamVanLonden/projects/1/views/1)
+- **Google Sheets Data Source:** [Published Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vTyMseqbTrrpUYEXzyDZ0pyh2O4rKBNAClSCt5sEGcjsw-ZxMf-Zx77z2Nf-XIoyib4mz-0Z1-XBEun/pubhtml?gid=1&single=true)
 
-### `npm start`
+## Code Review and Development Workflow
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To maintain high-quality code, all changes must go through a **code review process** before being merged into the main branch.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- All new updates should be pushed to the **review-code** branch.
+- After pushing changes, a **pull request (PR)** must be created for approval.
+- Only after the PR is reviewed and approved will the changes be merged into the main branch.
 
-### `npm test`
+## Migration Plan
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Website Assessment
+- The current website structure and design are being analyzed to determine necessary changes.
+- React components will be created for UI elements to ensure responsiveness and maintain the existing site's look.
 
-### `npm run build`
+### 2. Feature Implementation
+- The home page dynamically displays data from a **Google Sheet**.
+- The **Google Sheets API** is used to fetch structured data and display it on the React website.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Deployment Plan
+- The website will be deployed to **Render.com** for hosting.
+- A smooth transition will be ensured by testing all components and data integrations before the official launch.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Communication & Collaboration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Primary Communication:** Microsoft Teams chat for discussions and feedback.
+- **Task Tracking:** GitHub issues and project board.
 
-### `npm run eject`
+## Development Guidelines
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Branching Strategy:**  
+  - `main` – Stable production-ready branch.  
+  - `review-code` – Branch for code review before merging.  
+  - All work must be pushed to `review-code` before being reviewed and merged into `main`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Data Integration:**  
+  - Content is fetched from a **Google Sheet** to reduce manual updates.  
+  - Ensure that no sensitive information is included in the published sheet.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
