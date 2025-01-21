@@ -45,5 +45,22 @@ To maintain high-quality code, all changes must go through a **code review proce
 
 - **Data Integration:**  
   - Content is fetched from a **Google Sheet** to reduce manual updates.  
-  - Ensure that no sensitive information is included in the published sheet.  
+  - Ensure that no sensitive information is included in the published sheet.
+ 
+## Troubleshooting Common Issues
+1. **OpenSSL Digital Envelope Routines Error**
+If you encounter an OpenSSL error like:
+```sh
+Error: error:0308010C:digital envelope routines::unsupported
+```
+Try running:
+```sh
+set NODE_OPTIONS=--openssl-legacy-provider
+npm start
+```
+If using Mac/Linux, run:
+```sh
+export NODE_OPTIONS=--openssl-legacy-provider
+npm start
+```
 
