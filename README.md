@@ -58,7 +58,7 @@ Try running:
 set NODE_OPTIONS=--openssl-legacy-provider
 npm start
 ```
-If using Mac/Linux, run:
+If using Mac/Linux, run (this works, but we may need to eliminate the export, if Render.com doesn't accept it):
 ```sh
 export NODE_OPTIONS=--openssl-legacy-provider
 npm start
