@@ -57,7 +57,7 @@ const GoogleSheetData = () => {
                 <td>{row["Inventory"]}</td>
                 <td>{row["Description"]}</td>
                 <td>{row["Date"]}</td>
-                <td>{row["High-resolution image URL"]}</td>
+                <td>{row["URL"]}</td>
               </tr>
             ))
           ) : (
