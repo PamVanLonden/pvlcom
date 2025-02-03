@@ -1,5 +1,12 @@
 # Pam Van Londen Website Migration
 
+** Update Feb 2 All files were updated. 
+** Some files in root of the main branch can't be deleted (they do not belong there). 
+** Now launch sequence
+# npm install
+# npm run dev
+
+
 ## Overview
 
 This project is migrating [Pam Van Londen's website](https://pamvanlonden.com/) to **React.js** and hosting it on **Render.com**. The goal is to improve maintainability, scalability, and user experience while keeping the site's design as close to the original as possible.
@@ -47,7 +54,7 @@ To maintain high-quality code, all changes must go through a **code review proce
   - Content is fetched from a **Google Sheet** to reduce manual updates.  
   - Ensure that no sensitive information is included in the published sheet.
  
-## Troubleshooting Common Issues
+## OpenSSL was removed on Feb 2. 
 1. **OpenSSL Digital Envelope Routines Error**
 If you encounter an OpenSSL error like:
 ```sh
