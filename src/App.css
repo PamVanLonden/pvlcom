@@ -1,78 +1,217 @@
-/* Add Pam's stylesheet.  
-*/
-/* Import font */
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
-/* define color variables in :root */
-
-body {
-  margin:0 auto; 
-  text-align:center;
-  font-size:1.1em;
+/* Define Color Variables */
+:root {
+    --purple: hsl(333, 71%, 21%);
+    --tan: hsl(38, 80%, 90%);
+    --tanT: hsl(38, 80%, 90%, 90%);
+    --blue: hsl(191, 33%, 49%);
+    --gold: hsl(39, 87%, 61%);
+    --mauve: hsl(336, 43%, 36%);
+    --mauveT: hsl(336, 43%, 36%, 50%);
+    --mauveO: hsl(336, 43%, 36%, 90%);
 }
 
-h1, h2, h3, h4, h5 {}
-
-.gallery {
-  display:flex;
-  flex-flow:row wrap;
-}
-.gallery figure {
-  width:300px;
- }
-.gallery figcaption {
-  font-size:75%;
-  line-height:1.1;
-}
-.gallery figcaption strong {font-size:150%;}
-.gallery img {width:100%;}
-
-
-.purchaseIcons {
-  /* display:block; */
-  margin-top:3%;
-  font-size:130%;
+/* Global Styles */
+html, body {
+    overflow-x: hidden; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Abel", sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5;
+    background-image: url('images/pvl-crow-in-the-grass-2-1200.jpg');
+    background-color: var(--purple);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
 }
 
-/* Leave this stuff commented.
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Ensure all text follows the correct color */
+body, h1, h2, h3, h4, h5, p, a {
+    color: var(--gold); 
+    text-decoration: none;
+}
+
+/* Fix blue link color issue */
+a {
+    color: var(--gold); /* Same color as headings */
+}
+
+a:hover {
+    color: var(--tan); 
+}
+
+/* Main App Wrapper */
+.App {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5 {
+    color: var(--gold); 
+}
+
+/* Page Layout */
+header {
+  width: 100vw; 
+  max-width: 100%; 
+  padding: 2%;
+  background-color: var(--mauveT);
+  border-radius: 0 0 10px 10px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+header h1 {
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Logo inside header */
+.App-logo {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Main Content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
 }
 
-.card {
-  padding: 2em;
+/* Ensure gallery title & description are centered */
+.gallery-container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
-.read-the-docs {
-  color: #888;
-} */
+/* Fix gallery centering */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Ensure images scale properly */
+.gallery figure {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Fix text color in gallery captions */
+.gallery figcaption,
+.gallery figcaption strong {
+    color: var(--gold);
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Fancy Buttons */
+.fancyButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.fancyButtons a {
+    color: var(--tan); 
+    background-color: var(--mauveT);
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.fancyButtons a:hover {
+    background-color: var(--tanT);
+}
+
+/* Purchase Icons */
+.purchaseIcons {
+    margin-top: 3%;
+    font-size: 130%;
+    color: var(--gold); 
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: var(--mauve);
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    color: var(--tan); 
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 1em;
+    }
+
+    header {
+        padding: 3%;
+    }
+
+    header h1 {
+        font-size: 1.4em;
+    }
+
+    .gallery figure {
+        width: 100%;
+        max-width: 100%; 
+    }
+
+    .fancyButtons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main, .gallery-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .gallery {
+        max-width: 80%;
+    }
+}
