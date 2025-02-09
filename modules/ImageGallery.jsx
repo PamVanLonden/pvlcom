@@ -1,7 +1,6 @@
 import React from "react";
 import useFetchCSV from "../hooks/useFetchCSV";
-import { IoLogoVenmo } from "react-icons/io5";
-import { SiCashapp, SiZelle } from "react-icons/si";
+
 
 
 const GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTyMseqbTrrpUYEXzyDZ0pyh2O4rKBNAClSCt5sEGcjsw-ZxMf-Zx77z2Nf-XIoyib4mz-0Z1-XBEun/pub?output=csv";
@@ -33,8 +32,9 @@ const ImageGallery = () => {
                         />
                         
                         <figcaption>
-                            <span className="purchaseIcons"><IoLogoVenmo /> <SiZelle /> <SiCashapp /> </span><strong>{item.Title}</strong> 
+                            <strong>{item.Title}</strong> 
                             <br />{item.Description}
+                            <span><button>Add to Cart</button> </span>
                         </figcaption>
                     </figure>
                 );
