@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { useState } from 'react';
 
 import HomePage from "./modules/HomePage.jsx";
-import Slogan from "./modules/Slogan.jsx";
+import Slogan from "./components/Slogan.jsx";
 
 import { IoLogoVenmo } from "react-icons/io5";
 import { SiCashapp, SiZelle } from "react-icons/si";
