@@ -4,34 +4,37 @@ import { useState } from 'react';
 
 import HomePage from "./modules/HomePage.jsx";
 import Slogan from "./modules/Slogan.jsx";
+
+import { IoLogoVenmo } from "react-icons/io5";
+import { SiCashapp, SiZelle } from "react-icons/si";
+
 import './App.css';
 
 function App() {
   return (
-    <div >
+    <div className="App">
       <Router>
         <header>
-          <h1>Pam<a href="/" ><i><img src="favicon-32x32.png" alt="Pam Van Londen's paintbrush" className="App-logo" /></i></a>Van Londen</h1>
-          <Slogan />
+          <h1><a href="/" >PamVan Londen</a></h1>
+          <p><Slogan /></p>
+          <p className="purchaseIcons"><i><IoLogoVenmo /> <SiZelle /> <SiCashapp /></i></p>
         </header>
         
         
         {/* <Navigation /> */}
           <main>
-              <section>
-              
-                  <Routes>
-                    <Route path="/" element={<HomePage />} />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
 
-                  </Routes>
-                
-              </section>
+              </Routes>
           </main>
         </Router>
 
         <footer>
-        <Slogan /> 
-        <p>&copy; {new Date().getFullYear()} Pam Van Londen </p>
+          <p> 
+            <Slogan /> 
+            &copy; {new Date().getFullYear()} Pam Van Londen 
+          </p>
         </footer>
       
     </div>

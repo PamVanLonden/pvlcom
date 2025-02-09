@@ -14,29 +14,27 @@
 }
 
 /* Global Styles */
-html, body {
-    overflow-x: hidden; 
-    width: 100%;
-    margin: 0;
-    padding: 0;
+body {
+    background: url(assets/pvl-crow-in-the-grass-2-1200.jpg);
+    background-repeat:no-repeat;
+    background-attachment: 0 auto;  
+    background-position: center -100px;  
+    background-size: 1200px auto;
+    background-color:var(--purple);
     font-family: "Abel", sans-serif;
     font-size: 1.1em;
     line-height: 1.5;
-    background-image: url('images/pvl-crow-in-the-grass-2-1200.jpg');
-    background-color: var(--purple);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
+    color:var(--gold);
+    margin:0 auto;
+    width:100%;
 }
-
-/* Ensure all text follows the correct color */
-body, h1, h2, h3, h4, h5, p, a {
-    color: var(--gold); 
-    text-decoration: none;
+.App {
+    display:flex;
+    flex-direction: column;
+    flex-basis: auto;
 }
-
-/* Fix blue link color issue */
 a {
+    text-decoration: none;
     color: var(--gold); /* Same color as headings */
 }
 
@@ -44,94 +42,109 @@ a:hover {
     color: var(--tan); 
 }
 
-/* Main App Wrapper */
-.App {
-    max-width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Headers */
-h1, h2, h3, h4, h5 {
-    color: var(--gold); 
-}
-
 /* Page Layout */
 header {
-  width: 100vw; 
-  max-width: 100%; 
-  padding: 2%;
-  background-color: var(--mauveT);
-  border-radius: 0 0 10px 10px;
-  text-align: center;
+    width: 140%;
+    padding: 5%;
+    margin:0 auto 150px auto;
+    text-align:left;
 }
-
-
-header h1 {
-    font-size: 1.8em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 0;
+header h1, h1 a,
+header p  {
+    margin:0;
+    padding:0;
+    color:var(--gold)
 }
+header p {
+    font-size:1.5em; 
 
-/* Logo inside header */
-.App-logo {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
+}
+ 
+.purchaseIcons {
+    font-size: 130%;
+    margin:5% 0 -5% 0;
+    color: var(--gold); 
 }
 
 /* Main Content */
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin:0 auto;
+    width:100%;
+    background-color:var(--blue);
+    padding:5% 0 0 5%;
+    text-align:center;
+}
+.float {float:left;}
+
+
+/* Footer */
+footer {
+    width: 140%;
+    background-color: var(--mauve);
+    padding: 3%;
+    align-items:center;
     text-align: center;
-    width: 100%;
-    padding: 20px;
+    padding:1%;
+    position:fixed;
+    bottom:0px;
 }
 
-/* Ensure gallery title & description are centered */
-.gallery-container {
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 20px 0;
+footer p {
+    color: var(--gold); 
+    font-size: 0.9em;
 }
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+    font-weight:900;
+    margin:0;
+    padding:0;
+}
+
 
 /* Fix gallery centering */
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
-    gap: 20px;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+    margin:0 0 0 -5%;
+    padding:0 0 0 0;
+
 }
 
 /* Ensure images scale properly */
 .gallery figure {
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
+    width: 300px;
 }
 
 /* Fix text color in gallery captions */
 .gallery figcaption,
 .gallery figcaption strong {
-    color: var(--gold);
+    line-height:1.2;
 }
-
+.gallery figcaption strong {
+    font-weight:900;
+    font-size:1.3em;
+}
 .gallery img {
     width: 100%;
     border-radius: 10px;
+    border:10px solid var(--purple);
+}
+
+/* Add to cart button */
+button {
+    display:block;
+    border-radius:10px;
+    margin:3% auto;
+    border:1px solid transparent;
+    background-color:var(--mauveT);
+    color:white;
+    padding:2%;
+}
+button:hover {
+    background-color:white;
+    color:var(--mauve);
+    box-shadow: 3px 3px 3px 3px rgba(105, 54, 54, 0.4); 
 }
 
 /* Fancy Buttons */
@@ -158,60 +171,94 @@ main {
     background-color: var(--tanT);
 }
 
-/* Purchase Icons */
-.purchaseIcons {
-    margin-top: 3%;
-    font-size: 130%;
-    color: var(--gold); 
-}
+#tabs label {
+    background-color: orange; 
+    color:white;
+    cursor: pointer;
+    margin:0 2% 0 0;
+    padding:2% 6% 2% 3%;
+    z-index: 1;
+    -webkit-border-radius:5px 30px 0 0;
+        -ms-border-radius:5px 30px 0 0;
+            border-radius:5px 30px 0 0;
+  }
+  #tabs label:first-of-type {
+    margin-left: 0;
+  }
+  #tabs label:hover {
+      background-color:orange;
+      color:white;
+      -webkit-transition: all 500ms ease;
+         -moz-transition: all 500ms ease;
+          -ms-transition: all 500ms ease;
+              -o-transition: all 500ms ease;
+      transition: all 500ms ease;
+      }
+  #tabs article {
+    width: 95%;
+    min-height:auto;
+    margin: 6px 0 5% 0;
+    padding: 1% 2% 2% 2%;
+    color:white;
+  }
+  #tabs input[type=radio]{display: none;}
+  
+  #tabs input[type=radio]:checked + label {/* active current tab */
+    background: white;
+    color:var(--purpleish);
+    margin-bottom:-2px;
+  }
+  #tabs input[type=radio]:checked + label + article {
+      display: block;
+      color:black;
+  }
 
-/* Footer */
-footer {
-    width: 100%;
-    background-color: var(--mauve);
-    padding: 20px;
-    text-align: center;
-    margin-top: 40px;
-}
 
-footer p {
-    color: var(--tan); 
-    font-size: 0.9em;
-}
+
 
 /* Responsive Design */
 @media screen and (max-width: 600px) {
-    body {
-        font-size: 1em;
-    }
 
     header {
-        padding: 3%;
-    }
-
-    header h1 {
-        font-size: 1.4em;
-    }
-
-    .gallery figure {
-        width: 100%;
-        max-width: 100%; 
-    }
-
+        margin-left:10%;
+    } 
     .fancyButtons {
         flex-direction: column;
         align-items: center;
     }
 
-    main, .gallery-container {
+    /* main, .gallery-container {
         width: 100%;
         max-width: 100%;
         padding: 10px;
+    } */
+    /* #tabs {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
     }
+    #tabs article {
+        -webkit-order: 1;
+        order: 1;
+        display: none;
+        min-height:300px;
+        margin: 0px 0 5% 0;
+    }
+    #tabs label {
+        padding:1% 2% 1% 1%; 
+    } */
 }
 
 @media screen and (min-width: 900px) {
-    .gallery {
-        max-width: 80%;
-    }
+
+    header {
+        margin-left:20%;
+    } 
 }
+
+@media print { 
+    #tabs label {color:black; border-color:gray;}
+} 
+
+ 
