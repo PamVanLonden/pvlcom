@@ -5,12 +5,9 @@ import ImageGallery from './ImageGallery.jsx'
 function HomePage(){
     return (
         <>
-            <h2><i><AiFillHome /></i>Welcome to my Gallery</h2>
-            <article>
-                <p>Scroll to see more available paintings...</p>
-            
-                <ImageGallery />
-            </article>
+            <h2 className="float"><i><AiFillHome /></i>Welcome to my Gallery</h2>
+            <p>Scroll to see more available paintings...</p>
+            <ImageGallery />
         </>
     )
 }
