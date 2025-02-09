@@ -27,14 +27,14 @@ const ImageGallery = () => {
                     <figure key={index} className="image-item">
                        <img 
                             src={imageSrc} 
-                            alt={item.Description || "A description is missing."} 
+                            alt={item.Description.trim() || "A description is missing."}
                             onError={(e) => e.target.src = '/assets/fallback.webp'} 
                         />
                         
                         <figcaption>
-                            <strong>{item.Title}</strong> 
-                            <br />{item.Description}
-                            <span><button>Add to Cart</button> </span>
+                            <strong>{item.Title || "Untitled"}</strong> 
+                            <br />{item.Description.trim() || "No description available."}
+                            <span><button>Add to Cart</button></span>
                         </figcaption>
                     </figure>
                 );
