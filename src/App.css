@@ -44,28 +44,87 @@ a:hover {
     color: var(--tan); 
 }
 
-/* Page Layout */
-header {
-    width: 140%;
-    padding: 5%;
-    margin:0 auto 150px auto;
-    text-align:left;
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between; /* Pushes left and right sections apart */
+    align-items: center;
+    padding: 40px 20px; /* Adjusted padding */
+    height: 250px; /* Set height for visibility */
+    position: relative; /* Ensure it positions text inside */
 }
-header h1, h1 a,
+
+/* Ensure text appears inside the image */
+.header-left, .header-right {
+    position: absolute;
+    top: 20%;
+    transform: translateY(-50%); /* Center text vertically */
+}
+
+/* Adjust the left side text inside the image */
+.header-left {
+    left: 15%;
+    z-index: 2;
+}
+
+/* Adjust the right side text inside the image */
+.header-right {
+    right: 15%;
+    z-index: 2;
+}
+header h1 {
+    color: var(--gold);
+}
+
 header p  {
     margin:0;
     padding:0;
-    color:var(--gold)
+    color: #fff;
 }
-header p {
-    font-size:1.5em; 
 
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+        height: auto; 
+        padding: 20px 10px; 
+    }
+
+    .header-left, .header-right {
+        position: static; 
+        transform: none; 
+        text-align: center; 
+        width: 100%; 
+    }
+
+    .header-left {
+        margin-bottom: 10px; 
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; 
+    }
+
+    .cart-icon {
+        font-size: 16px; 
+    }
+
+    .purchaseIcons {
+        font-size: 20px; 
+    }
 }
- 
+
+
+/* Icon section */
 .purchaseIcons {
-    font-size: 130%;
-    margin:5% 0 -5% 0;
-    color: var(--gold); 
+    font-size: 24px;
+    display: flex;
+    gap: 10px; 
 }
 
 /* Main Content */
@@ -258,12 +317,6 @@ button:hover {
     } */
 }
 
-@media screen and (min-width: 900px) {
-
-    header {
-        margin-left:20%;
-    } 
-}
 
 @media print { 
     #tabs label {color:black; border-color:gray;}
@@ -439,8 +492,9 @@ button:hover {
     color: var(--purple);
 }
 
-/* Cart Icon */
+/* Cart link styling */
 .cart-icon {
-    font-size: 1.2rem;
+    font-size: 18px;
+    margin-bottom: 10px; /* Adds spacing */
 }
 

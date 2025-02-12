@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useCart } from "react-use-cart"; // Import useCart
 
-import CartContext from "./modules/cart/CartProvider.jsx"; // Ensure CartProvider is imported
+import CartContext from "./modules/cart/CartProvider.jsx"; 
 import HomePage from "./modules/HomePage.jsx";
 import Cart from "./modules/cart/Cart.jsx"; 
 import Checkout from "./modules/cart/Checkout.jsx"; 
@@ -18,17 +18,24 @@ function Header() {
   const { totalItems } = useCart(); 
 
   return (
-    <header>
-      <h1><a href="/">PamVan Londen</a></h1>
-      <p><Slogan /></p>
-      <p className="purchaseIcons"><i><IoLogoVenmo /> <SiZelle /> <SiCashapp /></i></p>
+    <header className="header">
+      {/* Left side content */}
+      <div className="header-left">
+        <h1><a href="/">PamVan Londen</a></h1>
+        <p><Slogan /></p>
+      </div>
 
-      {/* Cart Icon with Corrected Link */}
-      <p className="cart-icon">
-        <Link to="/cart">
-          <FaShoppingCart /> View Cart ({totalItems})
-        </Link>
-      </p>
+      {/* Right side content */}
+      <div className="header-right">
+        <p className="cart-icon">
+          <Link to="/cart">
+            <FaShoppingCart /> View Cart ({totalItems})
+          </Link>
+        </p>
+        <p className="purchaseIcons">
+          <IoLogoVenmo /> <SiZelle /> <SiCashapp />
+        </p>
+      </div>
     </header>
   );
 }
