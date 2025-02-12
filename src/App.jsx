@@ -14,45 +14,29 @@ import { FaShoppingCart } from "react-icons/fa"; // Import cart icon
 
 import './App.css';
 
-function Header() {
-  const { totalItems } = useCart(); 
-
-  return (
-    <header className="header">
-      {/* Left side content */}
-      <div className="header-left">
-        <h1><a href="/">PamVan Londen</a></h1>
-        <p><Slogan /></p>
-      </div>
-
-      {/* Right side content */}
-      <div className="header-right">
-        <p className="cart-icon">
-          <Link to="/cart">
-            <FaShoppingCart /> View Cart ({totalItems})
-          </Link>
-        </p>
-        <p className="purchaseIcons">
-          <IoLogoVenmo /> <SiZelle /> <SiCashapp />
-        </p>
-      </div>
-    </header>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <p><Slogan /> &copy; {new Date().getFullYear()} Pam Van Londen</p>
-    </footer>
-  );
-}
-
 function App() {
+  const { totalItems } = useCart(); 
   return (
     <CartContext> 
+
+      <header>
+        <h1><a href="/">Pam Van Londen</a></h1>
+        <p><Slogan /></p>
+      </header>
+
       <Router>
-        <Header /> 
+        <nav className="fancyButtons">
+          <i className="purchaseIcons"><IoLogoVenmo /> <SiZelle /> <SiCashapp /></i>
+          <Link to="">Home</Link>
+            <Link to="">Commissions</Link>
+            <Link to="">Exhibits</Link>
+            <Link to="">Publications</Link>
+            <Link to="">Résumé</Link>
+            <Link to="">About</Link>
+            <Link to="">Contact</Link>
+            <Link to="/cart" className="cart-icon"><FaShoppingCart /> View Cart ({totalItems})</Link>
+            
+        </nav>
         
         <main>
           <Routes>
@@ -62,9 +46,17 @@ function App() {
           </Routes>
         </main>
 
-        <Footer /> 
+        <footer>
+          
+          <nav id="footer">
+            &copy; {new Date().getFullYear()} Pam Van Londen
+            <Link to="">Legal</Link>
+            <Link to="">Social</Link>
+          </nav>
+        </footer>
       </Router>
     </CartContext>
+ 
   );
 }
 

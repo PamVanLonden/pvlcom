@@ -11,17 +11,20 @@
     --blue: hsl(191, 33%, 49%);
     --gold: hsl(39, 87%, 61%);
     --mauve: hsl(336, 43%, 36%);
-    --mauveT: hsl(336, 43%, 36%, 50%);
+    --mauveT: hsl(336, 43%, 36%, 70%);
     --mauveO: hsl(336, 43%, 36%, 90%);
 }
 
-/* Global Styles */
+/* Global Styles for PHONE 
+    @media query for DESKTOP are at the bottom.
+    @media query for PRINT is at the bottom. 
+*/
 body {
-    background: url(assets/pvl-crow-in-the-grass-2-1200.webp);
+    background: url(assets/pvl-crow-in-the-grass-2-1200.jpg);
     background-repeat:no-repeat;
     background-attachment: 0 auto;  
     background-position: center -100px;  
-    background-size: 1200px auto;
+    background-size: 1100px auto;
     background-color:var(--purple);
     font-family: "Abel", sans-serif;
     font-size: 1.1em;
@@ -45,78 +48,23 @@ a:hover {
 }
 
 /* Header Styling */
-.header {
-    display: flex;
-    justify-content: space-between; /* Pushes left and right sections apart */
-    align-items: center;
-    padding: 40px 20px; /* Adjusted padding */
-    height: 250px; /* Set height for visibility */
-    position: relative; /* Ensure it positions text inside */
+header {
+    width: 140%;
+    padding: 5%;
+    margin:0 auto 100px auto;
+    text-align:left;
 }
 
-/* Ensure text appears inside the image */
-.header-left, .header-right {
-    position: absolute;
-    top: 20%;
-    transform: translateY(-50%); /* Center text vertically */
-}
-
-/* Adjust the left side text inside the image */
-.header-left {
-    left: 15%;
-    z-index: 2;
-}
-
-/* Adjust the right side text inside the image */
-.header-right {
-    right: 15%;
-    z-index: 2;
-}
 header h1 {
     color: var(--gold);
+    animation: fadeInOut 3s ease-in-out;
 }
 
 header p  {
     margin:0;
     padding:0;
-    color: #fff;
-}
-
-/* Responsive Styles for Mobile */
-@media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center;
-        height: auto; 
-        padding: 20px 10px; 
-    }
-
-    .header-left, .header-right {
-        position: static; 
-        transform: none; 
-        text-align: center; 
-        width: 100%; 
-    }
-
-    .header-left {
-        margin-bottom: 10px; 
-    }
-
-    .header-right {
-        display: flex;
-        flex-direction: column; 
-        align-items: center; 
-        gap: 10px; 
-    }
-
-    .cart-icon {
-        font-size: 16px; 
-    }
-
-    .purchaseIcons {
-        font-size: 20px; 
-    }
+    color:var(--gold);
+    animation: fadeInOut 3s ease-in-out;
 }
 
 
@@ -125,6 +73,7 @@ header p  {
     font-size: 24px;
     display: flex;
     gap: 10px; 
+    color:var(--mauve)
 }
 
 /* Main Content */
@@ -133,7 +82,7 @@ main {
     margin: 0 auto;
     width: 100%;
     background-color: var(--blue);
-    padding: 5%;
+    padding: 2% 5%;
     text-align: center;
 }
 .float {float:left;}
@@ -141,21 +90,24 @@ main {
 
 /* Footer */
 footer {
-    width: 100%;
+    width: 140%;
     background-color: var(--mauve);
-    padding: 2%;
-    align-items: center;
+    padding: 3%;
+    align-items:center;
     text-align: center;
-    position: relative; 
-    bottom: auto;
-    margin-top: auto; 
+    padding:1%;
+    position:fixed;
+    bottom:0px;
 }
-
 footer p {
     color: var(--gold); 
     font-size: 0.9em;
 }
-
+footer nav a {
+margin:0 1%;
+text-decoration:underline;
+ 
+}
 /* Typography */
 h1, h2, h3, h4, h5 {
     font-weight:900;
@@ -180,7 +132,7 @@ h1 {
 
 /* Ensure images scale properly */
 .gallery figure {
-    width: 300px;
+    width: 250px;
 }
 
 /* Fix text color in gallery captions */
@@ -224,104 +176,31 @@ button:hover {
 }
 
 .fancyButtons a {
-    color: var(--tan); 
+    color: var(--gold); 
     background-color: var(--mauveT);
-    padding: 10px 15px;
+    padding: 4px 8px;
+    /* margin-bottom:-30px; */
     text-decoration: none;
     border-radius: 10px;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
     font-weight: bold;
-    transition: background 0.3s ease;
 }
 
 .fancyButtons a:hover {
     background-color: var(--tanT);
-}
-
-#tabs label {
-    background-color: orange; 
-    color:white;
-    cursor: pointer;
-    margin:0 2% 0 0;
-    padding:2% 6% 2% 3%;
-    z-index: 1;
-    -webkit-border-radius:5px 30px 0 0;
-        -ms-border-radius:5px 30px 0 0;
-            border-radius:5px 30px 0 0;
-  }
-  #tabs label:first-of-type {
-    margin-left: 0;
-  }
-  #tabs label:hover {
-      background-color:orange;
-      color:white;
-      -webkit-transition: all 500ms ease;
-         -moz-transition: all 500ms ease;
-          -ms-transition: all 500ms ease;
-              -o-transition: all 500ms ease;
-      transition: all 500ms ease;
-      }
-  #tabs article {
-    width: 95%;
-    min-height:auto;
-    margin: 6px 0 5% 0;
-    padding: 1% 2% 2% 2%;
-    color:white;
-  }
-  #tabs input[type=radio]{display: none;}
-  
-  #tabs input[type=radio]:checked + label {/* active current tab */
-    background: white;
-    color:var(--purpleish);
-    margin-bottom:-2px;
-  }
-  #tabs input[type=radio]:checked + label + article {
-      display: block;
-      color:black;
-  }
-
-
-
-
-/* Responsive Design */
-@media screen and (max-width: 600px) {
-
-    header {
-        margin-left:10%;
-    } 
-    .fancyButtons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* main, .gallery-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-    } */
-    /* #tabs {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-    #tabs article {
-        -webkit-order: 1;
-        order: 1;
-        display: none;
-        min-height:300px;
-        margin: 0px 0 5% 0;
-    }
-    #tabs label {
-        padding:1% 2% 1% 1%; 
-    } */
+    color:var(--mauve);
 }
 
 
-@media print { 
-    #tabs label {color:black; border-color:gray;}
-} 
 
+/* Cart Page Styling */
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
 .cart-notification {
     position: fixed;
     top: 10px;
@@ -335,21 +214,16 @@ button:hover {
     animation: fadeInOut 3s ease-in-out;
   }
   
-  @keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(-10px); }
-    10% { opacity: 1; transform: translateY(0); }
-    90% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-10px); }
-  }
+
   
-/* Cart Page Styling */
+
 .cart-container {
-    width: 60%;
-    margin: 40px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* width: auto;
+    margin: 0 auto; */
+    /* background-color: #fff; */
+    /* padding: 20px;
+    border-radius: 8px; */
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
   }
   
   .cart-header {
@@ -460,7 +334,7 @@ button:hover {
 /* Add to Cart Button */
 .add-to-cart-btn {
     background-color: var(--mauveT);
-    color: white;
+    color: var(--tan);
     border-radius: 10px;
     border: none;
     padding: 10px 15px;
@@ -469,9 +343,9 @@ button:hover {
 }
 
 .add-to-cart-btn:hover {
-    background-color: white;
+    background-color: var(--tan);
     color: var(--mauve);
-    box-shadow: 3px 3px 3px rgba(105, 54, 54, 0.4);
+    box-shadow: 3px 3px 3px var(--blue);
 }
 
 /* View Cart Button */
@@ -494,7 +368,26 @@ button:hover {
 
 /* Cart link styling */
 .cart-icon {
-    font-size: 18px;
-    margin-bottom: 10px; /* Adds spacing */
+    background-color:var(--mauve)!important; 
 }
 
+
+/* Responsive Styles for DESKTOP  ---------------------------------------*/
+@media screen and (min-width: 800px) {
+    
+    header {
+        margin-left:25%;
+    }
+    .cart-icon {
+        font-size: 16px; 
+    }
+    .purchaseIcons {
+        font-size: 20px; 
+    }
+}
+
+/* PRINT STYLES */
+
+@media print { 
+    #tabs label {color:black; border-color:gray;}
+} 
