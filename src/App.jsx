@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useCart } from "react-use-cart"; // Import useCart
 
+import CartContext from "./modules/cart/CartProvider.jsx"; // Ensure CartProvider is imported
 import HomePage from "./modules/HomePage.jsx";
-import Slogan from "./components/Slogan.jsx";
-import Cart from "./components/Cart.jsx"; 
-import Checkout from "./components/Checkout.jsx"; 
+import Cart from "./modules/cart/Cart.jsx"; 
+import Checkout from "./modules/cart/Checkout.jsx"; 
+import Slogan from "./modules/cart/Slogan.jsx";
 
 import { IoLogoVenmo } from "react-icons/io5";
 import { SiCashapp, SiZelle } from "react-icons/si";
@@ -17,9 +18,8 @@ function Header() {
   const { totalItems } = useCart(); 
   const location = useLocation(); // Get current route
 
-  // Hide header on cart page
-  if (location.pathname === "/cart") return null; 
-  if (location.pathname === "/checkout") return null;
+  // Hide header on cart and checkout pages
+  if (location.pathname === "/cart" || location.pathname === "/checkout") return null;
 
   return (
     <header>
@@ -27,7 +27,7 @@ function Header() {
       <p><Slogan /></p>
       <p className="purchaseIcons"><i><IoLogoVenmo /> <SiZelle /> <SiCashapp /></i></p>
 
-      {/* Cart Icon with Item Count */}
+      {/* Cart Icon with Corrected Link */}
       <p className="cart-icon">
         <Link to="/cart">
           <FaShoppingCart /> View Cart ({totalItems})
@@ -40,9 +40,8 @@ function Header() {
 function Footer() {
   const location = useLocation();
 
-  // Hide footer on cart page
-  if (location.pathname === "/cart") return null; 
-  if (location.pathname === "/checkout") return null;
+  // Hide footer on cart and checkout pages
+  if (location.pathname === "/cart" || location.pathname === "/checkout") return null;
 
   return (
     <footer>
@@ -53,9 +52,9 @@ function Footer() {
 
 function App() {
   return (
-    <div className="App">
+    <CartContext> 
       <Router>
-        <Header /> {/* Conditionally renders header */}
+        <Header /> 
         
         <main>
           <Routes>
@@ -65,9 +64,9 @@ function App() {
           </Routes>
         </main>
 
-        <Footer /> {/* Conditionally renders footer */}
+        <Footer /> 
       </Router>
-    </div>
+    </CartContext>
   );
 }
 
