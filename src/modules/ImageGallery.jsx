@@ -61,11 +61,6 @@ const ImageGallery = () => {
                             <div className="button-section">
                                 {/* Add to Cart Button */}
                                 <button className="add-to-cart-btn" onClick={() => handleAddToCart(item)}>Add to Cart</button>
-
-                                {/* View Cart Button with Icon */}
-                                <Link to="/cart" className="view-cart-btn">
-                                    <FaShoppingCart className="cart-icon" /> View Cart ({totalItems})
-                                </Link>
                             </div>
                         </figcaption>
                     </figure>
