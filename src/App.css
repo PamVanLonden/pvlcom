@@ -166,7 +166,7 @@ button:hover {
     box-shadow: 3px 3px 3px 3px rgba(105, 54, 54, 0.4); 
 }
 
-/* Fancy Buttons */
+/* Fancy Buttons  MAIN NAV */
 .fancyButtons {
     display: flex;
     flex-wrap: wrap;
@@ -378,6 +378,7 @@ button:hover {
     header {
         margin-left:25%;
     }
+    /* .fancyButtons {position:fixed; top:20px;} */
     .cart-icon {
         font-size: 16px; 
     }
