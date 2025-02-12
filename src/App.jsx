@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useCart } from "react-use-cart"; // Import useCart
 
 import CartContext from "./modules/cart/CartProvider.jsx"; // Ensure CartProvider is imported
@@ -16,10 +16,6 @@ import './App.css';
 
 function Header() {
   const { totalItems } = useCart(); 
-  const location = useLocation(); // Get current route
-
-  // Hide header on cart and checkout pages
-  if (location.pathname === "/cart" || location.pathname === "/checkout") return null;
 
   return (
     <header>
@@ -38,11 +34,6 @@ function Header() {
 }
 
 function Footer() {
-  const location = useLocation();
-
-  // Hide footer on cart and checkout pages
-  if (location.pathname === "/cart" || location.pathname === "/checkout") return null;
-
   return (
     <footer>
       <p><Slogan /> &copy; {new Date().getFullYear()} Pam Van Londen</p>
