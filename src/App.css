@@ -313,17 +313,21 @@ button:hover {
   }
   
   .checkout-button {
-    color: white;
-    padding: 10px 15px;
+    padding: 10px 15px; 
+    background-color: var(--mauveT);
+    color: var(--tan);
+    border-radius: 10px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-  }
-  
-  .checkout-button:hover {
-    background-color: #e68a00;
-  }
+    font-size: 1rem;
+}
+
+.checkout-button:hover {
+    background-color: var(--tan);
+    color: var(--mauve);
+    box-shadow: 3px 3px 3px var(--blue);
+}
+
   
   /* Buttons Section - Aligns Add to Cart & View Cart */
 .button-section {
