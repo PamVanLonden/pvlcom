@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { useCart } from "react-use-cart"; // Import useCart
+import { useCart } from "react-use-cart"; 
 
-import CartContext from "./modules/cart/CartProvider.jsx"; 
+import CartContext from "./modules/cart/CartProvider"; 
 import HomePage from "./modules/HomePage.jsx";
 import Cart from "./modules/cart/Cart.jsx"; 
 import Checkout from "./modules/cart/Checkout.jsx"; 
@@ -10,34 +10,31 @@ import Slogan from "./modules/cart/Slogan.jsx";
 
 import { IoLogoVenmo } from "react-icons/io5";
 import { SiCashapp, SiZelle } from "react-icons/si";
-import { FaShoppingCart } from "react-icons/fa"; // Import cart icon
+import { FaShoppingCart } from "react-icons/fa"; 
 
 import './App.css';
 
 function App() {
-  const { totalItems } = useCart(); 
   return (
-    <CartContext> 
+    <Router>
+      <CartContext> {/* Wrap the entire app to ensure `totalItems` updates */}
+        <header>
+          <h1><a href="/">Pam Van Londen</a></h1>
+          <p><Slogan /></p>
+        </header>
 
-      <header>
-        <h1><a href="/">Pam Van Londen</a></h1>
-        <p><Slogan /></p>
-      </header>
-
-      <Router>
         <nav className="fancyButtons">
           <i className="purchaseIcons"><IoLogoVenmo /> <SiZelle /> <SiCashapp /></i>
-          <Link to="">Home</Link>
-            <Link to="">Commissions</Link>
-            <Link to="">Exhibits</Link>
-            <Link to="">Publications</Link>
-            <Link to="">Résumé</Link>
-            <Link to="">About</Link>
-            <Link to="">Contact</Link>
-            <Link to="/cart" className="cart-icon"><FaShoppingCart /> View Cart ({totalItems})</Link>
-            
+          <Link to="/">Home</Link>
+          <Link to="/commissions">Commissions</Link>
+          <Link to="/exhibits">Exhibits</Link>
+          <Link to="/publications">Publications</Link>
+          <Link to="/resume">Résumé</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <CartLink /> {/* CartLink component ensures `totalItems` updates */}
         </nav>
-        
+
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -47,17 +44,26 @@ function App() {
         </main>
 
         <footer>
-          
           <nav id="footer">
             &copy; {new Date().getFullYear()} Pam Van Londen
-            <Link to="">Legal</Link>
-            <Link to="">Social</Link>
+            <Link to="/legal">Legal</Link>
+            <Link to="/social">Social</Link>
           </nav>
         </footer>
-      </Router>
-    </CartContext>
- 
+      </CartContext>
+    </Router>
   );
 }
+
+/*  Separate CartLink to ensure `totalItems` updates when the cart is cleared */
+const CartLink = () => {
+  const { totalItems } = useCart(); // Dynamically updates
+
+  return (
+    <Link to="/cart" className="cart-icon">
+      <FaShoppingCart /> View Cart ({totalItems})
+    </Link>
+  );
+};
 
 export default App;
