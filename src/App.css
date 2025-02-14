@@ -366,11 +366,6 @@ button:hover {
     color: var(--purple);
 }
 
-/* Cart link styling */
-.cart-icon {
-    background-color:var(--mauve)!important; 
-}
-
 
 /* Responsive Styles for DESKTOP  ---------------------------------------*/
 @media screen and (min-width: 800px) {
