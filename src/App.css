@@ -153,17 +153,20 @@ h1 {
 /* Add to cart button */
 button {
     display:block;
-    border-radius:10px;
     margin:3% auto;
-    border:1px solid transparent;
-    background-color:var(--mauveT);
-    color:white;
     padding:2%;
+    background-color: var(--mauveT);
+    color: var(--tan);
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
 }
 button:hover {
-    background-color:white;
-    color:var(--mauve);
-    box-shadow: 3px 3px 3px 3px rgba(105, 54, 54, 0.4); 
+    background-color: var(--tan);
+    color: var(--mauve);
+    box-shadow: 3px 3px 3px var(--blue);
 }
 
 /* Fancy Buttons  MAIN NAV */
@@ -215,23 +218,21 @@ button:hover {
   }
   
 
-  
-
 .cart-container {
-    /* width: auto;
-    margin: 0 auto; */
-    /* background-color: #fff; */
-    /* padding: 20px;
-    border-radius: 8px; */
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
-  }
+    max-width: 600px; 
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.cart-container, .cart-items, .cart-item {
+    padding: 10px; 
+}
+
   
   .cart-header {
     font-size: 24px;
     font-weight: bold;
-    border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
-    color: #ff9900; /* Amazon-like orange */
   }
   
   .cart-actions {
@@ -240,9 +241,8 @@ button:hover {
   }
   
   .cart-actions a {
-    color: #0073e6;
     text-decoration: none;
-    margin-right: 15px;
+    margin: 15px;
   }
   
   .cart-items {
@@ -287,20 +287,24 @@ button:hover {
     gap: 10px;
   }
   
-  .cart-item-actions button {
-    background-color: #f3f3f3;
-    border: 1px solid #ccc;
-    color: #000;
-    padding: 5px 10px;
-    cursor: pointer;
+  .cart-item-actions button, 
+  .checkout-button {
+      font-size: 1.2rem; 
+      padding: 12px 20px; 
   }
   
+  
   .cart-remove {
-    color: red;
+    color: var(--gold);
     font-size: 14px;
     border: none;
     background: none;
     cursor: pointer;
+  }
+
+  .cart-remove:hover {
+    color: var(--tan);
+    background: none;
   }
   
   .cart-summary {
@@ -309,7 +313,6 @@ button:hover {
   }
   
   .checkout-button {
-    background-color: #ff9900;
     color: white;
     padding: 10px 15px;
     border: none;
