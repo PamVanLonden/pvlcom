@@ -6,7 +6,7 @@ import CartContext from "./modules/cart/CartProvider";
 import HomePage from "./modules/HomePage.jsx";
 import Cart from "./modules/cart/Cart.jsx"; 
 import Checkout from "./modules/cart/Checkout.jsx"; 
-import Slogan from "./modules/cart/Slogan.jsx";
+import Slogan from "./modules/Slogan.jsx";
 
 import { IoLogoVenmo } from "react-icons/io5";
 import { SiCashapp, SiZelle } from "react-icons/si";
@@ -24,7 +24,7 @@ function App() {
         </header>
 
         <nav className="fancyButtons">
-          <i className="purchaseIcons"><IoLogoVenmo /> <SiZelle /> <SiCashapp /></i>
+          <i className="purchaseIcons"><IoLogoVenmo /> <SiZelle />  </i>
           <Link to="/">Home</Link>
           <Link to="/commissions">Commissions</Link>
           <Link to="/exhibits">Exhibits</Link>
