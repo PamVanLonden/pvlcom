@@ -279,6 +279,7 @@ button:hover {
     flex-direction: column;
     gap: 20px; */
   }
+  .cart-items h3 {text-align:center;}
   
   .cart-item {
     /* display: flex;
@@ -289,10 +290,7 @@ button:hover {
   }
   
   .cart-item-thumbnail {
-    /* width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 4px; */
+    width:200px;
   }
   
   .cart-item-details {
