@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 // Icons
 import { IoLogoVenmo } from "react-icons/io5";
 import { SiCashapp, SiZelle } from "react-icons/si";
-import { FaShoppingCart } from "react-icons/fa"; 
+// import { FaShoppingCart } from "react-icons/fa"; 
 
 
-              // Pass imageSrc from the ImageGallery
-const Cart = (imageSrc) => {
+// Pass imageSrc from the ImageGallery
+const Cart = () => {
   const {
     isEmpty,
     totalUniqueItems,
@@ -55,7 +55,8 @@ const Cart = (imageSrc) => {
           {/* CLEAN the image filename, or pass it from the imageGallery. */}
            <td> 
               <h3>{item.name}</h3>
-              <img src={item.imageSrc}  alt={item.name} 
+              <img src={item.imageSrc}  
+                  alt={item.name} 
                   className="cart-item-thumbnail"
                   onError={(e) => { 
                     console.error("Image failed to load:", item.imageSrc);
