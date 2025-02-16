@@ -7,6 +7,7 @@ import HomePage from "./modules/HomePage.jsx";
 import Cart from "./modules/cart/Cart.jsx"; 
 import Checkout from "./modules/cart/Checkout.jsx"; 
 import Slogan from "./modules/Slogan.jsx";
+// import Search from './hoods/Search.jsx';
 
 import { IoLogoVenmo } from "react-icons/io5";
 import { SiCashapp, SiZelle } from "react-icons/si";
@@ -15,6 +16,8 @@ import { FaShoppingCart } from "react-icons/fa";
 import './App.css';
 
 function App() {
+  const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTyMseqbTrrpUYEXzyDZ0pyh2O4rKBNAClSCt5sEGcjsw-ZxMf-Zx77z2Nf-XIoyib4mz-0Z1-XBEun/pub?output=csv";
+
   return (
     <Router>
       <CartContext> {/* Wrap the entire app to ensure `totalItems` updates */}
@@ -25,6 +28,7 @@ function App() {
 
         <nav className="fancyButtons">
           <i className="purchaseIcons"><IoLogoVenmo /> <SiZelle />  </i>
+          {/* <Search csvUrl={csvUrl} /> */}
           <Link to="/">Home</Link>
           <Link to="/commissions">Commissions</Link>
           <Link to="/exhibits">Exhibits</Link>
@@ -35,7 +39,7 @@ function App() {
           <CartLink /> {/* CartLink component ensures `totalItems` updates */}
         </nav>
 
-        <main>
+        <main>        
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/cart" element={<Cart />} />
@@ -45,6 +49,7 @@ function App() {
 
         <footer>
           <nav id="footer">
+           <CartLink /> {/* CartLink component ensures `totalItems` updates */}
             &copy; {new Date().getFullYear()} Pam Van Londen
             <Link to="/legal">Legal</Link>
             <Link to="/social">Social</Link>
