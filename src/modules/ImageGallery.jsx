@@ -15,12 +15,14 @@ const ImageGallery = () => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    const handleAddToCart = (item) => {
+    const handleAddToCart = (item, imageSrc) => {
+        
         addItem({
             id: item.id || Math.random(), // Ensure unique ID
             name: item.Title || "Untitled",
             price: parseFloat(item.Price || 0),
             quantity: 1,
+            imageSrc, 
         });
 
         // Show notification
@@ -50,10 +52,10 @@ const ImageGallery = () => {
 
                 let cleanFileName = item.Filename.trim().toLowerCase();
                 if (!cleanFileName.endsWith(".webp")) cleanFileName += ".webp";
-
+        
                 // Directly reference public folder (Vite serves `/public` as root)
                 const imageSrc = `/assets/${cleanFileName}`;
-
+                
                 return (
                     <figure key={index} className="image-item">
                         <img 
@@ -83,6 +85,9 @@ const ImageGallery = () => {
             {/* Modal */}
             {isOpen && selectedItem && (
                 <div className="modal-overlay" onClick={closeModal}>
+
+                    {notification && <div className="cart-notification">{notification}</div>}
+
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <h2>{selectedItem.Title || "Untitled"}</h2>
                         <img 
@@ -92,7 +97,10 @@ const ImageGallery = () => {
                         />
                         <p>{selectedItem.Description || "No description available."}</p>
                         <p>Price: ${selectedItem.Price || "0.00"}</p>
+                        <div className="button-section">
                         <button className="close-modal-btn" onClick={closeModal}>Close</button>
+                        <button className="add-to-cart-btn" onClick={() => handleAddToCart(selectedItem, `/assets/${selectedItem.Filename.trim().toLowerCase()}`)}>Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             )}
