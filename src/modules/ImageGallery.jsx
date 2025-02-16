@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import useFetchCSV from "../hooks/useFetchCSV";
 import { useCart } from "react-use-cart";
-import { FaShoppingCart } from "react-icons/fa"; // Import cart icon
-import { Link } from "react-router-dom"; // Import Link for navigation
 
 // Google Sheets URL to fetch painting data
 const GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTyMseqbTrrpUYEXzyDZ0pyh2O4rKBNAClSCt5sEGcjsw-ZxMf-Zx77z2Nf-XIoyib4mz-0Z1-XBEun/pub?output=csv";
@@ -10,8 +8,10 @@ const GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTyMse
 const ImageGallery = () => {
     const { data, loading, error } = useFetchCSV(GOOGLE_SHEET_URL);
     const { addItem, totalItems } = useCart();
-    const [notification, setNotification] = useState(""); // Notification state
-
+    const [notification, setNotification] = useState("");   // Notification state
+    const [isOpen, setIsOpen] = useState(false);            // Modal
+    const [selectedItem, setSelectedItem] = useState(null); // To track selected image
+   
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
@@ -28,6 +28,16 @@ const ImageGallery = () => {
 
         // Hide notification after 3 seconds
         setTimeout(() => setNotification(""), 3000);
+    };
+
+    const handleImageClick = (item) => {
+        setSelectedItem(item); // Set the selected item when image is clicked
+        setIsOpen(true); // Open the modal
+    };
+
+    const closeModal = () => {
+        setIsOpen(false); // Close the modal
+        setSelectedItem(null); // Reset the selected item
     };
 
     return (
@@ -50,6 +60,9 @@ const ImageGallery = () => {
                             src={imageSrc} 
                             alt={item.Description.trim() || "A description is missing."}
                             onError={(e) => e.target.src = '/assets/fallback.webp'} 
+                            // Open modal on click
+                            onClick={() => handleImageClick(item)} 
+                            className="cursor-pointer"
                         />
                         
                         <figcaption>
@@ -66,8 +79,24 @@ const ImageGallery = () => {
                     </figure>
                 );
             })}
+
+            {/* Modal */}
+            {isOpen && selectedItem && (
+                <div className="modal-overlay" onClick={closeModal}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <h2>{selectedItem.Title || "Untitled"}</h2>
+                        <img 
+                            src={`/assets/${selectedItem.Filename.trim().toLowerCase()}`} 
+                            alt={selectedItem.Description || "Description missing"} 
+                            className="modal-image"
+                        />
+                        <p>{selectedItem.Description || "No description available."}</p>
+                        <p>Price: ${selectedItem.Price || "0.00"}</p>
+                        <button className="close-modal-btn" onClick={closeModal}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
-
 export default ImageGallery;
