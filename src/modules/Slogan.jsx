@@ -5,7 +5,7 @@ import { IoCodeSlashSharp } from "react-icons/io5";
 
 function Slogan() {
     return (
-        <>
+    <>
             Art <i><FaPaintBrush /></i>
             &nbsp;+&nbsp;
             Code <i><IoCodeSlashSharp /></i>
