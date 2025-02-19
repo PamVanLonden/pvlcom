@@ -176,9 +176,10 @@ h3 {text-align:right;}
 
 /* Add to cart button */
 button,
-.close-modal-btn  {
-    display:block;
-    margin:3% auto;
+.close-modal-btn,
+.purchaseLink  {
+    /* display:block; */
+    margin:3%;
     padding:2%;
     background-color: var(--mauveT);
     color: var(--tan);
@@ -188,12 +189,14 @@ button,
     cursor: pointer;
     font-size: 1rem;
 }
-button:hover {
+button:hover,
+.close-modal-btn:hover,
+.purchaseLink:hover {
     background-color: var(--tan);
     color: var(--mauve);
     box-shadow: 3px 3px 3px var(--blue);
 }
-
+ 
 /* Fancy Buttons  MAIN NAV */
 .fancyButtons {
     display: flex;
@@ -259,9 +262,10 @@ button:hover {
 .cart-container h2 {
     margin: 1% 0 0 2%;
     font-family: 'Fredericka the Great', serif;
-    float:left;
+    text-align:left;
 }
-  
+.cart-container figure {width:50%;}
+.cart-container figure img {width:100%;}
 .cart-actions {
     margin: 2% 0 0 50%;
   }
@@ -335,8 +339,8 @@ button:hover {
   }
   
   .cart-summary {
-    /* margin-top: 20px;
-    text-align: right; */
+    margin-bottom: 100px;
+ 
   }
   .cart-summary li {
     list-style:none;
