@@ -97,6 +97,21 @@ const Cart = () => {
       <div className="cart-summary">
         <h3>Subtotal ({totalItems} items): ${cartTotal.toFixed(2)}</h3>
         <h2>Checkout</h2>
+          <p>Send payment using:</p>
+          
+          <nav id="purchaseLinks" >
+            <Link to="venmo" className="purchaseLink"><i><IoLogoVenmo /></i>Venmo</Link>
+            <Link to="zelle" className="purchaseLink"><i><SiZelle /></i>Zelle</Link>
+          </nav>
+          {/* <p>Please upload a screenshot of the payment or enter the confirmation code.</p>
+          <input type="file" />
+          <button>Submit</button> */}
+      </div>
+
+{/*       
+      <div className="cart-summary">
+        <h3>Subtotal ({totalItems} items): ${cartTotal.toFixed(2)}</h3>
+        <h2>Checkout</h2>
         <p>Send payment using:</p>
         
         <button onClick={() => setSelectedPayment("paypal")}><IoLogoVenmo /> Pay with PayPal / Venmo</button>
@@ -123,7 +138,7 @@ const Cart = () => {
 
       <button onClick={handleDownloadOrder} style={{ marginTop: "10px" }}>
         Download Order as PNG
-      </button>
+      </button> */}
     </div>
   );
 };
