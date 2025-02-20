@@ -46,8 +46,8 @@ const CheckoutForm = () => {
 
     emailjs
       .send(
-        "service_ms7uxqh",  // ✅ EmailJS Service ID
-        "template_3r3br8v",  // ✅ EmailJS Template ID
+        "service_ms7uxqh",  // EmailJS Service ID
+        "template_3r3br8v",  // EmailJS Template ID
         templateParams,
         "your_public_key"    // Replace this with your actual EmailJS Public Key
       )
