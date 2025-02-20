@@ -45,7 +45,12 @@ const CheckoutForm = () => {
     };
 
     emailjs
-      .send("service_ms7uxqh", "template_3r3br8v", templateParams, "your_user_id")
+      .send(
+        "service_ms7uxqh",  // ✅ EmailJS Service ID
+        "template_3r3br8v",  // ✅ EmailJS Template ID
+        templateParams,
+        "your_public_key"    // Replace this with your actual EmailJS Public Key
+      )
       .then((response) => {
         console.log("Email sent successfully:", response.status, response.text);
         setIsSent(true);

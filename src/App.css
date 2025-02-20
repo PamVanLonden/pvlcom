@@ -210,7 +210,6 @@ button:hover,
     color: var(--gold); 
     background-color: var(--mauveT);
     padding: 4px 8px;
-    /* margin-bottom:-30px; */
     text-decoration: none;
     border-radius: 10px;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
@@ -224,34 +223,29 @@ button:hover,
 
 /* Checkout Form */
 
-/* Keep layout consistent with Cart */
 .cart-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
   }
   
-  /* Ensure two-column layout */
   .form-row {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
   }
   
-  /* Ensure form-group items align properly */
   .form-group {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
   
-  /* Label formatting (removes the `:`) */
   label {
     font-weight: bold;
     margin-bottom: 5px;
   }
   
-  /* Input and textarea styles (match existing UI) */
   input,
   textarea {
     padding: 5px;
@@ -265,12 +259,10 @@ button:hover,
     height: 80px;
   }
   
-  /* Keep Order & Total in two columns */
   .form-row > .form-group {
-    flex: 1; /* Make them equal width */
+    flex: 1; 
   }
   
-  /* Keep the button centered */
   .button-container {
     display: flex;
     justify-content: center;
