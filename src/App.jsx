@@ -6,6 +6,7 @@ import CartContext from "./modules/cart/CartProvider";
 import HomePage from "./modules/HomePage.jsx";
 import Cart from "./modules/cart/Cart.jsx"; 
 import CheckoutVenmo from "./modules/cart/CheckoutVenmo.jsx"; 
+import CheckoutForm from "./modules/cart/CheckoutForm.jsx";  
 import Slogan from "./modules/Slogan.jsx";
 // import Search from './hoods/Search.jsx';
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/cart/venmo" element={<CheckoutVenmo />} />
+            <Route path="/cart/checkout-form" element={<CheckoutForm />} /> 
           </Routes>
         </main>
 
