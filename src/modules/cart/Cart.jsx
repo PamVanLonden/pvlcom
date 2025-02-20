@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 import { Link } from "react-router-dom";
-// import html2canvas from "html2canvas/dist/html2canvas";
 
 // Icons
 import { IoLogoVenmo } from "react-icons/io5";
@@ -26,34 +25,6 @@ const Cart = () => {
     setCartUpdated(true);
     setTimeout(() => setCartUpdated(false), 100);
   }, [totalItems]);
-
-  /* const handleDownloadOrder = async () => {
-    const orderElement = document.createElement("div");
-    orderElement.style.padding = "20px";
-    orderElement.style.background = "white";
-    orderElement.style.width = "300px";
-    orderElement.innerHTML = `
-      <h3>Order Summary</h3>
-      <p>Total Items: ${totalItems}</p>
-      <p>Total Amount: $${cartTotal.toFixed(2)}</p>
-      <ul>
-        ${items.map(item => `<li>${item.name} - $${item.price.toFixed(2)} x ${item.quantity}</li>`).join('')}
-      </ul>
-      <h4>Thank you for your purchase!</h4>
-    `;
-    document.body.appendChild(orderElement);
-    
-    const canvas = await html2canvas(orderElement);
-    const dataUrl = canvas.toDataURL("image/png");
-
-    const link = document.createElement("a");
-    link.href = dataUrl;
-    link.download = "order.png";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    document.body.removeChild(orderElement);
-  }; */
 
   if (isEmpty) return <h2>Your cart is empty</h2>;
 
@@ -96,15 +67,13 @@ const Cart = () => {
       <div className="cart-summary">
         <h3>Subtotal ({totalItems} items): ${cartTotal.toFixed(2)}</h3>
         <h2>Checkout</h2>
-          <p>Send payment using:</p>
-          
-          <nav id="purchaseLinks" >
-            <Link to="venmo" className="purchaseLink"><i><IoLogoVenmo /></i>Venmo</Link>
-            <Link to="zelle" className="purchaseLink"><i><SiZelle /></i>Zelle</Link>
-          </nav>
-          {/* <p>Please upload a screenshot of the payment or enter the confirmation code.</p>
-          <input type="file" />
-          <button>Submit</button> */}
+        <p>Send payment using:</p>
+
+        <nav id="purchaseLinks">
+          <Link to="venmo" className="purchaseLink"><i><IoLogoVenmo /></i>Venmo</Link>
+          <Link to="zelle" className="purchaseLink"><i><SiZelle /></i>Zelle</Link>
+          <Link to="checkout-form" className="purchaseLink">Continue to Checkout</Link>
+        </nav>
       </div>
     </div>
   );

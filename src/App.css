@@ -210,7 +210,6 @@ button:hover,
     color: var(--gold); 
     background-color: var(--mauveT);
     padding: 4px 8px;
-    /* margin-bottom:-30px; */
     text-decoration: none;
     border-radius: 10px;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
@@ -222,7 +221,55 @@ button:hover,
     color:var(--mauve);
 }
 
+/* Checkout Form */
 
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    padding: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .form-row > .form-group {
+    flex: 1; 
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  
 
 /* SHOPPING CART */
 
