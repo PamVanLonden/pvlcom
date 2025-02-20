@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 import { Link } from "react-router-dom";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import html2canvas from "html2canvas/dist/html2canvas";
+// import html2canvas from "html2canvas/dist/html2canvas";
 
 // Icons
 import { IoLogoVenmo } from "react-icons/io5";
@@ -28,7 +27,7 @@ const Cart = () => {
     setTimeout(() => setCartUpdated(false), 100);
   }, [totalItems]);
 
-  const handleDownloadOrder = async () => {
+  /* const handleDownloadOrder = async () => {
     const orderElement = document.createElement("div");
     orderElement.style.padding = "20px";
     orderElement.style.background = "white";
@@ -54,7 +53,7 @@ const Cart = () => {
     link.click();
     document.body.removeChild(link);
     document.body.removeChild(orderElement);
-  };
+  }; */
 
   if (isEmpty) return <h2>Your cart is empty</h2>;
 
@@ -107,38 +106,6 @@ const Cart = () => {
           <input type="file" />
           <button>Submit</button> */}
       </div>
-
-{/*       
-      <div className="cart-summary">
-        <h3>Subtotal ({totalItems} items): ${cartTotal.toFixed(2)}</h3>
-        <h2>Checkout</h2>
-        <p>Send payment using:</p>
-        
-        <button onClick={() => setSelectedPayment("paypal")}><IoLogoVenmo /> Pay with PayPal / Venmo</button>
-        <button><SiZelle /> Pay with Zelle</button>
-      </div>
-
-      {selectedPayment === "paypal" && (
-        <PayPalScriptProvider options={{ "client-id": "YOUR_PAYPAL_CLIENT_ID" }}>
-          <PayPalButtons
-            style={{ layout: "vertical" }}
-            createOrder={(data, actions) => {
-              return actions.order.create({
-                purchase_units: [{ amount: { value: cartTotal.toFixed(2) } }],
-              });
-            }}
-            onApprove={(data, actions) => {
-              return actions.order.capture().then((details) => {
-                alert(`Transaction completed by ${details.payer.name.given_name}`);
-              });
-            }}
-          />
-        </PayPalScriptProvider>
-      )}
-
-      <button onClick={handleDownloadOrder} style={{ marginTop: "10px" }}>
-        Download Order as PNG
-      </button> */}
     </div>
   );
 };
