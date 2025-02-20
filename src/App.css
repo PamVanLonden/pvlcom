@@ -222,7 +222,62 @@ button:hover,
     color:var(--mauve);
 }
 
+/* Checkout Form */
 
+/* Keep layout consistent with Cart */
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Ensure two-column layout */
+  .form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Ensure form-group items align properly */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  /* Label formatting (removes the `:`) */
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Input and textarea styles (match existing UI) */
+  input,
+  textarea {
+    padding: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  /* Keep Order & Total in two columns */
+  .form-row > .form-group {
+    flex: 1; /* Make them equal width */
+  }
+  
+  /* Keep the button centered */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  
 
 /* SHOPPING CART */
 

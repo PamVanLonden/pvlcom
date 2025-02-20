@@ -72,7 +72,7 @@ const Cart = () => {
         <nav id="purchaseLinks">
           <Link to="venmo" className="purchaseLink"><i><IoLogoVenmo /></i>Venmo</Link>
           <Link to="zelle" className="purchaseLink"><i><SiZelle /></i>Zelle</Link>
-          <Link to="checkout-form" className="purchaseLink">Confirm Order</Link>
+          <Link to="checkout-form" className="purchaseLink">Continue to Checkout</Link>
         </nav>
       </div>
     </div>
