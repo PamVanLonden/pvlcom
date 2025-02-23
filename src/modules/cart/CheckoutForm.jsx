@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { useCart } from "react-use-cart";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = () => {
   const { items, cartTotal } = useCart();
@@ -13,9 +14,11 @@ const CheckoutForm = () => {
     state: "",
     zip: "",
     comments: "",
+    paymentMethod: "venmo",
   });
 
-  const [isSent, setIsSent] = useState(false);
+  const navigate = useNavigate();
+  const venmoAccount = "Pamela-VanLonden";
 
   const handleChange = (e) => {
     setFormData({
@@ -24,13 +27,19 @@ const CheckoutForm = () => {
     });
   };
 
+  const generateVenmoLink = () => {
+    return `https://venmo.com/u/${venmoAccount}?txn=pay&amount=${cartTotal.toFixed(2)}`;
+  };
+
   const handleSendEmail = (e) => {
     e.preventDefault();
 
     const orderDetails = items
       .map((item) => `${item.name} (x${item.quantity}) - $${item.price.toFixed(2)}`)
       .join(", ");
-
+    
+    const venmoLink = generateVenmoLink();
+    
     const templateParams = {
       firstlast: formData.firstlast,
       email: formData.email,
@@ -42,6 +51,8 @@ const CheckoutForm = () => {
       comments: formData.comments,
       order: orderDetails,
       total: `$${cartTotal.toFixed(2)}`,
+      paymentMethod: formData.paymentMethod,
+      venmoLink,
     };
 
     emailjs
@@ -49,11 +60,11 @@ const CheckoutForm = () => {
         "service_ms7uxqh",  // EmailJS Service ID
         "template_3r3br8v",  // EmailJS Template ID
         templateParams,
-        "your_public_key"    // Replace this with your actual EmailJS Public Key
+        "your_public_key"    // Replace with your actual EmailJS Public Key
       )
       .then((response) => {
         console.log("Email sent successfully:", response.status, response.text);
-        setIsSent(true);
+        navigate("/checkout-venmo", { state: { venmoLink } });
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -61,19 +72,16 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className="cart-container"> {/* Matches the Cart page */}
+    <div className="cart-container">
       <h2>Complete Your Order</h2>
       <p>Enter your details to receive a confirmation email.</p>
 
       <form onSubmit={handleSendEmail} className="checkout-form">
-        
-        {/* Full Width - Name */}
         <div className="form-group">
           <label>Full Name</label>
           <input type="text" name="firstlast" value={formData.firstlast} onChange={handleChange} required />
         </div>
 
-        {/* Two Columns - Email & Phone */}
         <div className="form-row">
           <div className="form-group">
             <label>Email</label>
@@ -85,13 +93,11 @@ const CheckoutForm = () => {
           </div>
         </div>
 
-        {/* Full Width - Address */}
         <div className="form-group">
           <label>Address</label>
           <input type="text" name="address" value={formData.address} onChange={handleChange} required />
         </div>
 
-        {/* Three Columns - City, State, ZIP */}
         <div className="form-row">
           <div className="form-group">
             <label>City</label>
@@ -107,31 +113,22 @@ const CheckoutForm = () => {
           </div>
         </div>
 
-        {/* Full Width - Comments */}
         <div className="form-group">
           <label>Comments</label>
           <textarea name="comments" value={formData.comments} onChange={handleChange} />
         </div>
 
-        {/* Two Columns - Order & Total */}
-        <div className="form-row">
-          <div className="form-group">
-            <label>Order</label>
-            <textarea name="order" value={items.map(item => `${item.name} (x${item.quantity}) - $${item.price.toFixed(2)}`).join("\n")} readOnly />
-          </div>
-          <div className="form-group">
-            <label>Total</label>
-            <input type="text" name="total" value={`$${cartTotal.toFixed(2)}`} readOnly />
-          </div>
+        <div className="form-group">
+          <label>Payment Method</label>
+          <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange} required>
+            <option value="venmo">Venmo</option>
+          </select>
         </div>
 
-        {/* Submit Button */}
         <div className="form-group button-container">
           <button type="submit">Send Order Confirmation</button>
         </div>
       </form>
-
-      {isSent && <p>Email confirmation sent successfully!</p>}
     </div>
   );
 };
