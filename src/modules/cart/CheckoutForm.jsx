@@ -35,33 +35,38 @@ const CheckoutForm = () => {
 
     const venmoLink = `https://venmo.com/u/Pamela-VanLonden?txn=pay&amount=${encodeURIComponent(cartTotal.toFixed(2))}&note=Order%20Payment`;
 
-    const templateParams = {
-      firstlast: formData.firstlast,
-      email: formData.email,
-      phone: formData.phone || "Not provided",
-      address: formData.address,
-      city: formData.city,
-      state: formData.state,
-      zip: formData.zip,
-      comments: formData.comments,
-      order: orderDetails,
-      total: `$${cartTotal.toFixed(2)}`,
-      paymentMethod: formData.paymentMethod,
-      venmoLink, 
-    };
+    const templateParams = Object.fromEntries(
+      Object.entries({
+        firstlast: formData.firstlast,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        state: formData.state,
+        zip: formData.zip,
+        comments: formData.comments,
+        order: orderDetails,
+        total: `$${cartTotal.toFixed(2)}`,
+        paymentMethod: formData.paymentMethod,
+        venmoLink, 
+      }).filter(([_, value]) => value && value.trim() !== "")
+    );
 
     emailjs
       .send(
-        "service_knvroya", // EmailJS Service ID (Teresita's testing)
-        "template_a1k8oej", // EmailJS Template ID (Teresita's testing)
+        "service_knvroya", // EmailJS Service ID
+        "template_a1k8oej", // EmailJS Template ID
         templateParams,
-        "sEQDF6uWOSo_Ho_w2" // EmailJS Public Key (Teresita's testing)
+        "sEQDF6uWOSo_Ho_w2" // EmailJS Public Key
       )
       .then((response) => {
         console.log("Email sent successfully:", response.status, response.text);
         
-        // Redirect to CheckoutVenmo.jsx after successful email submission
-        navigate("/cart/venmo", { state: { venmoLink } });
+        if (formData.paymentMethod === "venmo") {
+          navigate("/cart/venmo", { state: { venmoLink } });
+        } else if (formData.paymentMethod === "zelle") {
+          navigate("/cart/zelle");
+        }
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -119,6 +124,7 @@ const CheckoutForm = () => {
           <label>Payment Method</label>
           <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange} required>
             <option value="venmo">Venmo</option>
+            <option value="zelle">Zelle</option>
           </select>
         </div>
 
