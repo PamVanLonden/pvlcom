@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = () => {
   const { items, cartTotal } = useCart();
+  const navigate = useNavigate(); 
+
   const [formData, setFormData] = useState({
     firstlast: "",
     email: "",
@@ -17,9 +19,6 @@ const CheckoutForm = () => {
     paymentMethod: "venmo",
   });
 
-  const navigate = useNavigate();
-  const venmoAccount = "Pamela-VanLonden";
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -27,19 +26,15 @@ const CheckoutForm = () => {
     });
   };
 
-  const generateVenmoLink = () => {
-    return `https://venmo.com/u/${venmoAccount}?txn=pay&amount=${cartTotal.toFixed(2)}`;
-  };
-
   const handleSendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
 
     const orderDetails = items
       .map((item) => `${item.name} (x${item.quantity}) - $${item.price.toFixed(2)}`)
       .join(", ");
-    
-    const venmoLink = generateVenmoLink();
-    
+
+    const venmoLink = `https://venmo.com/u/Pamela-VanLonden?txn=pay&amount=${encodeURIComponent(cartTotal.toFixed(2))}&note=Order%20Payment`;
+
     const templateParams = {
       firstlast: formData.firstlast,
       email: formData.email,
@@ -52,19 +47,21 @@ const CheckoutForm = () => {
       order: orderDetails,
       total: `$${cartTotal.toFixed(2)}`,
       paymentMethod: formData.paymentMethod,
-      venmoLink,
+      venmoLink, 
     };
 
     emailjs
       .send(
-        "service_ms7uxqh",  // EmailJS Service ID
-        "template_3r3br8v",  // EmailJS Template ID
+        "service_knvroya", // EmailJS Service ID (Teresita's testing)
+        "template_a1k8oej", // EmailJS Template ID (Teresita's testing)
         templateParams,
-        "your_public_key"    // Replace with your actual EmailJS Public Key
+        "sEQDF6uWOSo_Ho_w2" // EmailJS Public Key (Teresita's testing)
       )
       .then((response) => {
         console.log("Email sent successfully:", response.status, response.text);
-        navigate("/checkout-venmo", { state: { venmoLink } });
+        
+        // Redirect to CheckoutVenmo.jsx after successful email submission
+        navigate("/cart/venmo", { state: { venmoLink } });
       })
       .catch((error) => {
         console.error("Error sending email:", error);
