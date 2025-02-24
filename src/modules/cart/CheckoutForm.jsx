@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = () => {
   const { items, cartTotal } = useCart();
+  const navigate = useNavigate(); 
+
   const [formData, setFormData] = useState({
     firstlast: "",
     email: "",
@@ -15,10 +17,8 @@ const CheckoutForm = () => {
     zip: "",
     comments: "",
     paymentMethod: "venmo",
+    venmoUsername: "",
   });
-
-  const navigate = useNavigate();
-  const venmoAccount = "Pamela-VanLonden";
 
   const handleChange = (e) => {
     setFormData({
@@ -27,44 +27,53 @@ const CheckoutForm = () => {
     });
   };
 
-  const generateVenmoLink = () => {
-    return `https://venmo.com/u/${venmoAccount}?txn=pay&amount=${cartTotal.toFixed(2)}`;
-  };
-
   const handleSendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
+
+    if (formData.paymentMethod === "venmo" && !formData.venmoUsername.trim()) {
+      alert("Please enter your Venmo username.");
+      return;
+    }
 
     const orderDetails = items
       .map((item) => `${item.name} (x${item.quantity}) - $${item.price.toFixed(2)}`)
       .join(", ");
-    
-    const venmoLink = generateVenmoLink();
-    
-    const templateParams = {
-      firstlast: formData.firstlast,
-      email: formData.email,
-      phone: formData.phone || "Not provided",
-      address: formData.address,
-      city: formData.city,
-      state: formData.state,
-      zip: formData.zip,
-      comments: formData.comments,
-      order: orderDetails,
-      total: `$${cartTotal.toFixed(2)}`,
-      paymentMethod: formData.paymentMethod,
-      venmoLink,
-    };
+
+    const venmoLink = `https://venmo.com/u/Pamela-VanLonden?txn=pay&amount=${encodeURIComponent(cartTotal.toFixed(2))}&note=Order%20Payment`;
+
+    const templateParams = Object.fromEntries(
+      Object.entries({
+        firstlast: formData.firstlast,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        state: formData.state,
+        zip: formData.zip,
+        comments: formData.comments,
+        order: orderDetails,
+        total: `$${cartTotal.toFixed(2)}`,
+        paymentMethod: formData.paymentMethod,
+        venmoUsername: formData.venmoUsername,
+        venmoLink, 
+      }).filter(([_, value]) => value && value.trim() !== "")
+    );
 
     emailjs
       .send(
-        "service_ms7uxqh",  // EmailJS Service ID
-        "template_3r3br8v",  // EmailJS Template ID
+        "service_knvroya", // EmailJS Service ID
+        "template_a1k8oej", // EmailJS Template ID
         templateParams,
-        "your_public_key"    // Replace with your actual EmailJS Public Key
+        "sEQDF6uWOSo_Ho_w2" // EmailJS Public Key
       )
       .then((response) => {
         console.log("Email sent successfully:", response.status, response.text);
-        navigate("/checkout-venmo", { state: { venmoLink } });
+        
+        if (formData.paymentMethod === "venmo") {
+          navigate("/cart/venmo", { state: { venmoLink } });
+        } else if (formData.paymentMethod === "zelle") {
+          navigate("/cart/zelle");
+        }
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -122,8 +131,16 @@ const CheckoutForm = () => {
           <label>Payment Method</label>
           <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange} required>
             <option value="venmo">Venmo</option>
+            <option value="zelle">Zelle</option>
           </select>
         </div>
+
+        {formData.paymentMethod === "venmo" && (
+          <div className="form-group">
+            <label>Venmo Username</label>
+            <input type="text" name="venmoUsername" value={formData.venmoUsername} onChange={handleChange} required />
+          </div>
+        )}
 
         <div className="form-group button-container">
           <button type="submit">Send Order Confirmation</button>
