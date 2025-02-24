@@ -17,6 +17,7 @@ const CheckoutForm = () => {
     zip: "",
     comments: "",
     paymentMethod: "venmo",
+    venmoUsername: "",
   });
 
   const handleChange = (e) => {
@@ -28,6 +29,11 @@ const CheckoutForm = () => {
 
   const handleSendEmail = (e) => {
     e.preventDefault(); 
+
+    if (formData.paymentMethod === "venmo" && !formData.venmoUsername.trim()) {
+      alert("Please enter your Venmo username.");
+      return;
+    }
 
     const orderDetails = items
       .map((item) => `${item.name} (x${item.quantity}) - $${item.price.toFixed(2)}`)
@@ -48,6 +54,7 @@ const CheckoutForm = () => {
         order: orderDetails,
         total: `$${cartTotal.toFixed(2)}`,
         paymentMethod: formData.paymentMethod,
+        venmoUsername: formData.venmoUsername,
         venmoLink, 
       }).filter(([_, value]) => value && value.trim() !== "")
     );
@@ -127,6 +134,13 @@ const CheckoutForm = () => {
             <option value="zelle">Zelle</option>
           </select>
         </div>
+
+        {formData.paymentMethod === "venmo" && (
+          <div className="form-group">
+            <label>Venmo Username</label>
+            <input type="text" name="venmoUsername" value={formData.venmoUsername} onChange={handleChange} required />
+          </div>
+        )}
 
         <div className="form-group button-container">
           <button type="submit">Send Order Confirmation</button>
