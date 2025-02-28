@@ -66,13 +66,13 @@ const Cart = () => {
 
       <div className="cart-summary">
         <h3>Subtotal ({totalItems} items): ${cartTotal.toFixed(2)}</h3>
-        <h2>Checkout</h2>
+        <h2>I'm happy with my order...</h2>
         {/* <p>Send payment using:</p> */}
-
+        <br />
         <nav id="purchaseLinks">
           {/* <Link to="venmo" className="purchaseLink"><i><IoLogoVenmo /></i>Venmo</Link>
           <Link to="zelle" className="purchaseLink"><i><SiZelle /></i>Zelle</Link> */}
-          <Link to="checkout-form" className="purchaseLink">Continue to Checkout</Link>
+          <Link to="checkout-form" className="purchaseLink">Next &rarr; Shipping & Payment Details</Link>
         </nav>
       </div>
     </div>

@@ -3,8 +3,11 @@ import React from "react";
 const CheckoutVenmo = () => {
   return (
     <div className="cart-container">
-      <h2>Thank you for your Order</h2>
-      <h3>Venmo</h3>
+      <h2>Thank you for your Purchase</h2>
+      <p>Please look for an email confirmation </p>
+      <p>and you will receive a Venmo request for payment. </p>
+
+      {/* <h3>Venmo</h3> */}
       {/* <figure>
         <img alt="QR Code" src="../assets/venmo-pay-pam.png" />
         <figcaption>Take a picture of this code with your phone to access

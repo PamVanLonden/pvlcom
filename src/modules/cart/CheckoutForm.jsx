@@ -61,10 +61,10 @@ const CheckoutForm = () => {
 
     emailjs
       .send(
-        "service_knvroya", // EmailJS Service ID
-        "template_a1k8oej", // EmailJS Template ID
+        "service_ms7uxqh", // EmailJS Service ID
+        "template_3r3br8v", // EmailJS Template ID
         templateParams,
-        "sEQDF6uWOSo_Ho_w2" // EmailJS Public Key
+        "Gi9WKk1EkoM7_PaVu" // EmailJS Public Key
       )
       .then((response) => {
         console.log("Email sent successfully:", response.status, response.text);
@@ -82,64 +82,64 @@ const CheckoutForm = () => {
 
   return (
     <div className="cart-container">
-      <h2>Complete Your Order</h2>
+      <h2>Shipping & Payment Details</h2>
       <p>Enter your details to receive a confirmation email.</p>
 
       <form onSubmit={handleSendEmail} className="checkout-form">
-        <div className="form-group">
+        <p className="form-group">
           <label>Full Name</label>
           <input type="text" name="firstlast" value={formData.firstlast} onChange={handleChange} required />
-        </div>
+        </p>
 
         <div className="form-row">
-          <div className="form-group">
+          <p className="form-group">
             <label>Email</label>
             <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-          </div>
-          <div className="form-group">
+          </p>
+          <p className="form-group">
             <label>Phone (optional)</label>
-            <input type="text" name="phone" value={formData.phone} onChange={handleChange} />
-          </div>
+            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} />
+          </p>
         </div>
 
-        <div className="form-group">
+        <p className="form-group">
           <label>Address</label>
           <input type="text" name="address" value={formData.address} onChange={handleChange} required />
-        </div>
+        </p>
 
         <div className="form-row">
-          <div className="form-group">
+          <p className="form-group">
             <label>City</label>
             <input type="text" name="city" value={formData.city} onChange={handleChange} required />
-          </div>
-          <div className="form-group">
+          </p>
+          <p className="form-group">
             <label>State</label>
             <input type="text" name="state" value={formData.state} onChange={handleChange} required />
-          </div>
-          <div className="form-group">
+          </p>
+          <p className="form-group">
             <label>ZIP Code</label>
-            <input type="text" name="zip" value={formData.zip} onChange={handleChange} required />
-          </div>
+            <input type="number" name="zip" value={formData.zip} onChange={handleChange} required />
+          </p>
         </div>
 
-        <div className="form-group">
+        <p className="form-group">
           <label>Comments</label>
           <textarea name="comments" value={formData.comments} onChange={handleChange} />
-        </div>
+        </p>
 
-        <div className="form-group">
+        <p className="form-group">
           <label>Payment Method</label>
           <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange} required>
             <option value="venmo">Venmo</option>
             <option value="zelle">Zelle</option>
           </select>
-        </div>
+        </p>
 
         {formData.paymentMethod === "venmo" && (
-          <div className="form-group">
+          <p className="form-group">
             <label>Venmo Username</label>
             <input type="text" name="venmoUsername" value={formData.venmoUsername} onChange={handleChange} required />
-          </div>
+          </p>
         )}
 
         <div className="form-group button-container">
