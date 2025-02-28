@@ -6,6 +6,7 @@
 /* Define Color Variables */
 :root {
     --purple: hsl(333, 71%, 21%);
+    --purpleT: hsla(333, 71%, 21%, 50%);
     --tan: hsl(38, 80%, 90%);
     --tanT: hsl(38, 80%, 90%, 90%);
     --blue: hsl(191, 33%, 49%);
@@ -13,12 +14,21 @@
     --mauve: hsl(336, 43%, 36%);
     --mauveT: hsl(336, 43%, 36%, 70%);
     --mauveO: hsl(336, 43%, 36%, 90%);
+    --greenGo: #28a745;
 }
-
 /* Global Styles for PHONE 
     @media query for DESKTOP are at the bottom.
     @media query for PRINT is at the bottom. 
 */
+html {
+    box-sizing:border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
     background: url(assets/pvl-crow-in-the-grass-2-1200.jpg);
     background-repeat:no-repeat;
@@ -120,6 +130,9 @@ h1 {
     font-weight: 400;
     font-style: normal;
 }
+.homeOnly {
+    text-align:left;
+}
 h3 {text-align:right;}
 /* Fix gallery centering */
 .gallery {
@@ -134,7 +147,12 @@ h3 {text-align:right;}
     width: 270px;
 }
 
+
 /* Fix text color in gallery captions */
+.loading {
+    margin:0 auto; 
+     
+}
 .gallery figcaption,
 .gallery figcaption strong {
     line-height:1.2;
@@ -147,6 +165,10 @@ h3 {text-align:right;}
     width: 100%;
     border-radius: 10px;
     border:10px solid var(--purple);
+}
+.gallery img:hover {
+    box-shadow: 1px 0 15px 5px var(--purpleT);
+    cursor:zoom-in;
 }
 
 /* MODAL */
@@ -224,15 +246,15 @@ button:hover,
 /* Checkout Form */
 
 .cart-container {
-    max-width: 800px;
+    max-width: 90%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2%;
   }
   
   .form-row {
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 2%;
+    margin-bottom: 2%;
   }
   
   .form-group {
@@ -243,17 +265,22 @@ button:hover,
   
   label {
     font-weight: bold;
-    margin-bottom: 5px;
+    text-align:left;
   }
   
   input,
-  textarea {
+  textarea, 
+  select {
     padding: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    width: 100%;
+    border: 1px solid var(--mauve);
+    font-size: 105%;
+    width: 96%;
+    color:var(--mauve);
+    background-color: white;
+    font-family:inherit;
   }
-  
+ 
+
   textarea {
     resize: none;
     height: 80px;
