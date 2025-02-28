@@ -12,8 +12,8 @@ const ImageGallery = () => {
     const [isOpen, setIsOpen] = useState(false);            // Modal
     const [selectedItem, setSelectedItem] = useState(null); // To track selected image
    
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <p className="loading">Loading... Scroll to see more available paintings... </p>;
+    if (error)   return <p className="loading">Error: {error}</p>;
 
     const handleAddToCart = (item, imageSrc) => {
         
@@ -70,13 +70,9 @@ const ImageGallery = () => {
                         <figcaption>
                             <strong>{item.Title || "Untitled"}</strong> 
                             <br />{item.Description.trim() || "No description available."}
-                            <br />Price: ${item.Price || "0.00"}
+                            <br />Price: ${item.Price || "NFS"}
                             <br />
-                            {/* Buttons Section */}
-                            <div className="button-section">
-                                {/* Add to Cart Button */}
-                                <button className="add-to-cart-btn" onClick={() => handleAddToCart(item)}>Add to Cart</button>
-                            </div>
+                            
                         </figcaption>
                     </figure>
                 );
