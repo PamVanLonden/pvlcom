@@ -39,8 +39,6 @@ const CheckoutForm = () => {
       .map((item) => `${item.name} (x${item.quantity}) - $${item.price.toFixed(2)}`)
       .join(", ");
 
-    const venmoLink = `https://venmo.com/u/Pamela-VanLonden?txn=pay&amount=${encodeURIComponent(cartTotal.toFixed(2))}&note=Order%20Payment`;
-
     const templateParams = Object.fromEntries(
       Object.entries({
         firstlast: formData.firstlast,
@@ -54,8 +52,7 @@ const CheckoutForm = () => {
         order: orderDetails,
         total: `$${cartTotal.toFixed(2)}`,
         paymentMethod: formData.paymentMethod,
-        venmoUsername: formData.venmoUsername,
-        venmoLink, 
+        venmoUsername: formData.venmoUsername
       }).filter(([_, value]) => value && value.trim() !== "")
     );
 
@@ -70,7 +67,7 @@ const CheckoutForm = () => {
         console.log("Email sent successfully:", response.status, response.text);
         
         if (formData.paymentMethod === "venmo") {
-          navigate("/cart/venmo", { state: { venmoLink } });
+          navigate("/cart/venmo");
         } else if (formData.paymentMethod === "zelle") {
           navigate("/cart/zelle");
         }
