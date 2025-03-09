@@ -125,7 +125,7 @@ h1, h2, h3, h4, h5 {
     padding:0;
 }
 
-h1 {
+h1, h2, h3 {
     font-family: 'Fredericka the Great', serif;
     font-weight: 400;
     font-style: normal;
@@ -295,7 +295,50 @@ button:hover,
     justify-content: center;
     margin-top: 20px;
   }
-  
+
+
+/* Pages */
+
+
+.page-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2%;
+  }
+
+.page-container a:hover {
+    color: var(--mauveT); 
+}
+
+.page-container {
+    width: 84%; 
+    margin: 0; 
+    text-align: left;
+    border-radius: 10px;
+    border:5px solid var(--purple);
+    background-color:var(--tan);
+    color:var(--blue);
+}
+.page-container table {width:100%; border-collapse:collapse;}
+.page tr td {border:1px solid var(--blue)}
+
+.page-container figure {width:50%;}
+.page-container figure img {width:100%;}
+
+.page-container h3 {
+    text-align: left;
+}
+
+.canvas-logo {
+    width: 50px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
   
 
 /* SHOPPING CART */
@@ -327,6 +370,10 @@ button:hover,
     border:5px solid var(--purple);
     background-color:var(--tan);
     color:var(--blue);
+}
+
+.cart-container a:hover {
+    color: var(--mauveT); 
 }
 .cart-container table {width:100%; border-collapse:collapse;}
 .cart-container tr td {border:1px solid var(--blue)}
@@ -511,6 +558,10 @@ button:hover,
         font-size: 20px; 
     }
     .cart-container {
+        width: 40%;
+        margin-left:10%;
+    }
+    .page-container {
         width: 40%;
         margin-left:10%;
     }
