@@ -329,6 +329,21 @@ button:hover,
     text-align: left;
 }
 
+.exhibits-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    width: 48%;
+}
+
+.column p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
 .canvas-logo {
     width: 50px;
 }
