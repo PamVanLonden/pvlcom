@@ -6,6 +6,7 @@ import CartContext from "./modules/cart/CartProvider";
 import HomePage from "./modules/HomePage.jsx";
 import ContactPage from "./modules/ContactPage.jsx";
 import ExhibitsPage from "./modules/ExhibitsPage.jsx";  
+import CommissionsPage from "./modules/CommissionsPage.jsx"; 
 import Cart from "./modules/cart/Cart.jsx"; 
 import CheckoutVenmo from "./modules/cart/CheckoutVenmo.jsx"; 
 import CheckoutForm from "./modules/cart/CheckoutForm.jsx";  
@@ -47,6 +48,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/exhibits" element={<ExhibitsPage />} /> 
+            <Route path="/commissions" element={<CommissionsPage />} /> 
             <Route path="/cart" element={<Cart />} />
             <Route path="/cart/venmo" element={<CheckoutVenmo />} />
             <Route path="/cart/checkout-form" element={<CheckoutForm />} /> 
