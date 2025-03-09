@@ -119,21 +119,32 @@ text-decoration:underline;
  
 }
 /* Typography */
+p {max-width:800px; text-align:left;}
+ul {text-align:left;}
+li {margin-bottom:2%; line-height:1.1;}
 h1, h2, h3, h4, h5 {
     font-weight:900;
     margin:0;
     padding:0;
 }
 
-h1 {
+h1, h2, h3 {
     font-family: 'Fredericka the Great', serif;
     font-weight: 400;
     font-style: normal;
 }
-.homeOnly {
+h2 {
     text-align:left;
 }
 h3 {text-align:right;}
+
+/* DL List in 2 columns */
+dl {text-align:left;}
+.columns2 {
+    column-count:2;
+    column-gap: 5%;
+}
+
 /* Fix gallery centering */
 .gallery {
     display: flex;
@@ -147,11 +158,9 @@ h3 {text-align:right;}
     width: 270px;
 }
 
-
 /* Fix text color in gallery captions */
 .loading {
     margin:0 auto; 
-     
 }
 .gallery figcaption,
 .gallery figcaption strong {
@@ -169,6 +178,21 @@ h3 {text-align:right;}
 .gallery img:hover {
     box-shadow: 1px 0 15px 5px var(--purpleT);
     cursor:zoom-in;
+}
+#pubs .gallery {}
+#pubs .gallery figure {
+    border:2px solid; 
+    border-radius:5px;
+    width:400px;
+}   
+#pubs .gallery img {
+    border:0;
+    border-radius:5px 5px 0 0;
+    background-color:white;
+}
+#pubs .gallery figcaption {
+    padding:1%;
+
 }
 
 /* MODAL */
@@ -295,8 +319,107 @@ button:hover,
     justify-content: center;
     margin-top: 20px;
   }
-  
-  
+
+
+/* Pages */
+
+
+.page-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2%;
+  }
+
+.page-container a:hover {
+    color: var(--mauveT); 
+}
+
+.page-container {
+    width: 84%; 
+    margin: 0; 
+    text-align: left;
+    border-radius: 10px;
+    border:5px solid var(--purple);
+    background-color:var(--tan);
+    color:var(--blue);
+}
+.page-container table {width:100%; border-collapse:collapse;}
+.page tr td {border:1px solid var(--blue)}
+
+.page-container figure {width:50%;}
+.page-container figure img {width:100%;}
+
+.page-container h3 {
+    text-align: left;
+}
+
+.exhibits-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    width: 48%;
+}
+
+.column p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.canvas-logo {
+    width: 50px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+    padding: 0;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #777;
+}
 
 /* SHOPPING CART */
 
@@ -327,6 +450,10 @@ button:hover,
     border:5px solid var(--purple);
     background-color:var(--tan);
     color:var(--blue);
+}
+
+.cart-container a:hover {
+    color: var(--mauveT); 
 }
 .cart-container table {width:100%; border-collapse:collapse;}
 .cart-container tr td {border:1px solid var(--blue)}
@@ -493,6 +620,7 @@ button:hover,
 }
 
 
+
 /* Responsive Styles for DESKTOP  ---------------------------------------*/
 @media screen and (min-width: 900px) {
     body {
@@ -513,6 +641,10 @@ button:hover,
     .cart-container {
         width: 40%;
         margin-left:10%;
+    }
+
+    .columns2 {
+        padding-right:500px;
     }
 }
 

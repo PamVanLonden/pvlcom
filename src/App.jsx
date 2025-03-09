@@ -4,6 +4,12 @@ import { useCart } from "react-use-cart";
 
 import CartContext from "./modules/cart/CartProvider"; 
 import HomePage from "./modules/HomePage.jsx";
+import ContactPage from "./modules/ContactPage.jsx";
+import ExhibitsPage from "./modules/ExhibitsPage.jsx";  
+import PublicationsPage from "./modules/PublicationsPage.jsx";  
+import CommissionsPage from "./modules/CommissionsPage.jsx"; 
+import ResumePage from "./modules/ResumePage.jsx";
+import AboutPage from "./modules/AboutPage.jsx";
 import Cart from "./modules/cart/Cart.jsx"; 
 import CheckoutVenmo from "./modules/cart/CheckoutVenmo.jsx"; 
 import CheckoutForm from "./modules/cart/CheckoutForm.jsx";  
@@ -28,7 +34,8 @@ function App() {
         </header>
 
         <nav className="fancyButtons">
-          <i className="purchaseIcons"><IoLogoVenmo /> <SiZelle />  </i>
+          <i className="purchaseIcons"><IoLogoVenmo /> </i>
+          {/* <i> <SiZelle /> </i> */}
           {/* <Search csvUrl={csvUrl} /> */}
           <Link to="/">Home</Link>
           <Link to="/commissions">Commissions</Link>
@@ -43,6 +50,14 @@ function App() {
         <main>        
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} /> 
+            <Route path="/commissions" element={<CommissionsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/exhibits" element={<ExhibitsPage />} /> 
+            <Route path="/publications" element={<PublicationsPage />} /> 
+            <Route path="/resume" element={<ResumePage />} /> 
+            
+
             <Route path="/cart" element={<Cart />} />
             <Route path="/cart/venmo" element={<CheckoutVenmo />} />
             <Route path="/cart/checkout-form" element={<CheckoutForm />} /> 
