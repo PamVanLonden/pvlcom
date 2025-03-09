@@ -1,5 +1,4 @@
 import React from "react";
-import ModalImage from "react-modal-image";
 
 function CommissionsPage() {
     const images = [
