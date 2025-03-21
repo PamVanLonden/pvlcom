@@ -3,9 +3,10 @@ import React from 'react';
 function ExhibitsPage() {
     return (
         <>
-            <h2>Exhibits</h2>
-            <p>Solo and Group displays of my paintings:</p>
-
+        <h2>Exhibits</h2>
+        <p>Solo and Group displays of my paintings:</p>
+        
+        <article id="exhibits">
        <dl className="columns2">
         <dt>2025 Lost in Blue, Cannon Beach Gallery, Cannon Beach, Oregon;</dt>
         <dd>Two pieces accepted; one sold.</dd>
@@ -152,7 +153,7 @@ function ExhibitsPage() {
         <dt>1980 Freshman solo show, Theatre lobby, Western Oregon State College.</dt>
         <dd>Watercolors.</dd>
     </dl>
-
+    </article>
         </>
     );
 }

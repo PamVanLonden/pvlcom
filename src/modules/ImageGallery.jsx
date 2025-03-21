@@ -23,16 +23,39 @@ const ImageGallery = ({ searchQuery }) => {
         return title.includes(searchQuery.toLowerCase()) || description.includes(searchQuery.toLowerCase());
     });
 
+    // Clean title and description 
+    const cleanedPaintings = filteredPaintings.map(item => {
+        if (!item.Filename) return null;
+
+        let cleanFileName = item.Filename.trim().toLowerCase();
+        if (!cleanFileName.endsWith(".webp")) cleanFileName += ".webp";
+
+        const imageSrc = `/assets/${cleanFileName}`;
+        
+        // Account for special characters in params.
+        const cleanTitle = item.Title?.trim()
+            .replace(/^["*#]|["*#]$/g, "")  // Remove unwanted characters at the beginning and en
+            .replace(/\\"/g, "")
+            || "Untitled";
+
+        const cleanDescription = item.Description?.trim()
+            .replace(/^["'*#]|["'*#]$/g, "")
+            .replace(/\\"/g, "")
+            || "No description available.";
+
+        return { ...item, cleanTitle, cleanDescription, imageSrc };
+    }).filter(item => item !== null);
+
     const handleAddToCart = (item, imageSrc) => {
         addItem({
             id: item.id || Math.random(), 
-            name: item.Title || "Untitled",
+            name: item.cleanTitle || "Untitled",
             price: parseFloat(item.Price || 0),
             quantity: 1,
             imageSrc, 
         });
 
-        setNotification(`${item.Title || "Item"} added to cart!`);
+        setNotification(`${item.cleanTitle || "Item"} added to cart!`);
 
         setTimeout(() => setNotification(""), 3000);
     };
@@ -51,34 +74,25 @@ const ImageGallery = ({ searchQuery }) => {
         <div className="gallery">
             {notification && <div className="cart-notification">{notification}</div>}
 
-            {filteredPaintings.length > 0 ? (
-                filteredPaintings.map((item, index) => {
-                    if (!item.Filename) return null;
-
-                    let cleanFileName = item.Filename.trim().toLowerCase();
-                    if (!cleanFileName.endsWith(".webp")) cleanFileName += ".webp";
-
-                    const imageSrc = `/assets/${cleanFileName}`;
-                    
-                    return (
-                        <figure key={index} className="image-item">
-                            <img 
-                                src={imageSrc} 
-                                alt={item.Description.trim() || "A description is missing."}
-                                onError={(e) => e.target.src = '/assets/fallback.webp'} 
-                                onClick={() => handleImageClick(item)} 
-                                className="cursor-pointer"
-                            />
-                            
-                            <figcaption>
-                                <strong>{item.Title || "Untitled"}</strong> 
-                                <br />{item.Description.trim() || "No description available."}
-                                <br />Price: ${item.Price || "NFS"}
-                                <br />
-                            </figcaption>
-                        </figure>
-                    );
-                })
+            {cleanedPaintings.length > 0 ? (
+                cleanedPaintings.map((item, index) => (
+                    <figure key={index} className="image-item">
+                        <img 
+                            src={item.imageSrc} 
+                            alt={item.cleanDescription}
+                            onError={(e) => e.target.src = '/assets/fallback.webp'} 
+                            onClick={() => handleImageClick(item)} 
+                            className="cursor-pointer"
+                        />
+                        
+                        <figcaption>
+                            <strong>{item.cleanTitle}</strong> 
+                            <br />{item.cleanDescription}
+                            <br />Price: ${item.Price || "NFS"}
+                            <br />
+                        </figcaption>
+                    </figure>
+                ))
             ) : (
                 <p>No paintings found matching "{searchQuery}".</p>
             )}
@@ -88,17 +102,17 @@ const ImageGallery = ({ searchQuery }) => {
                     {notification && <div className="cart-notification">{notification}</div>}
 
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <h2>{selectedItem.Title || "Untitled"}</h2>
+                        <h2>{selectedItem.cleanTitle || "Untitled"}</h2>
                         <img 
-                            src={`/assets/${selectedItem.Filename.trim().toLowerCase()}`} 
-                            alt={selectedItem.Description || "Description missing"} 
+                            src={selectedItem.imageSrc} 
+                            alt={selectedItem.cleanDescription} 
                             className="modal-image"
                         />
                         <p>{selectedItem.Description || "No description available."}</p>
                         <p>Price: ${selectedItem.Price || "0.00"}</p>
                         <div className="button-section">
                             <button className="close-modal-btn" onClick={closeModal}>Close</button>
-                            <button className="add-to-cart-btn" onClick={() => handleAddToCart(selectedItem, `/assets/${selectedItem.Filename.trim().toLowerCase()}`)}>Add to Cart</button>
+                            <button className="add-to-cart-btn" onClick={() => handleAddToCart(selectedItem, selectedItem.imageSrc)}>Add to Cart</button>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Papa from "papaparse";
 
 const useFetchCSV = (url) => {
     const [data, setData] = useState([]);
@@ -14,19 +15,15 @@ const useFetchCSV = (url) => {
                 const text = await response.text();
                 console.log("Raw CSV Data:", text); // Debugging
 
-                const rows = text
-                    .split("\n")
-                    .map(row => row.split(",").map(cell => cell.trim())); // Trim spaces
-
-                const headers = rows[0].map(header => header.trim());
-                console.log("Headers:", headers); // Debugging
-
-                const formattedData = rows.slice(1).map(row =>
-                    Object.fromEntries(row.map((cell, i) => [headers[i], cell]))
-                );
-
-                console.log("Formatted Data:", formattedData); // Debugging
-                setData(formattedData);
+                // Use PapaParse to parse the CSV correctly
+                Papa.parse(text, {
+                    complete: (result) => {
+                        console.log("Parsed CSV Data:", result.data); // Debugging
+                        setData(result.data);
+                    },
+                    header: true, // This tells PapaParse that the first row contains column headers
+                    skipEmptyLines: true, // Skip empty lines
+                });
             } catch (err) {
                 setError(err.message);
             } finally {

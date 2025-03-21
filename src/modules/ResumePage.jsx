@@ -3,14 +3,14 @@ import { MdOutlineWork } from "react-icons/md";
 import { IoIosPrint } from "react-icons/io";
 import { FaUserGraduate } from "react-icons/fa6";
 import { RiUserCommunityFill } from "react-icons/ri";
-import { FaAward } from "react-icons/fa";
+import { FaAward, FaHammer } from "react-icons/fa";
 
 
 function ResumePage(){
     return (
         <>
           <h2 itemProp="name" className="tshadow light"> Artist and University Instructor </h2>
-<article id="about">
+    <article className="resume">
 
       {/* <aside className="alignright fiftyfive">
         <figure className="alignleft thirty ">
@@ -22,7 +22,7 @@ function ResumePage(){
           <span className="break" style="margin-bottom:3%;">I also capture my own dreams in oil, acrylic, and watercolor paint.</span>
         </p>
       </aside> */}
-
+ 
       <address  id="contact-details">  
           <p>Oregon State University<br />  
             <span itemProp="address">1148 Kelly Engineering Center</span>, 
@@ -41,7 +41,7 @@ function ResumePage(){
 
 
 
-   <article id="work"   >
+   <article id="work"   className="resume">
       <h2><i><MdOutlineWork /></i> Work Experience</h2>
       <dl>
         <dt itemProp="jobTitle" className="job"   itemScope   itemType="http://schema.org/Event/Job">
@@ -93,7 +93,7 @@ function ResumePage(){
      </dl>
 
 
-      <section className="reveal">
+      <section className="reveal resume">
         <p className="">More... </p>
         <div className="more">
           <dl>
@@ -138,7 +138,7 @@ function ResumePage(){
     </article>
 
     
-    <article id="education" >
+    <article id="education" className="resume">
       <h2><i><FaUserGraduate /></i> Education</h2>
       <dl>
         <dt><a href="http://www.wou.edu/graduate/instructional-design-certificate/" target="_blank">Master's Degree in Interdisciplinary Studies</a></dt>
@@ -158,7 +158,7 @@ function ResumePage(){
       <p className="clear"></p>
 
   </article>
- <article id="service" >
+ <article id="service" className="resume">
      <h2 className=""><i><RiUserCommunityFill /></i> Committees & Community</h2>
       <ul className="">
         <li>OSU College of Engineering, School of EECS Effective and Inclusive Teaching Practices Committee, 2022 to present.</li>
@@ -191,8 +191,8 @@ function ResumePage(){
     
     
  
-    <article id="skills"   itemScope   itemType="http://schema.org/ItemList"  >
-    <h2><i><FaAward /></i> Skills and Awards</h2>
+    <article id="skills"  className="resume"  itemScope   itemType="http://schema.org/ItemList"  >
+    <h2><i><FaHammer /></i> Skills </h2>
       <dl>
         <dt>Technologies</dt>
         <dd>MongoDB, Express, React, Node.js, CSS, HTML, JavaScript, PHP, MySQL, front-end development, and back-end development.</dd>
@@ -247,8 +247,8 @@ function ResumePage(){
         </tfoot>
       </table>
     */}
-      <dl id="awards">
-        <dt>Awards</dt>
+       <h2><i><FaAward /></i> Awards</h2>
+      <dl id="awards" className="resume">
         <dd>Society for Technical Communication&#8217;s Award of Achievement (1995) CSS Sales Assistant Manual.</dd>
         <dd>Society for Technical Communication&#8217;s Award of Merit (1996)  Rogue Wave Software DBTools.h++ brochure.</dd>
         <dd>Society for Technical Communication&#8217;s Award of Merit (1996)  Microsoft Case Studies brochure.</dd>

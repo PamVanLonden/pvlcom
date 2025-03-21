@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiOutlineSearch } from "react-icons/ai";
 import ImageGallery from './ImageGallery.jsx';
 
 function HomePage() {
@@ -10,14 +10,22 @@ function HomePage() {
             <h2 className="homeOnly"><i><AiFillHome /></i>Welcome to my Gallery</h2>
             
             {/* Search Bar */}
-            <input 
-                type="text" 
-                placeholder="Search paintings by title or description..." 
-                value={searchQuery} 
-                onChange={(e) => setSearchQuery(e.target.value)}
-                style={{ marginBottom: '10px', padding: '5px', width: '100%' }}
-            />
-
+            <p aria-live="polite">
+                    <label htmlFor="search">
+                    <i aria-hidden="true" className="search">
+                        <AiOutlineSearch />
+                    </i>
+                </label>
+                <input 
+                    id="search"
+                    type="text" 
+                    placeholder="Search paintings by title, size, or description..." 
+                    value={searchQuery} 
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    aria-label="Search paintings by title, size, or description"
+                    role="searchbox"
+                />
+            </p>
             <ImageGallery searchQuery={searchQuery} />
         </>
     );
