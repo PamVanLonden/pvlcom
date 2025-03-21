@@ -20,6 +20,21 @@
     <link rel="manifest" href="/manifest.json">
     
     <!-- <link rel="canonical" href=""> -->
+
+    <!-- Google Search Console Verification -->
+    <!-- Replace "your-verification-code" with the actual verification code from Google Search Console -->
+    <meta name="google-site-verification" content="your-verification-code" />
+
+    <!-- Google Analytics (GA4) -->
+    <!-- Replace "G-XXXXXXX" with the actual Google Analytics Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX'); // Replace with actual Measurement ID
+    </script>
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
