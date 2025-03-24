@@ -12,7 +12,7 @@ function CommissionsPage() {
         { src: "/assets/pvl-columbia-gorge-beacon-rock.jpg", caption: "Columbia River from Rooster Rock of Beacon Rock 2" },
         { src: "/assets/pvl-cgbrrr-40x30.jpg", caption: "Columbia River from Rooster Rock of Beacon Rock 1" },
         { src: "/assets/pvl-randy-heidrich-surfing.jpg", caption: "Thank you for the surf lesson" },
-        { src: "/assets/pvl-johnson-creek-7.jpg", caption: "Johnson Creek 7 by request" },
+        { src: "/assets/pvl-johnson-creek-7.webp", caption: "Johnson Creek 7 by request" },
         { src: "/assets/pvl-miller-family.jpg", caption: "Family portrait in Waldport" },
         { src: "/assets/pvl-crows-at-the-beach2.jpg", caption: "Crows at the Beach 2" },
         { src: "/assets/pvl-byebyebirdie.jpg", caption: "Bye Bye Birdie" },
