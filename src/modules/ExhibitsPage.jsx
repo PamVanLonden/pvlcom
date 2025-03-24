@@ -5,14 +5,14 @@ function ExhibitsPage() {
         <>
         <h2>Exhibits</h2>
         <p>Solo and Group displays of my paintings:</p>
-        <img src="./assets/tac-wordmark.png" alt="The Arts Center, Corvallis" />
+        <img src="../assets/tac-wordmark.png" alt="The Arts Center, Corvallis" />
         <article id="exhibits">
        <dl className="columns2">
            <dt>2025 The Arts Center, Corvallis ArtShop</dt>
            <dd>Ten small pieces in oil on canvas.</dd>
         <dt>2025 Lost in Blue, Cannon Beach Gallery, Cannon Beach, Oregon;</dt>
         <dd>Two pieces accepted; one sold.</dd>
-        <dt>2024 Show & Sell, The Arts Center, Corvallis, Oregon</dt>
+        <dt>2024 Show &amp; Sell, The Arts Center, Corvallis, Oregon</dt>
         <dd>40+ pieces for sale at this holiday fair</dd>
         <dt>2023-2024 Northside Open Studio Tour, Corvallis, Oregon</dt>
         <dd>13 watercolor pieces, and 5 oil pieces sold during this neighborhood sale at 17 locations.</dd>
