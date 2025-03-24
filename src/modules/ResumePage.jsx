@@ -10,9 +10,9 @@ function ResumePage(){
     return (
         <>
           <h2 itemProp="name" className="tshadow light"> Artist and University Instructor </h2>
-    <article className="resume">
+{/*     <article className="resume">
 
-      {/* <aside className="alignright fiftyfive">
+      <aside className="alignright fiftyfive">
         <figure className="alignleft thirty ">
           <img itemProp="image" className="circle boxshadow" src="http://web.engr.oregonstate.edu/~vanlondp/images/pam-vanlonden-2021-600.jpg" alt="Pam Van Londen, 2021" title="&copy; Van Londen 2021" />
           <figcaption className=" "> Pam Van Londen </figcaption>
@@ -21,7 +21,7 @@ function ResumePage(){
           Every day, I organize words, code, and media to inspire learners to fulfill their dreams. 
           <span className="break" style="margin-bottom:3%;">I also capture my own dreams in oil, acrylic, and watercolor paint.</span>
         </p>
-      </aside> */}
+      </aside>
  
       <address  id="contact-details">  
           <p>Oregon State University<br />  
@@ -37,7 +37,7 @@ function ResumePage(){
       </address>
     
       <p className="clear"></p>
-    </article>
+    </article> */}
 
 
 
