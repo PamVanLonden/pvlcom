@@ -1,12 +1,19 @@
 import React from 'react';
 
+const ads = [
+    { 
+        title: "The Arts Center Artshop, Corvallis", 
+        img: "/assets/tac-wordmark.png", 
+        link: "https://theartscenter.net/" 
+    },
+    
 function ExhibitsPage() {
     return (
         <>
         <h2>Exhibits</h2>
         <p>Solo and Group displays of my paintings:</p>
-        <img src="../assets/tac-wordmark.png" alt="The Arts Center, Corvallis" />
-        <article id="exhibits">
+            <a href="item.link" target="_blank"><img src={ads.img} alt={ads.title} className="float" /></a>    
+     <article id="exhibits">
        <dl className="columns2">
            <dt>2025 The Arts Center, Corvallis ArtShop</dt>
            <dd>Ten small pieces in oil on canvas.</dd>
