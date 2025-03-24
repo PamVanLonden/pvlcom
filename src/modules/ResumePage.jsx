@@ -10,37 +10,6 @@ function ResumePage(){
     return (
         <>
           <h2 itemProp="name" className="tshadow light"> Artist and University Instructor </h2>
-{/*     <article className="resume">
-
-      <aside className="alignright fiftyfive">
-        <figure className="alignleft thirty ">
-          <img itemProp="image" className="circle boxshadow" src="http://web.engr.oregonstate.edu/~vanlondp/images/pam-vanlonden-2021-600.jpg" alt="Pam Van Londen, 2021" title="&copy; Van Londen 2021" />
-          <figcaption className=" "> Pam Van Londen </figcaption>
-        </figure>
-        <p itemProp="description">
-          Every day, I organize words, code, and media to inspire learners to fulfill their dreams. 
-          <span className="break" style="margin-bottom:3%;">I also capture my own dreams in oil, acrylic, and watercolor paint.</span>
-        </p>
-      </aside>
- 
-      <address  id="contact-details">  
-          <p>Oregon State University<br />  
-            <span itemProp="address">1148 Kelly Engineering Center</span>, 
-            <span itemProp="addressLocality">Corvallis</span>, OR 97331 </p>
-            <p>
-              {/* <a itemProp="telephone">(541) 760-1449</a> (cellphone)  */}
-              </p>
-            <p><a itemProp="url" rel="me" href="http://web.engr.oregonstate.edu/~vanlondp/">Vitae</a>
-            </p> 
-        <p><i onClick={() => window.print()}  title="Opens the print dialog box."  style={{ cursor: "pointer" }} ><IoIosPrint /></i></p>  
-              
-      </address>
-    
-      <p className="clear"></p>
-    </article> */}
-
-
-
    <article id="work"   className="resume">
       <h2><i><MdOutlineWork /></i> Work Experience</h2>
       <dl>
