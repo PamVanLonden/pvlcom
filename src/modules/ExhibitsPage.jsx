@@ -5,7 +5,8 @@ const ads = [
         title: "The Arts Center Artshop, Corvallis", 
         img: "/assets/tac-wordmark.png", 
         link: "https://theartscenter.net/" 
-    },
+    }
+];
     
 function ExhibitsPage() {
     return (
