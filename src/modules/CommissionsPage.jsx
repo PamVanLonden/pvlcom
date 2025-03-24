@@ -4,7 +4,7 @@ function CommissionsPage() {
     const images = [
         { src: "/assets/pvl-columbia-gorge-crown-point-beacon-rock-2021-1240.jpg", caption: "Columbia River Crown Point Beacon Rock 3 2021" },
         { src: "/assets/pvl-marys-peak-11-dyptich-400.jpg", caption: "Commission of Mary’s Peak" },
-        { src: "/assets/pvl-nest-of-prosperity10.jpg", caption: "Nests of Prosperity 9 and 10" },
+        { src: "/assets/pvl-nest-of-prosperity-19.webp", caption: "Nests of Prosperity 19" },
         { src: "/assets/pvl-willamette-river-28-clem.jpg", caption: "Willamette River commission" },
         { src: "/assets/chefs-jubilie-2011-poster1.jpg", caption: "Radishes painting supports the Grace Center" },
         { src: "/assets/levien-13.2.jpg", caption: "Deeper into the Jungle" },
