@@ -12,11 +12,13 @@ function ExhibitsPage() {
         <>
         <h2>Exhibits</h2>
         <p>Solo and Group displays of my paintings:</p>
-            <a href="item.link" target="_blank"><img src={ads.img} alt={ads.title} className="float" /></a>    
+            <a href={ads.link} target="_blank">
+                <img src={ads.img} alt={ads.title} className="float" />
+            </a>    
      <article id="exhibits">
        <dl className="columns2">
-           <dt>2025 The Arts Center, Corvallis ArtShop</dt>
-           <dd>Ten small pieces in oil on canvas.</dd>
+         <dt>2025 The Arts Center, Corvallis ArtShop</dt>
+         <dd>Ten small pieces in oil on canvas.</dd>
         <dt>2025 Lost in Blue, Cannon Beach Gallery, Cannon Beach, Oregon;</dt>
         <dd>Two pieces accepted; one sold.</dd>
         <dt>2024 Show &amp; Sell, The Arts Center, Corvallis, Oregon</dt>
