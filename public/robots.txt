@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /legal
+Disallow: /cart
+Disallow: /cart/venmo
+Disallow: /cart/checkout-form
