@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useCart } from "react-use-cart"; 
 
 import { Analytics } from "@vercel/analytics/react"
+import { HelmetProvider, Helmet } from "react-helmet-async";
+
 
 import CartContext from "./modules/cart/CartProvider"; 
 import HomePage from "./modules/HomePage.jsx";
@@ -26,10 +28,12 @@ import { FaShoppingCart } from "react-icons/fa";
 import './App.css';
 
 function App() {
-  const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTyMseqbTrrpUYEXzyDZ0pyh2O4rKBNAClSCt5sEGcjsw-ZxMf-Zx77z2Nf-XIoyib4mz-0Z1-XBEun/pub?output=csv";
+  // const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTyMseqbTrrpUYEXzyDZ0pyh2O4rKBNAClSCt5sEGcjsw-ZxMf-Zx77z2Nf-XIoyib4mz-0Z1-XBEun/pub?output=csv";
 
   return (
+    <HelmetProvider>
     <Router>
+      <CanonicalLink />
       <CartContext> {/* Wrap the entire app to ensure `totalItems` updates */}
         <header>
           <h1><a href="/">Pam Van Londen</a></h1>
@@ -39,7 +43,6 @@ function App() {
         <nav className="fancyButtons">
           <i className="purchaseIcons"><IoLogoVenmo /> </i>
           {/* <i> <SiZelle /> </i> */}
-          {/* <Search csvUrl={csvUrl} /> */}
           <Link to="/">Home</Link>
           <Link to="/commissions">Commissions</Link>
           <Link to="/exhibits">Exhibits</Link>
@@ -81,6 +84,7 @@ function App() {
         </footer>
       </CartContext>
     </Router>
+    </HelmetProvider>
   );
 }
 
@@ -92,6 +96,17 @@ const CartLink = () => {
     <Link to="/cart" className="cart-icon">
       <FaShoppingCart /> View Cart ({totalItems})
     </Link>
+  );
+};
+
+const CanonicalLink = () => {
+  const location = useLocation();
+  const canonicalUrl = `https://yourdomain.com${location.pathname}`;
+
+  return (
+    <Helmet>
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
   );
 };
 

@@ -7,9 +7,10 @@
 :root {
     --purple: hsl(333, 71%, 21%);
     --purpleT: hsla(333, 71%, 21%, 50%);
+    --white: hsl(37, 67%, 98%);
     --tan: hsl(38, 80%, 90%);
     --tanT: hsl(38, 80%, 90%, 90%);
-    --blue: hsl(191, 33%, 49%);
+    --blue: hsl(191, 37%, 45%);
     --gold: hsl(39, 87%, 61%);
     --mauve: hsl(336, 43%, 36%);
     --mauveT: hsl(336, 43%, 36%, 70%);
@@ -95,16 +96,16 @@ main {
     padding: 2% 5%;
     text-align: center;
 }
-.float {float:left;}
+.float {float:right; width:50%;}
 
 /* search */
 input#search {
     padding:1.2%;
     border: 0;
     border-radius:5px;
-    width:300px;
-    margin:2% 0 2% 1%;
-    font-size:1.3em;
+    width:150px;
+    margin:0 0 0 1%;
+    font-size:1.2em;
 }
 i.search {font-size:2em;}
 
@@ -114,6 +115,7 @@ i.search {font-size:2em;}
     color:var(--blue);
     padding:3%;
     border-radius:5px; 
+    margin-bottom:2%;
 }
 /* Footer */
 footer {
@@ -153,6 +155,7 @@ h1, h2, h3 {
 h2, h3 {
     text-align:left;
 }
+h2 { color:var(--white);}
 
 /* DL List in 2 columns */
 dl {text-align:left; color:var(--blue)}
@@ -189,6 +192,7 @@ dt a:hover, dd a:hover {
 .gallery figcaption strong {
     font-weight:900;
     font-size:1.3em;
+    color:var(--tan)
 }
 .gallery img {
     width: 100%;
@@ -199,7 +203,7 @@ dt a:hover, dd a:hover {
     box-shadow: 1px 0 15px 5px var(--purpleT);
     cursor:zoom-in;
 }
-#pubs .gallery {}
+
 #pubs .gallery figure {
     border:2px solid; 
     border-radius:5px;
@@ -233,12 +237,18 @@ dt a:hover, dd a:hover {
     width: 100%;
     text-align: center;
     border-radius: 8px;
+    max-height: calc(100vh - 40px); /* Prevents overflow but allows growth */
+    
 }
 .modal-image {
-    max-width: 100%;
+    max-height: 60vh; /* Ensures the image never exceeds 60% of the viewport height */
+    height: auto;
+    object-fit: contain; /* Keeps aspect ratio and fits inside the modal */
     margin-bottom: 0;
+    border: 0.8vw solid var(--purple)!important;
+    padding:0;
 }
-
+img.modal-image {width:auto!important;}
 
 /* Add to cart button */
 button,
@@ -565,6 +575,9 @@ font-size:150%;
         column-count:3;
     }
     .gallery figure {width:330px;}
+
+    /* search */
+    input#search {width:400px;}
 }
 
 /* PRINT STYLES */
