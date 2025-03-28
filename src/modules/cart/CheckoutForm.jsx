@@ -78,9 +78,9 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div >
+    <div className="cart-container">
       <h2>Shipping & Payment Details</h2>
-      <article className="cart-container">
+      <article >
       <p>Enter your details to receive a confirmation email.</p>
 
       <form onSubmit={handleSendEmail} className="checkout-form">

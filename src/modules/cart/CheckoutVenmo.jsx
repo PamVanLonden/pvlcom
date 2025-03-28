@@ -2,9 +2,9 @@ import React from "react";
 
 const CheckoutVenmo = () => {
   return (
-    <div >
+    <div className="cart-container">
       <h2>Thank you for your Purchase</h2>
-      <article className="cart-container">
+      <article>
       <p>Please look for an email confirmation </p>
       <p>and you will receive a Venmo request for payment. </p>
 
