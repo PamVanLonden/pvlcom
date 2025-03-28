@@ -1,5 +1,6 @@
 # Pam Van Londen Website Migration
-Live website: https://pamvanlonden.onrender.com/
+Live website: https://pamvanlonden.vercel.app/
+previous site at https://pamvanlonden.onrender.com/
 
 ** Update Feb 2 All files were updated. 
 ** Some files in root of the main branch can't be deleted (they do not belong there). 
@@ -10,7 +11,7 @@ Live website: https://pamvanlonden.onrender.com/
 
 ## Overview
 
-This project is migrating [Pam Van Londen's website](https://pamvanlonden.com/) to **React.js** and hosting it on **Render.com**. The goal is to improve maintainability, scalability, and user experience while keeping the site's design as close to the original as possible.
+This project is migrating [Pam Van Londen's website](https://pamvanlonden.com/) to **React.js** and hosting it on **Vercel.com**. The goal is to improve maintainability, scalability, and user experience while keeping the site's design as close to the original as possible.
 
 - **Main branch (production-ready code):** [GitHub Main Branch](https://github.com/PamVanLonden/pvlcom/tree/main)
 - **Website migration branch:** [GitHub Migration Branch](https://github.com/PamVanLonden/pvlcom/tree/2024-php-site)
@@ -36,7 +37,7 @@ To maintain high-quality code, all changes must go through a **code review proce
 - The **Google Sheets API** is used to fetch structured data and display it on the React website.
 
 ### 3. Deployment Plan
-- The website will be deployed to **Render.com** for hosting.
+- The website will be deployed to **Vercel** for hosting.
 - A smooth transition will be ensured by testing all components and data integrations before the official launch.
 
 ## Communication & Collaboration
