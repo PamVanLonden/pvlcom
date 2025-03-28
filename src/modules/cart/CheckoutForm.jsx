@@ -78,8 +78,9 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className="cart-container">
+    <div >
       <h2>Shipping & Payment Details</h2>
+      <article className="cart-container">
       <p>Enter your details to receive a confirmation email.</p>
 
       <form onSubmit={handleSendEmail} className="checkout-form">
@@ -143,6 +144,8 @@ const CheckoutForm = () => {
           <button type="submit">Send Order Confirmation</button>
         </div>
       </form>
+
+      </article>
     </div>
   );
 };
