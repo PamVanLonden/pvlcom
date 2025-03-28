@@ -7,10 +7,8 @@ function HomePage() {
 
     return (
         <>
-            <h2 className="homeOnly"><i><AiFillHome /></i>Welcome to my Gallery</h2>
-            
             {/* Search Bar */}
-            <p aria-live="polite">
+            <p aria-live="polite"  className="float fifty">
                     <label htmlFor="search">
                     <i aria-hidden="true" className="search">
                         <AiOutlineSearch />
@@ -19,13 +17,17 @@ function HomePage() {
                 <input 
                     id="search"
                     type="text" 
-                    placeholder="Search paintings by title, size, or description..." 
+                    placeholder="Search by title, size, or description" 
                     value={searchQuery} 
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    aria-label="Search paintings by title, size, or description"
+                    aria-label="Search by title, size, or description"
                     role="searchbox"
                 />
             </p>
+            <h2 className="homeOnly"><i><AiFillHome /></i>Welcome to my Gallery</h2>
+            <p>Original abstract landscape oil, acrylic, and watercolor paintings, 
+                by fine artist and educator, Pam Van Londen, Corvallis, Oregon.</p>
+            
             <ImageGallery searchQuery={searchQuery} />
         </>
     );

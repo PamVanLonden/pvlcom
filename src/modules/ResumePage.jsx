@@ -11,7 +11,7 @@ function ResumePage(){
         <>
           <h2 itemProp="name" className="tshadow light"> Artist and University Instructor </h2>
    <article id="work"   className="resume">
-      <h2><i><MdOutlineWork /></i> Work Experience</h2>
+      <h3><i><MdOutlineWork /></i> Work Experience</h3>
       <dl>
         <dt itemProp="jobTitle" className="job"   itemScope   itemType="http://schema.org/Event/Job">
           <a href="https://eecs.oregonstate.edu/" target="_blank">
@@ -108,7 +108,7 @@ function ResumePage(){
 
     
     <article id="education" className="resume">
-      <h2><i><FaUserGraduate /></i> Education</h2>
+      <h3><i><FaUserGraduate /></i> Education</h3>
       <dl>
         <dt><a href="http://www.wou.edu/graduate/instructional-design-certificate/" target="_blank">Master's Degree in Interdisciplinary Studies</a></dt>
         <dd>Western Oregon State College (now called Western Oregon University, WOU), 1988. Emphasis in Educational Communication Technology, Computer Science, and Art Education. Scholarship recipient. 
@@ -128,7 +128,7 @@ function ResumePage(){
 
   </article>
  <article id="service" className="resume">
-     <h2 className=""><i><RiUserCommunityFill /></i> Committees & Community</h2>
+     <h3 className=""><i><RiUserCommunityFill /></i> Committees & Community</h3>
       <ul className="">
         <li>OSU College of Engineering, School of EECS Effective and Inclusive Teaching Practices Committee, 2022 to present.</li>
         <li>OSU Honor's College Task Force, 2021</li>
@@ -161,7 +161,7 @@ function ResumePage(){
     
  
     <article id="skills"  className="resume"  itemScope   itemType="http://schema.org/ItemList"  >
-    <h2><i><FaHammer /></i> Skills </h2>
+    <h3><i><FaHammer /></i> Skills </h3>
       <dl>
         <dt>Technologies</dt>
         <dd>MongoDB, Express, React, Node.js, CSS, HTML, JavaScript, PHP, MySQL, front-end development, and back-end development.</dd>
@@ -178,7 +178,7 @@ function ResumePage(){
 
 {/*  
       <table id="skillstable">
-        <caption><h2><i className="material-icons">build</i> Creative &amp; Technical Skills</h2></caption>
+        <caption><h3><i className="material-icons">build</i> Creative &amp; Technical Skills</h3></caption>
         <tbody>
           <tr>
             <th className='no-sort skill' itemProp="itemListElement">Marketing Consultant</th>
@@ -216,7 +216,7 @@ function ResumePage(){
         </tfoot>
       </table>
     */}
-       <h2><i><FaAward /></i> Awards</h2>
+       <h3><i><FaAward /></i> Awards</h3>
       <dl id="awards" className="resume">
         <dd>Society for Technical Communication&#8217;s Award of Achievement (1995) CSS Sales Assistant Manual.</dd>
         <dd>Society for Technical Communication&#8217;s Award of Merit (1996)  Rogue Wave Software DBTools.h++ brochure.</dd>

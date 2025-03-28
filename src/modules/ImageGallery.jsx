@@ -87,7 +87,8 @@ const ImageGallery = ({ searchQuery }) => {
                         
                         <figcaption>
                             <strong>{item.cleanTitle}</strong> 
-                            <br />{item.cleanDescription}
+                            <br />{item.cleanDescription}. 
+                            Corvallis, Oregon
                             <br />Price: ${item.Price || "NFS"}
                             <br />
                         </figcaption>
