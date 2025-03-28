@@ -87,6 +87,8 @@ function ExhibitsPage() {
         <dd>Juried into 90+ collections by peer artisans.</dd>
         <dt>2009-2011 Daily Abstract International Painters</dt>
         <dd>Juried online exhibit.</dd>
+        <dt><a href="https://gazettetimes.com/entertainment/artist-spotlight-pam-van-londen/article_d2208d90-a942-11de-9d04-001cc4c002e0.html" target="_blank">Gazette Times Featured Artist</a></dt>
+           <dd>2009</dd>
         <dt>2009 Sam&#8217;s Station</dt>
         <dd>Large works.</dd>
         <dt>2009 La Sells Stewart Center Guistina Gallery, OSU</dt>
