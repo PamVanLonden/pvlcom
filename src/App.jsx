@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useCart } from "react-use-cart"; 
 
+import { Analytics } from "@vercel/analytics/react"
+
 import CartContext from "./modules/cart/CartProvider"; 
 import HomePage from "./modules/HomePage.jsx";
 import ContactPage from "./modules/ContactPage.jsx";
@@ -71,6 +73,7 @@ function App() {
             <Link to="/legal">Legal</Link>
             <Link to="/social">Social</Link>
           </nav>
+          <Analytics/>
         </footer>
       </CartContext>
     </Router>
