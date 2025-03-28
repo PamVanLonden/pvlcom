@@ -41,6 +41,7 @@ const Cart = () => {
         </nav>
 
         <table className="cart-items">
+          <tbody>
           {items.map((item) => (
             <tr key={item.id} className="cart-item">
               <td>
@@ -62,6 +63,7 @@ const Cart = () => {
               </td>
             </tr>
           ))}
+          </tbody>
         </table>
         
         <div className="cart-summary">
@@ -74,8 +76,8 @@ const Cart = () => {
             <Link to="zelle" className="purchaseLink"><i><SiZelle /></i>Zelle</Link> */}
             <Link to="checkout-form" className="purchaseLink">Next &rarr; Shipping & Payment Details</Link>
           </nav>
-        
         </div>
+        
       </article>
     </div>
   );
