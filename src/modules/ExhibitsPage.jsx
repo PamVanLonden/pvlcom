@@ -20,7 +20,7 @@ function ExhibitsPage() {
        <dl className="columns2">
          <dt>2025 The Arts Center, Corvallis ArtShop</dt>
          <dd>Ten small pieces in oil on canvas.</dd>
-        <dt>2025 Lost in Blue, Cannon Beach Gallery, Cannon Beach, Oregon;</dt>
+        <dt><a href="https://www.discoverourcoast.com/coast-weekend/arts/cannon-beach-gallery-gets-lost-in-blue/article_de26b9d0-df68-11ef-b3dc-53f64321a748.html" target="_blank">2025 Lost in Blue</a>, Cannon Beach Gallery, Cannon Beach, Oregon;</dt>
         <dd>Two pieces accepted; one sold.</dd>
         <dt>2024 Show &amp; Sell, The Arts Center, Corvallis, Oregon</dt>
         <dd>40+ pieces for sale at this holiday fair</dd>
