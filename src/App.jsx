@@ -101,7 +101,7 @@ const CartLink = () => {
 
 const CanonicalLink = () => {
   const location = useLocation();
-  const canonicalUrl = `https://yourdomain.com${location.pathname}`;
+  const canonicalUrl = `https://pamvanlonden.vercel.app${location.pathname}`;
 
   return (
     <Helmet>

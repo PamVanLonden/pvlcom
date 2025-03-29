@@ -23,6 +23,7 @@
 */
 html {
     box-sizing:border-box;
+    width:100%;
 }
 *,
 *::before,
@@ -57,7 +58,8 @@ a {
 a:hover {
     color: var(--tan); 
 }
-
+article a {color:var(--blue)}
+article a:hover {color:var(--purple)}
 /* Header Styling */
 header {
     width: 100%;
@@ -110,12 +112,13 @@ input#search {
 i.search {font-size:2em;}
 
 /* articles */
-#exhibits, .resume, #about {
+article {
     background-color:var(--tan);
+    border:5px solid var(--purple);
     color:var(--blue);
     padding:3%;
     border-radius:5px; 
-    margin-bottom:2%;
+    margin-bottom:4%;
 }
 /* Footer */
 footer {
@@ -300,7 +303,7 @@ button:hover,
 /* Checkout Form */
 
 .cart-container {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2%;
   }
@@ -336,7 +339,6 @@ button:hover,
  
 
   textarea {
-    resize: none;
     height: 80px;
   }
   
@@ -355,7 +357,7 @@ button:hover,
 
 
 .page-container {
-    max-width: 90%;
+    max-width: 99%;
     margin: 0 auto;
     padding: 2%;
   }
@@ -365,7 +367,7 @@ button:hover,
 }
 
 .page-container {
-    width: 84%; 
+    width: 99%; 
     margin: 0; 
     text-align: left;
     border-radius: 10px;
@@ -473,13 +475,9 @@ button:hover,
   }
 
 .cart-container {
-    width: 84%; 
+    width: 99%; 
     margin: 0; 
     text-align: center;
-    border-radius: 10px;
-    border:5px solid var(--purple);
-    background-color:var(--tan);
-    color:var(--blue);
 }
 
 .cart-container a:hover {
@@ -498,30 +496,32 @@ button:hover,
 .cart-container figure {width:50%;}
 .cart-container figure img {width:100%;}
 .cart-actions {
-    margin: 2% 0 0 50%;
+    margin: 2% 0 0 0%;
   }
 
 .cart-actions a {
 margin: 3%;
-text-align:right;
+text-align:center;
 font-size: 18px;
 color:var(--blue);
 font-weight:900;
 }
-.cart-items h3 {text-align:center;}
-
+.cart-items h3, 
+.cart-price {text-align:center;}
+ 
 .cart-item-thumbnail {
-width:200px;
+width:300px;
 }
 
 .cart-summary {
 margin-bottom: 100px;
-
-}
-.cart-summary li {
-list-style:none;
+text-align:right;
 font-size:150%;
 }
+.cart-summary p {
+
+}
+
   
   /* Buttons Section - Aligns Add to Cart & View Cart */
 .button-section {
@@ -553,6 +553,9 @@ font-size:150%;
 @media screen and (min-width: 900px) {
     body {
         background-size: 1100px auto;
+        margin:0 auto;
+        width:1500px;
+        object-fit: inherit;
     }
     header {
         margin-left:25%;
@@ -567,8 +570,8 @@ font-size:150%;
         font-size: 20px; 
     }
     .cart-container {
-        width: 40%;
-        margin-left:10%;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .columns2 {
