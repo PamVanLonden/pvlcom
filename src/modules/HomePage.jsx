@@ -26,7 +26,8 @@ function HomePage() {
             </p>
             <h2 className="homeOnly"><i><AiFillHome /></i>Welcome to my Gallery</h2>
             <p>Original abstract landscape oil, acrylic, and watercolor paintings, 
-                by fine artist and educator, Pam Van Londen, Corvallis, Oregon.</p>
+                by fine artist and educator, Pam Van Londen, Corvallis, Oregon. 
+                Purchase paintings without fees using Venmo or Zelle.</p>
             
             <ImageGallery searchQuery={searchQuery} />
         </>
