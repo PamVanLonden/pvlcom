@@ -44,10 +44,10 @@ function App() {
           <i className="purchaseIcons"><IoLogoVenmo /> </i>
           {/* <i> <SiZelle /> </i> */}
           <Link to="/">Home</Link>
+          <Link to="/social">Social</Link>
           <Link to="/commissions">Commissions</Link>
           <Link to="/exhibits">Exhibits</Link>
           <Link to="/publications">Publications</Link>
-          <Link to="/resume">Résumé</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
           <CartLink /> {/* CartLink component ensures `totalItems` updates */}
@@ -56,17 +56,16 @@ function App() {
         <main>        
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} /> 
+            <Route path="/social" element={<SocialPage />} /> 
             <Route path="/commissions" element={<CommissionsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
             <Route path="/exhibits" element={<ExhibitsPage />} /> 
             <Route path="/publications" element={<PublicationsPage />} /> 
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} /> 
+
             <Route path="/resume" element={<ResumePage />} /> 
-
             {/* <Route path="/legal" element={<LegalPage />} />  */}
-            <Route path="/social" element={<SocialPage />} /> 
             
-
             <Route path="/cart" element={<Cart />} />
             <Route path="/cart/venmo" element={<CheckoutVenmo />} />
             <Route path="/cart/checkout-form" element={<CheckoutForm />} /> 
@@ -78,7 +77,7 @@ function App() {
            <CartLink /> {/* CartLink component ensures `totalItems` updates */}
             &copy; {new Date().getFullYear()} Pam Van Londen
             <Link to="/legal">Legal</Link>
-            <Link to="/social">Social</Link>
+            <Link to="/resume">Résumé</Link>
           </nav>
           <Analytics/>
         </footer>
