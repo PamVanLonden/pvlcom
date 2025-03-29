@@ -31,7 +31,7 @@ const Cart = () => {
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
-      <article>
+      <article >
         <nav className="cart-actions">
           <Link to="/">Continue Shopping</Link>
           <Link to="#" className="clear-cart-link" onClick={(e) => {
@@ -67,10 +67,8 @@ const Cart = () => {
         </table>
         
         <div className="cart-summary">
-          <h3>Subtotal ({totalItems} items): ${cartTotal.toFixed(2)}</h3>
-          <p><strong>I'm happy with my order...</strong></p>
-          {/* <p>Send payment using:</p> */}
-          <br /><br />
+          <h4>Subtotal ({totalItems} items): ${cartTotal.toFixed(2)}</h4>
+          {/* <p>I'm happy with my order...</p> */}
           <nav id="purchaseLinks">
             {/* <Link to="venmo" className="purchaseLink"><i><IoLogoVenmo /></i>Venmo</Link>
             <Link to="zelle" className="purchaseLink"><i><SiZelle /></i>Zelle</Link> */}
