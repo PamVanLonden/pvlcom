@@ -19,7 +19,7 @@ import CheckoutVenmo from "./modules/cart/CheckoutVenmo.jsx";
 import CheckoutForm from "./modules/cart/CheckoutForm.jsx";  
 import Slogan from "./modules/Slogan.jsx";
 // import LegalPage from './modules/LegalPage.jsx';
-// import SocialPage from './modules/SocialPage.jsx';
+import SocialPage from './modules/SocialPage.jsx';
 
 import { IoLogoVenmo } from "react-icons/io5";
 import { SiCashapp, SiZelle } from "react-icons/si";
@@ -64,7 +64,7 @@ function App() {
             <Route path="/resume" element={<ResumePage />} /> 
 
             {/* <Route path="/legal" element={<LegalPage />} />  */}
-            {/* <Route path="/social" element={<SocialPage />} />  */}
+            <Route path="/social" element={<SocialPage />} /> 
             
 
             <Route path="/cart" element={<Cart />} />
