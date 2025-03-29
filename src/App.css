@@ -95,7 +95,7 @@ main {
     margin: 0 auto;
     width: 100%;
     background-color: var(--blue);
-    padding: 2% 5%;
+    padding: 2% 2% 2% 5%;
     text-align: center;
 }
 .float {float:right; width:50%;}
@@ -118,7 +118,7 @@ article {
     color:var(--blue);
     padding:3%;
     border-radius:5px; 
-    margin-bottom:4%;
+    margin:0 8% 4% 0;
 }
 /* Footer */
 footer {
@@ -181,7 +181,7 @@ dt a:hover, dd a:hover {
 
 /* Ensure images scale properly */
 .gallery figure {
-    width: 330px;
+    width: 350px;
 }
 
 /* Fix text color in gallery captions */
@@ -518,9 +518,6 @@ margin-bottom: 100px;
 text-align:right;
 font-size:150%;
 }
-.cart-summary p {
-
-}
 
   
   /* Buttons Section - Aligns Add to Cart & View Cart */
@@ -532,29 +529,54 @@ font-size:150%;
     margin-top: 10px;
 }
 
-
-/* Responsive Styles for TABLET  ---------------------------------------*/
-@media screen and (min-width: 700px) {
+/* Responsive Styles for Surface Duo  ---------------------------------------*/
+@media screen and (min-width: 540px) {
     body {
         background-size: 900px auto;
         background-position: center -80px;  
     }
+    header { margin-left:5%;}
+
+    .columns2 {
+        column-count:2;
+        column-gap: 4%;
+    }
+    .gallery {
+        margin-left:-8%;
+    }
+    .gallery figure {
+        width:180px;
+    }
+    .gallery img {
+        border-radius: 6px;
+        border:6px solid var(--purple);
+    }
+    .gallery figcaption {font-size:.8em;}
+}
+
+/* Responsive Styles for TABLET  ---------------------------------------*/
+@media screen and (min-width: 768px) {
+    /* body {
+        background-size: 900px auto;
+        background-position: center -80px;  
+    }
     header { margin-left:10%;}
+
     .columns2 {
         column-count:2;
         column-gap: 6%;
-    }
-    .gallery figure {width:300px;}
+    } */
+    .gallery figure {width:290px;}
 }
 
 
 
 /* Responsive Styles for DESKTOP  ---------------------------------------*/
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1024px) {
     body {
         background-size: 1100px auto;
         margin:0 auto;
-        width:1500px;
+        width:1024px;
         object-fit: inherit;
     }
     header {
@@ -577,10 +599,10 @@ font-size:150%;
     .columns2 {
         column-count:3;
     }
-    .gallery figure {width:330px;}
+    .gallery figure {width:380px;}
 
     /* search */
-    input#search {width:400px;}
+    input#search {width:350px;}
 }
 
 /* PRINT STYLES */
