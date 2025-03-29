@@ -605,6 +605,13 @@ font-size:150%;
     input#search {width:350px;}
 }
 
+/* Responsive Styles for Retina display  ---------------------------------------*/
+@media screen and (min-width: 1240px) {
+    body {
+        width:1440px;
+    }
+    .gallery figure {width:270px;}
+}
 /* PRINT STYLES */
 
 @media print { 
