@@ -24,7 +24,7 @@ function ExhibitsPage() {
         <dd>Two pieces accepted; one sold.</dd>
         <dt>2024 Show &amp; Sell, The Arts Center, Corvallis, Oregon</dt>
         <dd>40+ pieces for sale at this holiday fair</dd>
-        <dt>2023-2024 Northside Open Studio Tour, Corvallis, Oregon</dt>
+        <dt>2023-2025 Northside Open Studio Tour, Corvallis, Oregon</dt>
         <dd>13 watercolor pieces, and 5 oil pieces sold during this neighborhood sale at 17 locations.</dd>
         <dt>2016 Studio262 Gallery, Corvallis, Oregon.</dt>
         <dd>10 pieces consigned.</dd>
