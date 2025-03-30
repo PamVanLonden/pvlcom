@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { AiFillHome, AiOutlineSearch } from "react-icons/ai";
 import ImageGallery from './ImageGallery.jsx';
 
 function HomePage() {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const initialQuery = searchParams.get("search") || "";
     const [searchQuery, setSearchQuery] = useState("");
+
+    useEffect(() => {
+        if (searchQuery) {
+            setSearchParams({ search: searchQuery });
+        } else {
+            setSearchParams({});
+        }
+    }, [searchQuery, setSearchParams]);
+
 
     return (
         <>
@@ -20,7 +32,7 @@ function HomePage() {
                     placeholder="Search by title, size, or description" 
                     value={searchQuery} 
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    aria-label="Search by title, size, or description"
+                    aria-label="Search title, size, media"
                     role="searchbox"
                 />
             </p>
