@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { useCart } from "react-use-cart";
+import { useCart} from "react-use-cart";
 import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = () => {
-  const { items, cartTotal } = useCart();
+  const { items, cartTotal, emptyCart } = useCart();
+  const [isOpen, setIsOpen] = useState(false);   
   const navigate = useNavigate(); 
 
   const [formData, setFormData] = useState({
@@ -20,6 +21,10 @@ const CheckoutForm = () => {
     venmoUsername: "",
   });
 
+  const closeModal = () => {
+    setIsOpen(false);
+    navigate("/");  
+};
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -35,8 +40,13 @@ const CheckoutForm = () => {
       return;
     }
 
+    if (formData.paymentMethod === "zelle" && !formData.zelleUsername.trim()) {
+      alert("Please enter your Zelle phone number or email adddress. ");
+      return;
+    }
+
     const orderDetails = items
-      .map((item) => `${item.name} (x${item.quantity}) - $${item.price.toFixed(2)}`)
+      .map((item) => `${item.name} (x${item.quantity}) - ${item.price.toFixed(2)}`)
       .join(", ");
 
     const templateParams = Object.fromEntries(
@@ -50,7 +60,7 @@ const CheckoutForm = () => {
         zip: formData.zip,
         comments: formData.comments,
         order: orderDetails,
-        total: `$${cartTotal.toFixed(2)}`,
+        total: `${cartTotal.toFixed(2)}`,
         paymentMethod: formData.paymentMethod,
         venmoUsername: formData.venmoUsername
       }).filter(([_, value]) => value && value.trim() !== "")
@@ -64,15 +74,11 @@ const CheckoutForm = () => {
         "Gi9WKk1EkoM7_PaVu" // EmailJS Public Key
       )
       .then((response) => {
-        console.log("Email sent successfully:", response.status, response.text);
-        
-        if (formData.paymentMethod === "venmo") {
-          navigate("/cart/venmo");
-        } else if (formData.paymentMethod === "zelle") {
-          navigate("/cart/zelle");
-        }
-      })
+        setIsOpen(true); // Show modal on success
+        emptyCart();  // Clear the shopping cart
+    })
       .catch((error) => {
+        alert(`Your order was <strong>not</strong> sent. Please try again.`);
         console.error("Error sending email:", error);
       });
   };
@@ -85,49 +91,49 @@ const CheckoutForm = () => {
 
       <form onSubmit={handleSendEmail} className="checkout-form">
         <p className="form-group">
-          <label>Full Name</label>
-          <input type="text" name="firstlast" value={formData.firstlast} onChange={handleChange} required />
+          <label htmlFor="firstlast">Full Name</label>
+          <input type="text" id="firstlast" name="firstlast" value={formData.firstlast} onChange={handleChange} required />
         </p>
 
         <div className="form-row">
           <p className="form-group">
-            <label>Email</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
           </p>
           <p className="form-group">
-            <label>Phone (optional)</label>
-            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} />
+            <label htmlFor="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} />
           </p>
         </div>
 
         <p className="form-group">
-          <label>Address</label>
-          <input type="text" name="address" value={formData.address} onChange={handleChange} required />
+          <label htmlFor="addr">Address</label>
+          <input type="text" id="addr" name="address" value={formData.address} onChange={handleChange} required />
         </p>
 
         <div className="form-row">
           <p className="form-group">
-            <label>City</label>
-            <input type="text" name="city" value={formData.city} onChange={handleChange} required />
+            <label htmlFor="city">City</label>
+            <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} required />
           </p>
           <p className="form-group">
-            <label>State</label>
-            <input type="text" name="state" value={formData.state} onChange={handleChange} required />
+            <label htmlFor="state">State</label>
+            <input type="text" id="state" name="state" value={formData.state} onChange={handleChange} required />
           </p>
           <p className="form-group">
-            <label>ZIP Code</label>
-            <input type="number" name="zip" value={formData.zip} onChange={handleChange} required />
+            <label htmlFor="zip">ZIP Code</label>
+            <input type="number" id="zip" name="zip" value={formData.zip} onChange={handleChange} required />
           </p>
         </div>
 
         <p className="form-group">
-          <label>Comments</label>
-          <textarea name="comments" value={formData.comments} onChange={handleChange} />
+          <label htmlFor="comments">Comments</label>
+          <textarea name="comments" value={formData.comments} onChange={handleChange} id="comments" />
         </p>
 
         <p className="form-group">
-          <label>Payment Method</label>
-          <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange} required>
+          <label htmlFor="pmt">Payment Method</label>
+          <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange} id="pmt" required>
             <option value="venmo">Venmo</option>
             <option value="zelle">Zelle</option>
           </select>
@@ -135,17 +141,39 @@ const CheckoutForm = () => {
 
         {formData.paymentMethod === "venmo" && (
           <p className="form-group">
-            <label>Venmo Username</label>
-            <input type="text" name="venmoUsername" value={formData.venmoUsername} onChange={handleChange} required />
+            <label htmlFor="venmo">Venmo Username</label>
+            <input type="text" name="venmoUsername" value={formData.venmoUsername} onChange={handleChange} id="venmo" required />
           </p>
         )}
 
-        <div className="form-group button-container">
+        {formData.paymentMethod === "zelle" && (
+          <p className="form-group">
+            <label htmlFor="zelle">Zelle email address or phone number</label>
+            <input type="text" name="zelleUsername" value={formData.zelleUsername} onChange={handleChange} id="zelle" required />
+          </p>
+        )}
+
+        <label className="form-group button-container">
           <button type="submit">Send Order Confirmation</button>
-        </div>
+        </label>
       </form>
 
       </article>
+
+{/* Confirm via Modal */}
+      {isOpen && (
+            <div className="modal-overlay" onClick={closeModal}>
+                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                  <h2>Order Confirmation</h2>
+                  <p>Your order has successfully been sent to Pam. <br />
+                    Please check your email to complete the order without fees. </p>
+                  <label className="button-section">
+                      <button className="close-modal-btn" onClick={closeModal}>Close and return to Gallery</button>
+                  </label>
+                </div>
+            </div>
+        )}
+
     </div>
   );
 };
