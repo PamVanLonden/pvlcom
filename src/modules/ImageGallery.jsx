@@ -111,7 +111,7 @@ const ImageGallery = ({ searchQuery }) => {
                         />
                         <p>{selectedItem.Description || "No description available."}</p>
                         <p>Price: ${selectedItem.Price || "0.00"}</p>
-                        <div className="button-section">
+                        <div className="modal-footer">
                             <button className="close-modal-btn" onClick={closeModal}>Close</button>
                             <button className="add-to-cart-btn" onClick={() => handleAddToCart(selectedItem, selectedItem.imageSrc)}>Add to Cart</button>
                         </div>
