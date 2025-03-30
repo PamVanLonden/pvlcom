@@ -8,9 +8,9 @@ const social = [
         link: "https://www.nost-art.com/map" 
     },
     { 
-        title: "Watercolor Sale $10", 
+        title: "Watercolor Sale $10 each 8x8 and smaller!", 
         year: 2025, 
-        img: "/assets/watercolor-sale-ad.jpb", 
+        img: "/assets/watercolor-sale-ad.jpg", 
         link: "https://pamvanlonden.vercel.app/?search=watercolor" 
     },
     { 
