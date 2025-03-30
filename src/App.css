@@ -241,8 +241,8 @@ dt a:hover, dd a:hover {
     text-align: center;
     border-radius: 8px;
     max-height: calc(90vh - 40px); /* Prevents overflow but allows growth */
-    
 }
+.modal-content h2 {text-align:center;}
 .modal-image {
     max-height: 60vh; /* Ensures the image never exceeds 60% of the viewport height */
     height: auto;
@@ -258,8 +258,7 @@ button,
 .close-modal-btn,
 .purchaseLink  {
     /* display:block; */
-    margin:3%;
-    padding:2%;
+    margin:0% 3% 3% 3%;
     background-color: var(--mauveT);
     color: var(--tan);
     border-radius: 10px;
@@ -527,6 +526,16 @@ font-size:150%;
 }
 
 /* Responsive Styles for Surface Duo  ---------------------------------------*/
+@media screen and (min-width: 412px) {
+    .modal-content {
+        /* max-width: 360px; */
+        margin:0 0 0 -0px;
+        max-height: calc(100vh - 10px); /* Prevents overflow but allows growth */
+    }
+    .modal-content img {max-width:340px;}
+
+}
+/* Responsive Styles for Surface Duo  ---------------------------------------*/
 @media screen and (min-width: 540px) {
     body {
         background-size: 900px auto;
@@ -598,12 +607,10 @@ font-size:150%;
     }
     .gallery figure {width:380px;}
     .modal-content {
-        max-width: 700px;
+        max-width: 600px;
         margin:0;
         max-height: calc(100vh - 40px); /* Prevents overflow but allows growth */
     }
-
-    /* search */
     input#search {width:350px;}
 }
 
