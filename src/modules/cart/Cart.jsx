@@ -31,7 +31,7 @@ const Cart = () => {
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
-      <article >
+      <article id="shoppingcart">
         <nav className="cart-actions">
           <Link to="/">Continue Shopping</Link>
           <Link to="#" className="clear-cart-link" onClick={(e) => {
@@ -40,31 +40,25 @@ const Cart = () => {
           }}> Clear Cart </Link>
         </nav>
 
-        <table className="cart-items">
-          <tbody>
+        <section className="cart-items">
           {items.map((item) => (
-            <tr key={item.id} className="cart-item">
-              <td>
-                <h3>{item.name}</h3>
+            <figure key={item.id}>
+                <figcaption>{item.name}</figcaption>
                 <img src={item.imageSrc}  
                     alt={item.name} 
-                    className="cart-item-thumbnail"
                     onError={(e) => { 
                       console.error("Image failed to load:", item.imageSrc);
                       e.target.src = '/assets/fallback.webp';
                     }} 
-                />
-              </td>
-              <td className="cart-item-details">
-                <p className="cart-price">${item.price.toFixed(2)} </p>
-                <div className="cart-item-actions">
-                  <button className="cart-remove" onClick={() => removeItem(item.id)}>Remove</button>
-                </div>
-              </td>
-            </tr>
+                  />
+              
+              <dl>
+                <dt>${item.price.toFixed(2)} </dt>
+                <dd><button onClick={() => removeItem(item.id)}>Remove</button></dd>
+              </dl>
+              </figure>
           ))}
-          </tbody>
-        </table>
+        </section>
         
         <div className="cart-summary">
           <h4>Subtotal ({totalItems} items): ${cartTotal.toFixed(2)}</h4>
