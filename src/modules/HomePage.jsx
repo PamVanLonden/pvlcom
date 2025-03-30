@@ -6,7 +6,13 @@ import ImageGallery from './ImageGallery.jsx';
 function HomePage() {
     const [searchParams, setSearchParams] = useSearchParams();
     const initialQuery = searchParams.get("search") || "";
-    const [searchQuery, setSearchQuery] = useState("");
+    const [searchQuery, setSearchQuery] = useState(initialQuery);
+
+    useEffect(() => {
+        if (initialQuery) {
+            setSearchQuery(initialQuery);
+        }
+    }, [initialQuery]);
 
     useEffect(() => {
         if (searchQuery) {
