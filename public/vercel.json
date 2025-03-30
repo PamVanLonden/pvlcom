@@ -1,6 +1,7 @@
 {
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html", "status": 200, "trailingSlash": false },
     { "src": "/assets/(.*)", "dest": "/public/assets/$1" }
+    
   ]
 }
