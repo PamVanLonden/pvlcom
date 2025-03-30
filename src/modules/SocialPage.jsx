@@ -8,6 +8,12 @@ const social = [
         link: "https://www.nost-art.com/map" 
     },
     { 
+        title: "Watercolor Sale $10", 
+        year: 2025, 
+        img: "/assets/watercolor-sale-ad.jpb", 
+        link: "https://pamvanlonden.vercel.app/?search=watercolor" 
+    },
+    { 
         title: "Etsy Shop", 
         year: 2025, 
         img: "/assets/etsy-page.jpg", 
