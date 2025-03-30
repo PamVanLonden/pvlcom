@@ -234,17 +234,24 @@ dt a:hover, dd a:hover {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow-y: auto; /* Enables scrolling if modal exceeds screen height */
+
 }
 .modal-content {
     max-width: 400px;
-    width: 100%;
+    width: 90%;
     text-align: center;
     border-radius: 8px;
     max-height: calc(90vh - 40px); /* Prevents overflow but allows growth */
+    max-height: 85vh; /* Ensures it never exceeds viewport height */
+    overflow-y: auto; /* Allows scrolling within the modal if needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures button is always accessible */
 }
 .modal-content h2 {text-align:center;}
 .modal-image {
-    max-height: 60vh; /* Ensures the image never exceeds 60% of the viewport height */
+    max-height: 50vh; /* Ensures the image never exceeds 60% of the viewport height */
     height: auto;
     object-fit: contain; /* Keeps aspect ratio and fits inside the modal */
     margin-bottom: 0;
@@ -252,6 +259,14 @@ dt a:hover, dd a:hover {
     padding:0;
 }
 img.modal-image {width:auto!important;}
+
+.modal-footer {
+    margin-top: auto; /* Push buttons to the bottom */
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
 /* Add to cart button */
 button,
@@ -510,10 +525,10 @@ button:hover,
 .cart-items dt {font-size:150%;font-weight:bold;}
 .cart-items dd {margin:0; padding:0;}
 .cart-summary {
-margin-bottom: 100px;
-text-align:center;
-font-size:150%;
-}
+    margin-bottom: 100px;
+    text-align:center;
+    font-size:150%;
+    }
 
   
   /* Buttons Section - Aligns Add to Cart & View Cart */
@@ -525,10 +540,9 @@ font-size:150%;
     margin-top: 10px;
 }
 
-/* Responsive Styles for Surface Duo  ---------------------------------------*/
+/* Responsive Styles for Samsung phones  ---------------------------------------*/
 @media screen and (min-width: 412px) {
     .modal-content {
-        /* max-width: 360px; */
         margin:0 0 0 -0px;
         max-height: calc(100vh - 10px); /* Prevents overflow but allows growth */
     }
@@ -560,6 +574,7 @@ font-size:150%;
     .gallery figcaption {font-size:.8em; line-height:1;}
 
     .modal-content {
+        align-items: center;
         max-width: 400px;
         margin:-180px 0 0 -100px;
         max-height: calc(100vh - 200px); /* Prevents overflow but allows growth */
@@ -606,11 +621,12 @@ font-size:150%;
         column-count:3;
     }
     .gallery figure {width:380px;}
-    .modal-content {
-        max-width: 600px;
-        margin:0;
-        max-height: calc(100vh - 40px); /* Prevents overflow but allows growth */
+    .modal-overlay {
+        width: 600px!important;
+        margin:2% auto;
+        max-height: calc(100vh - 40px);  
     }
+    .modal-content img {width:100%!important;}
     input#search {width:350px;}
 }
 
