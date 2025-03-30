@@ -29,10 +29,10 @@ function HomePage() {
                 <input 
                     id="search"
                     type="text" 
-                    placeholder="Search by title, size, or description" 
+                    placeholder="Search title, size, media..." 
                     value={searchQuery} 
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    aria-label="Search title, size, media"
+                    aria-label="Search title, size, media..."
                     role="searchbox"
                 />
             </p>
