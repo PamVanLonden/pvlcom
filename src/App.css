@@ -98,7 +98,7 @@ main {
     padding: 2% 2% 2% 5%;
     text-align: center;
 }
-.float {float:right; width:50%;}
+.float {float:right; width:50%; border:2px solid var(--purple); border-radius:5px;margin-left:3%;}
 
 /* search */
 input#search {
