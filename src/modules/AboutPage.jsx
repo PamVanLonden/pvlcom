@@ -9,9 +9,9 @@ function AboutPage(){
         <>
             <h2> About Me</h2>
            <article id="about">
-           <figure>
-                <img src={selfies.src} alt={selfies.alt} />
-                <figcaption>{selfies.alt}</figcaption>
+           <figure className="float">
+                <img src="/assets/pam-van-londen-selfie-2025.webp" alt="Selfie of Pam Van Londen, 2025, in her art studio." />
+                <figcaption>Selfie of me in my studio. </figcaption>
             </figure>
            <h3>Lately...</h3>
             <p>My latest works are a set of naturescapes in oil on Ampersand Claybord panels 
