@@ -1,10 +1,19 @@
 import React from 'react';
 
+function CommissionsPage() {
+    const selfies = [
+        { src: "/assets/pam-van-londen-selfie-2025.webp", alt: "Selfie of Pam Van Londen, 2025, in her art studio." } 
+    ]
+}
 function AboutPage(){
     return (
         <>
             <h2> About Me</h2>
-           <article id="about"> 
+           <article id="about">
+           <figure key={index}>
+                <img src={selfies.src} alt={selfies.alt} />
+                <figcaption>{selfies.alt}</figcaption>
+            </figure>
            <h3>Lately...</h3>
             <p>My latest works are a set of naturescapes in oil on Ampersand Claybord panels 
             and gallery-edged canvases.  My childhood camping trips and motorhome travels, 
