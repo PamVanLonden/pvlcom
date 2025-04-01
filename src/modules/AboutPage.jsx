@@ -9,7 +9,7 @@ function AboutPage(){
         <>
             <h2> About Me</h2>
            <article id="about">
-           <figure className="float forty">
+           <figure className="float">
                 <img src="/assets/pam-van-londen-selfie-2025.webp" alt="Selfie of Pam Van Londen, 2025, in her art studio." />
                 <figcaption>Selfie of me in my studio. </figcaption>
             </figure>
