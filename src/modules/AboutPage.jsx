@@ -9,7 +9,7 @@ function AboutPage(){
         <>
             <h2> About Me</h2>
            <article id="about">
-           <figure key={index}>
+           <figure>
                 <img src={selfies.src} alt={selfies.alt} />
                 <figcaption>{selfies.alt}</figcaption>
             </figure>
