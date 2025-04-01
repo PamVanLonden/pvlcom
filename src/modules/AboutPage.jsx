@@ -1,11 +1,10 @@
 import React from 'react';
 
-function CommissionsPage() {
+function AboutPage(){
     const selfies = [
         { src: "/assets/pam-van-londen-selfie-2025.webp", alt: "Selfie of Pam Van Londen, 2025, in her art studio." } 
     ]
-}
-function AboutPage(){
+    
     return (
         <>
             <h2> About Me</h2>
