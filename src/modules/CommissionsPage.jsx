@@ -2,7 +2,7 @@ import React from "react";
 
 function CommissionsPage() {
     const images = [
-        { src: "/assets/pvl-columbia-gorge-crown-point-beacon-rock-2021-1240.jpg", caption: "Columbia River Crown Point Beacon Rock 3 2021" },
+        { src: "/assets/pvl-columbia-gorge-crown-point-beacon-rock-2021.webp", caption: "Columbia River Crown Point Beacon Rock 3 2021" },
         { src: "/assets/pvl-nest-of-prosperity-19.webp", caption: "Nests of Prosperity 19" },
         { src: "/assets/pvl-johnson-creek-7.webp", caption: "Johnson Creek 7 by request" },
         { src: "/assets/pvl-marys-peak-11-dyptich-400.jpg", caption: "Commission of Mary’s Peak" },
