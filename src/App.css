@@ -167,6 +167,7 @@ dl {text-align:left; color:var(--blue)}
 dt a, dd a {
     color:var(--blue); 
     font-weight:900;
+    text-decoration:underline;
 }
 dt a:hover, dd a:hover {
     color:var(--blue); 
