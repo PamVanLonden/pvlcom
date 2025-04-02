@@ -99,7 +99,14 @@ main {
     text-align: center;
 }
 .float {float:right; width:50%; }
-figure.float img {width:100%; border:2px solid var(--purple); border-radius:5px; margin-left:3%;}
+figure.float img,
+figure.float a img {
+    width:100%; 
+    border:2px solid var(--purple); 
+    border-radius:5px; 
+    margin-left:3%;
+}
+figure.float figcaption {color:var(--blue);}
 
 /* search */
 input#search {
