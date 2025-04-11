@@ -261,7 +261,7 @@ dt a:hover, dd a:hover {
 }
 .modal-content h2 {text-align:center;}
 .modal-image {
-    max-height: 50vh; /* Ensures the image never exceeds 60% of the viewport height */
+    max-height: 60vh; /* Ensures the image never exceeds 60% of the viewport height */
     height: auto;
     object-fit: contain; /* Keeps aspect ratio and fits inside the modal */
     margin-bottom: 0;
@@ -589,6 +589,7 @@ button:hover,
         margin:-180px 0 0 -100px;
         max-height: calc(100vh - 200px); /* Prevents overflow but allows growth */
     }
+    .modal-content img {max-width:390px;}
     
 }
 
@@ -596,10 +597,11 @@ button:hover,
 @media screen and (min-width: 768px) {
     .gallery figure {width:290px;}
     .modal-content {
-        max-width: 700px;
+        max-width: 900px;
         margin:-0px 0 0 -0px;
         max-height: calc(100vh - 40px); /* Prevents overflow but allows growth */
     }
+    .modal-content img {max-width:700px;}
     #pubs .gallery figure {width:400px;}
 }
 
@@ -634,25 +636,25 @@ button:hover,
     .columns2 {
         column-count:3;
     }
+    input#search {width:350px;}
     .gallery figure {width:380px;}
     .modal-overlay {
-        width: 600px!important;
-        margin:2% auto;
-        max-height: calc(100vh - 40px);  
+        width: 1000px!important;
+        margin:2% auto .5% auto;
+        max-height: calc(100vh);  
     }
-    .modal-content img {width:100%!important;}
-    input#search {width:350px;}
+    .modal-content img {max-width:700px;}
+
 }
 
 /* Responsive Styles for Retina display  ---------------------------------------*/
 @media screen and (min-width: 1240px) {
-    body {
-        width:1440px;
-    }
+    body { width:1440px;}
     .gallery figure {width:270px;}
+    .modal-content img {max-width:800px;}
 }
 /* PRINT STYLES */
 
 @media print { 
-    #tabs label {color:black; border-color:gray;}
+ 
 } 
