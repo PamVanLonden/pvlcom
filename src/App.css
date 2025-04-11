@@ -600,6 +600,7 @@ button:hover,
         margin:-0px 0 0 -0px;
         max-height: calc(100vh - 40px); /* Prevents overflow but allows growth */
     }
+    #pub .gallery figure {width:400px;}
 }
 
 
