@@ -35,6 +35,12 @@ const exhibits = [
       "url": "https://www.nost-art.com/pam-van-londen"
     },
     {
+      year: "2010, 2011, 2015, 2025",
+      title: "Corvallis Arts Center Annual Howland Community Open",
+      details: "Annual submission.",
+      url: "https://theartscenter.net/"
+    },
+    {
       "year": "2016",
       "title": "Studio262 Gallery, Corvallis, Oregon",
       "details": "10 pieces consigned.",
@@ -58,12 +64,7 @@ const exhibits = [
       "details": "15 pieces, Red Bluff, California",
       "url": "https://www.redbluffartgallery.com/"
     },
-    {
-      "year": "2015",
-      "title": "Around Oregon Annual, Corvallis Arts Center",
-      "details": "Juried by Johanna Seasonwein, Senior Curator Western Art Jordan Schnitzer Museum",
-      "url": "https://theartscenter.net/"
-    },
+
     {
       "year": "2014",
       "title": "Samuel Robert Winery Gallery",
@@ -107,28 +108,10 @@ const exhibits = [
       "url": "https://www.kimberlyconradcontemporaryart.com/"
     },
     {
-      "year": "2010-2014",
-      "title": "Corvallis Fall Festival",
-      "details": "Juried outdoor artisan fair",
-      "url": "https://www.corvallisfallfestival.org/"
-    },
-    {
       "year": "2012",
       "title": "Corvallis Arts Center Showcase",
       "details": "Juried, Oregon artists exhibit.",
       "url": "https://theartscenter.net/"
-    },
-    {
-      "year": "2012",
-      "title": "Sam\’s Station",
-      "details": "Thirty-one 8×8-inch framed daily paintings",
-      "url": "https://www.samsstation.com/"
-    },
-    {
-      "year": "2012",
-      "title": "Good Samaritan Hospital",
-      "details": "15 large paintings",
-      "url": "https://samhealth.org/find-a-location/good-samaritan-regional-medical-center/"
     },
     {
       "year": "2011",
@@ -154,12 +137,7 @@ const exhibits = [
       "details": "Ongoing exhibition and sales of daily paintings, framed and unframed. Thirty-four paintings sold in 18 months.",
       "url": ""
     },
-    {
-      "year": "2011, 2025",
-      "title": "Corvallis Arts Center Howland Community Open",
-      "details": "Annual submission.",
-      "url": "https://theartscenter.net/howland-community-open-art-show-for-all/"
-    },
+
     {
       "year": "2010",
       "title": "Albany Heartspring Wellness Center",
@@ -173,7 +151,7 @@ const exhibits = [
       "url": "https://www.nwhealing.com/"
     },
     {
-      "year": "2010-11",
+      "year": "2010, 2011",
       "title": "Contemporary Fine Art International",
       "details": "Juried online exhibit.",
       "url": ""
@@ -186,27 +164,9 @@ const exhibits = [
     },
     {
       "year": "2010",
-      "title": "Dana Marie Gallery",
-      "details": "Display of larger works in oil and acrylic, including American Landscapes and the Food on the Table Series.",
-      "url": ""
-    },
-    {
-      "year": "2010",
-      "title": "The 9 show – A Canine and Feline Exhibit.",
+      "title": "The 9 show: A Canine and Feline Exhibit.",
       "details": "LaSells Stewart Center. Juried.",
       url: "https://lasells.oregonstate.edu/giustina-gallery"
-    },
-    {
-      "year": "2010",
-      "title": "LaSells Stewart Center Community Open",
-      "details": "Annual submission.",
-      url: "https://lasells.oregonstate.edu/giustina-gallery"
-    },
-    {
-      "year": "2010",
-      "title": "Heart of the Valley Children's Choirs Fundraiser",
-      "details": "Three daily paintings raffled.",
-      "url": "https://www.hvcchoirs.org/"
     },
     {
       "year": "2010",
@@ -214,12 +174,7 @@ const exhibits = [
       "details": "3-month exhibit of daily paintings and other gallery-edged canvas works.",
       "url": ""
     },
-    {
-      "year": "2010",
-      "title": "Annual Community Open, Corvallis Arts Center",
-      "details": "Annual submission",
-      "url": "https://theartscenter.net/"
-    },
+
     {
       "year": "2010-11",
       "title": "Etsy Treasuries",
@@ -251,35 +206,9 @@ const exhibits = [
         },
         {
           year: "2011",
-          title: "Daily Paintworks",
-          details: "Weekly painting challenges, sold two paintings for the Japan Relief fund."
-        },
-        {
-          year: "2011",
           title: "Corvallis Etsy Group Exhibits",
           details: "Group show in the Footwise storefront window and Bookbin window.",
           url: "https://footwise.com/pages/footwise-corvallis"
-        },
-        {
-          year: "2010-2015",
-          title: "The Mod Pod",
-          details: "Ongoing exhibition and sales of daily paintings, framed and unframed. Thirty-four paintings sold in 18 months."
-        },
-        {
-          year: "2011",
-          title: "Corvallis Arts Center Community Open",
-          details: "Annual submission.",
-          url: "https://theartscenter.net/"
-        },
-        {
-          year: "2010-11",
-          title: "Contemporary Fine Art International",
-          details: "Juried online exhibit."
-        },
-        {
-          year: "2010-2011",
-          title: "Oregon Daily Painters",
-          details: "Online gallery."
         },
         {
           year: "2010",
@@ -287,27 +216,12 @@ const exhibits = [
           details: "Display of larger works in oil and acrylic, including American Landscapes and the Food on the Table Series."
         },
         {
-          year: "2010",
-          title: "The 9 show – A Canine and Feline Exhibit",
-          details: "LaSells Stewart Center. Juried.",
-          url: "https://lasells.oregonstate.edu/giustina-gallery"
+          "year": "2010",
+          "title": "Heart of the Valley Children's Choirs Fundraiser",
+          "details": "Three daily paintings raffled.",
+          "url": "https://www.hvcchoirs.org/"
         },
-        {
-          year: "2010",
-          title: "LaSells Stewart Center Community Open",
-          details: "Annual submission.",
-          url: "https://lasells.oregonstate.edu/giustina-gallery"
-        },
-        {
-          year: "2010",
-          title: "Heart of the Valley Fundraiser",
-          details: "Three daily paintings raffled."
-        },
-        {
-          year: "2010",
-          title: "The Soup Shop",
-          details: "3-month exhibit of daily paintings and other gallery-edged canvas works."
-        },
+
         {
           year: "2010",
           title: "Annual Community Open, Corvallis Arts Center",
@@ -326,17 +240,6 @@ const exhibits = [
         },
         {
           year: "2009",
-          title: "Artist Spotlight",
-          details: "Gazette-Times, Democrat-Herald"
-        },
-        {
-          year: "2009",
-          title: "La Sells Stewart Center Guistina Gallery, OSU",
-          details: "Community Open.",
-          url: "https://lasells.oregonstate.edu/giustina-gallery"
-        },
-        {
-          year: "2009",
           title: "Benton Hospice",
           details: "Food on the Table series."
         },
@@ -351,7 +254,7 @@ const exhibits = [
           details: "Large landscapes"
         },
         {
-          year: "2009",
+          year: "2007, 2009",
           title: "Leading Floral",
           details: "Various small works, including Food on the Table Series"
         },
@@ -373,19 +276,13 @@ const exhibits = [
           url: "https://lasells.oregonstate.edu/giustina-gallery"
         },
         {
-          year: "2008",
-          title: "Unitarian-Universalist Fellowship of Corvallis",
-          details: "“Our Beautiful Country” 38 oil and acrylic landscapes and portraits. One painting sold.",
-          url: "https://uucorvallis.org/"
-        },
-        {
-          year: "2007, 2008, 2009, 2010",
+          year: "2007 to 2014",
           title: "Corvallis Fall Festival",
-          details: "Sold many daily paintings!",
+          details: "Sold many daily paintings in my own booth (4 yrs) and earlier from the Corvallis Art Guild booth.",
           url:"https://www.corvallisfallfestival.org/"
         },
         {
-          year: "2008",
+          year: "2007, 2008, 2009, 2010",
           title: "La Sells Stewart Center Guistina Gallery Open Community Exhibit, OSU",
           details: "4-part polyptych submitted.",
           url: "https://lasells.oregonstate.edu/giustina-gallery"
@@ -405,22 +302,13 @@ const exhibits = [
           title: "OSU Women’s Center",
           details: "35 paintings on the gallery wall. Two paintings sold."
         },
+
         {
-          year: "2007",
-          title: "Unitarian-Universalist Fellowship of Corvallis Holiday Bizarre",
-          details: "Five paintings sold.",
-          url: "https://uucorvallis.org/"
-        },
-        {
-          year: "2007 – 2008",
-          title: "Henderson’s Copies",
+          year: "2007, 2008",
+          title: "Henderson\’s Copies",
           details: "12 pieces hanging on the gallery wall."
         },
-        {
-          year: "2007",
-          title: "Leading Floral",
-          details: "11 pieces hanging in this enchanting florist’s shop."
-        },
+       
         
         {
           year: "2007",
@@ -438,12 +326,7 @@ const exhibits = [
           details: "1 piece sold", 
           url: "https://corvallisartguild.net/clothesline-sale/"
         },
-        {
-          year: "2007",
-          title: "La Sells Stewart Center Austin Auditorium Open Community Exhibit, OSU",
-          details: "1 piece submitted.",
-          url: "https://lasells.oregonstate.edu/giustina-gallery"
-        },
+
         {
           year: "2007",
           title: "Corvallis Book Bin window",
@@ -485,9 +368,9 @@ const exhibits = [
           url: "https://theartscenter.net/"
         },
         {
-          year: "1996",
+          year: "1996, 2007, 2008",
           title: "Unitarian-Universalist Fellowship of Corvallis",
-          details: "Watercolors, photos, and drawings of Provence and Oregon.",
+          details: "Watercolors, photos, and drawings of Provence and Oregon. More than five sold. \“Our Beautiful Country\” 38 oil and acrylic landscapes and portraits. One painting sold.",
           url: "https://uucorvallis.org/"
         },
         {
@@ -506,7 +389,7 @@ const exhibits = [
           details: "Watercolors, photos, and drawings of Provence and Oregon; joint show with other Corvallis Art Guild members."
         },
         {
-          year: "1996 1997",
+          year: "1996, 1997",
           title: "Hanging About Town",
           details: "Watercolors, photos, and drawings of Provence and Oregon."
         },
