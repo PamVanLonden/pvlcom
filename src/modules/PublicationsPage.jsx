@@ -29,7 +29,7 @@ const publications = [
         title: "Computer Applications and Implications Textbook", 
         year: "2017, 2020", 
         img: "/assets/computing.pvl.png", 
-        link: "https://computing.pamvanlonden.com/" 
+        link: "https://pamvanlonden.com/computing/" 
     },
     { 
         title: "Web Design, Management, and Interaction Textbook", 
