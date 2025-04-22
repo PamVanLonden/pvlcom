@@ -9,23 +9,25 @@ const SocialShare = ({ url, title = '', text = '' }) => {
     const encodedURL = encodeURIComponent(url);
     const encodedTitle = encodeURIComponent(title);
     const encodedText = encodeURIComponent(text);
-    let shareURL = '';
+    let appUrl, webUrl;
 
     switch (platform) {
       case 'bluesky':
-        shareURL = `https://bsky.app/intent/compose?text=${encodedText}%20${encodedURL}`;
+        webUrl = `https://bsky.app/intent/compose?text=${encodedText}%20${encodedURL}`;
         break;
       case 'facebook':
-        shareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`;
+        appUrl = `fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`;
+        webUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`;
         break;
       case 'threads':
-        shareURL = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedURL}`;
+        appUrl = `instagram://threads?text=${encodedText}%20${encodedURL}`;
+        webUrl = `https://www.threads.net/intent/post?text=${encodedText}%20${encodedURL}`;
         break;
       case 'linkedin':
-        shareURL = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedURL}&title=${encodedTitle}`;
+        webUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedURL}&title=${encodedTitle}`;
         break;
       case 'email':
-        shareURL = `mailto:?subject=${encodedTitle}&body=${encodedText}%0A${encodedURL}`;
+        webUrl = `mailto:?subject=${encodedTitle}&body=${encodedText}%0A${encodedURL}`;
         break;
       case 'copy':
         navigator.clipboard.writeText(url).then(() => {
@@ -36,8 +38,16 @@ const SocialShare = ({ url, title = '', text = '' }) => {
         break;
     }
 
-    if (shareURL) {
-      window.open(shareURL, '_blank', 'noopener,noreferrer');
+    if (webUrl) {
+      if (appUrl) {
+        window.location.href = appUrl;
+    
+        setTimeout(() => {
+          window.location.href = webUrl;
+        }, 500);
+      } else {
+        window.location.href = webUrl;
+      }
     }
   };
 
