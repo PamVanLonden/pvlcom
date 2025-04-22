@@ -4,7 +4,7 @@ import { useCart } from "react-use-cart";
 
 import { Analytics } from "@vercel/analytics/react"
 import { HelmetProvider, Helmet } from "react-helmet-async";
-
+import SocialShare from './hooks/SocialShare';
 
 import CartContext from "./modules/cart/CartProvider"; 
 import HomePage from "./modules/HomePage.jsx";
@@ -23,7 +23,7 @@ import SocialPage from './modules/SocialPage.jsx';
 
 import { IoLogoVenmo } from "react-icons/io5";
 import { SiCashapp, SiZelle } from "react-icons/si";
-import { FaShoppingCart } from "react-icons/fa"; 
+import { FaShoppingCart, FaShareAlt } from "react-icons/fa"; 
 
 import './App.css';
 
@@ -38,11 +38,21 @@ function App() {
         <header>
           <h1><a href="/">Pam Van Londen</a></h1>
           <p><Slogan /></p>
+          
+          <nav id="share">
+            <a><FaShareAlt /></a>
+            <SocialShare
+                url={window.location.href}
+                title="Share with friends"
+                text="Corvallis, Oregon artist, Pam Van Londen's paintings in oil, watercolor, and acrylic."
+              />
+            </nav>
+
         </header>
 
         <nav className="fancyButtons">
           <i className="purchaseIcons"><IoLogoVenmo /> </i>
-          {/* <i> <SiZelle /> </i> */}
+          <i> <SiZelle /> </i>
           <Link to="/">Home</Link>
           <Link to="/social">Social</Link>
           <Link to="/commissions">Commissions</Link>

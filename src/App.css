@@ -117,7 +117,7 @@ input#search {
     margin:0 0 0 1%;
     font-size:1.2em;
 }
-i.search {font-size:2em;}
+i.search {font-size:1.5em;}
 
 /* articles */
 article {
@@ -300,13 +300,14 @@ button:hover,
     box-shadow: 3px 3px 3px var(--blue);
 }
  
-/* Fancy Buttons  MAIN NAV */
+/* MAIN NAV Fancy Buttons   */
 .fancyButtons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     padding: 10px;
+    width:85%
 }
 
 .fancyButtons a {
@@ -323,6 +324,20 @@ button:hover,
     background-color: var(--tanT);
     color:var(--mauve);
 }
+/* Share buttons */
+#share  {
+    position:absolute;
+    z-index:1000;
+    left:90%;
+    top:30px;
+}
+#share a {
+    display:block;
+
+    font-size:150%;
+}
+#share a:hover {color:var(--white)}
+
 
 /* Checkout Form */
 
@@ -636,7 +651,7 @@ button:hover,
     .columns2 {
         column-count:3;
     }
-    input#search {width:350px;}
+    input#search {width:350px; }
     .gallery figure {width:380px;}
     .modal-overlay {
         width: 1000px!important;
