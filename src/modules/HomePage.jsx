@@ -28,19 +28,20 @@ function HomePage() {
             {/* Search Bar */}
             <p aria-live="polite"  className="float fifty">
                     <label htmlFor="search">
-                    <i aria-hidden="true" className="search">
+                    {/* <i aria-hidden="true" className="search">
                         <AiOutlineSearch />
-                    </i>
+                    </i> */}
                 </label>
                 <input 
                     id="search"
                     type="text" 
-                    placeholder="Search title, size, media..." 
+                    placeholder="Search 🔎 scroll &darr;" 
                     value={searchQuery} 
                     onChange={(e) => setSearchQuery(e.target.value)}
                     aria-label="Search title, size, media..."
                     role="searchbox"
                 />
+                
             </p>
             <h2 className="homeOnly"><i><AiFillHome /></i>Welcome to my Gallery</h2>
             <p>Original abstract landscape oil, acrylic, and watercolor paintings, 
