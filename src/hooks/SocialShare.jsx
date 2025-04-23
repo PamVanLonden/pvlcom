@@ -26,9 +26,6 @@ const SocialShare = ({ url, title = '', text = '' }) => {
       case 'linkedin':
         webUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedURL}&title=${encodedTitle}`;
         break;
-      case 'email':
-        webUrl = `mailto:?subject=${encodedTitle}&body=${encodedText}%0A${encodedURL}`;
-        break;
       case 'copy':
         navigator.clipboard.writeText(url).then(() => {
           alert('Link copied to clipboard!');
@@ -58,7 +55,10 @@ const SocialShare = ({ url, title = '', text = '' }) => {
         <a onClick={() => share('facebook')} ><FaFacebook /></a>
         <a onClick={() => share('threads')} ><BsThreadsFill /></a>
         <a onClick={() => share('linkedin')} ><FaLinkedin /></a>
-        <a onClick={() => share('email')} ><MdEmail /></a>
+        <a href={`mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(text)}%0A${encodeURIComponent(url)}`} 
+            rel="noreferrer"
+            aria-label="Share via Email"
+          > <MdEmail /> </a>
         <a onClick={() => share('copy')} ><FaCopy /></a>
     </div>
   );
