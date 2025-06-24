@@ -101,16 +101,18 @@ const ImageGallery = ({ searchQuery }) => {
             {isOpen && selectedItem && (
                 <div className="modal-overlay" onClick={closeModal}>
                     {notification && <div className="cart-notification">{notification}</div>}
-
+                   
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <h2>{selectedItem.cleanTitle || "Untitled"}</h2>
+                        <h2>{selectedItem.cleanTitle || "Untitled"}
+                        <button className="close-modal-btn inline" onClick={closeModal}>X</button>
+                        </h2>
                         <img 
                             src={selectedItem.imageSrc} 
                             alt={selectedItem.cleanDescription} 
                             className="modal-image"
                         />
-                        <p>{selectedItem.Description || "No description available."}</p>
-                        <p>Price: ${selectedItem.Price || "0.00"}</p>
+                        <p>{selectedItem.Description || "No description available."}
+                         &nbsp; &nbsp; Price: ${selectedItem.Price || "0.00"}</p>
                         <div className="modal-footer">
                             <button className="close-modal-btn" onClick={closeModal}>Close</button>
                             <button className="add-to-cart-btn" onClick={() => handleAddToCart(selectedItem, selectedItem.imageSrc)}>Add to Cart</button>
