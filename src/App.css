@@ -84,9 +84,12 @@ header p  {
 /* Icon section */
 .purchaseIcons {
     font-size: 24px;
-    display: flex;
-    gap: 10px; 
-    color:var(--mauve)
+    /* display: flex;
+    gap: 10px;  */
+    color:var(--gold);
+    vertical-align:middle;
+    line-height:1;
+    margin-left:2%;
 }
 
 /* Main Content */
@@ -132,11 +135,10 @@ article {
 footer {
     width: 100%;
     background-color: var(--mauve);
-    padding: 3%;
     align-items:left;
     text-align: left;
-    margin-top:4%;
-    padding:1%;
+    margin-top:8%;
+    padding:2%;
     position:fixed;
     bottom:0px;
 }
@@ -150,7 +152,7 @@ text-decoration:underline;
  
 }
 /* Typography */
-p {max-width:800px; text-align:left;}
+p {max-width:800px; text-align:left; margin:1% 0;}
 ul {text-align:left;}
 li {margin-bottom:2%; line-height:1.1;}
 h1, h2, h3, h4, h5 {
@@ -299,18 +301,18 @@ button:hover,
     color: var(--mauve);
     box-shadow: 3px 3px 3px var(--blue);
 }
- 
-/* MAIN NAV Fancy Buttons   */
-.fancyButtons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    width:85%
+.inline {
+    display:inline;
+    margin:0 0 0 20px;
+    vertical-align:top;
+    padding:8px 12px;
+}
+/* Shopping Cart Button  */
+.viewCart {
+    margin:0 auto 0 30%;
 }
 
-.fancyButtons a {
+.viewCart a {
     color: var(--gold); 
     background-color: var(--mauveT);
     padding: 4px 8px;
@@ -320,23 +322,43 @@ button:hover,
     font-weight: bold;
 }
 
-.fancyButtons a:hover {
+.viewCart a:hover {
     background-color: var(--tanT);
     color:var(--mauve);
 }
-/* Share buttons */
+/* Global nav */
+#global  {
+    position:absolute;
+    z-index:1000;
+    left:5%;
+    top:115px;
+}
+#global a {
+    display:flex;
+    /* font-size:110%; */
+    color: var(--gold); 
+    background-color: var(--mauve);
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+#global a:hover {color:var(--gold)}
+
+
+ /* Share Nav */
 #share  {
     position:absolute;
     z-index:1000;
-    left:90%;
+    left:85%;
     top:30px;
 }
 #share a {
     display:block;
-
     font-size:150%;
 }
-#share a:hover {color:var(--white)}
+#share a:hover {color:var(--gold)}
 
 
 /* Checkout Form */
@@ -573,6 +595,9 @@ button:hover,
     }
     .modal-content img {max-width:340px;}
 
+    #global a, #share a  {
+        font-size:90%;
+    }
 }
 /* Responsive Styles for Surface Duo  ---------------------------------------*/
 @media screen and (min-width: 540px) {
@@ -622,7 +647,7 @@ button:hover,
 
 
 
-/* Responsive Styles for DESKTOP  ---------------------------------------*/
+/* Responsive Styles for DESKTOP and iPad Pro ---------------------------------------*/
 @media screen and (min-width: 1024px) {
     body {
         background-size: 1100px auto;
@@ -660,6 +685,10 @@ button:hover,
     }
     .modal-content img {max-width:700px;}
 
+    #global a, #share a  {
+        font-size:130%;
+    }
+
 }
 
 /* Responsive Styles for Retina display  ---------------------------------------*/
@@ -668,6 +697,8 @@ button:hover,
     .gallery figure {width:270px;}
     .modal-content img {max-width:800px;}
 }
+
+
 /* PRINT STYLES */
 
 @media print { 

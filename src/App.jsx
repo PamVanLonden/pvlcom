@@ -5,6 +5,7 @@ import { useCart } from "react-use-cart";
 import { Analytics } from "@vercel/analytics/react"
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import SocialShare from './hooks/SocialShare';
+import NavToggle from './hooks/NavToggle.jsx';
 
 import CartContext from "./modules/cart/CartProvider"; 
 import HomePage from "./modules/HomePage.jsx";
@@ -38,28 +39,21 @@ function App() {
         <header>
           <h1><a href="/">Pam Van Londen</a></h1>
           <p><Slogan /></p>
-          
-          <nav id="share">
-            <a><FaShareAlt /></a>
+
+          <nav id="global"> 
+            <NavToggle /> 
+          </nav>
+          <nav id="share"> 
             <SocialShare
                 url={window.location.href}
                 title="Share with friends"
                 text="Corvallis, Oregon artist, Pam Van Londen's paintings in oil, watercolor, and acrylic."
               />
-            </nav>
+          </nav>
 
         </header>
-
-        <nav className="fancyButtons">
-          <i className="purchaseIcons"><IoLogoVenmo /> </i>
-          <i> <SiZelle /> </i>
-          <Link to="/">Home</Link>
-          <Link to="/social">Social</Link>
-          <Link to="/commissions">Commissions</Link>
-          <Link to="/exhibits">Exhibits</Link>
-          <Link to="/publications">Publications</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+        
+        <nav className="viewCart">
           <CartLink /> {/* CartLink component ensures `totalItems` updates */}
         </nav>
 
@@ -86,6 +80,8 @@ function App() {
           <nav id="footer">
            <CartLink /> {/* CartLink component ensures `totalItems` updates */}
             &copy; {new Date().getFullYear()} Pam Van Londen
+            <i className="purchaseIcons"><IoLogoVenmo /> </i>
+            <i> <SiZelle /> </i>
             <Link to="/legal">Legal</Link>
             <Link to="/resume">Résumé</Link>
           </nav>
@@ -103,7 +99,8 @@ const CartLink = () => {
 
   return (
     <Link to="/cart" className="cart-icon">
-      <FaShoppingCart /> View Cart ({totalItems})
+      <FaShoppingCart /> View Cart ({totalItems}) 
+       
     </Link>
   );
 };
